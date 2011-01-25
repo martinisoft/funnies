@@ -15,8 +15,10 @@ end
 
 group :test do
   gem 'rspec', '2.3.0'
-  gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
   gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
