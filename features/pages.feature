@@ -7,3 +7,6 @@ Feature: Pages Feature
     When I go to the landing page
     Then I should see "This is the landing page"
 
+  Scenario: About Page
+    When I go to the about page
+    Then I should see "This is the about page"

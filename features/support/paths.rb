@@ -10,6 +10,8 @@ module NavigationHelpers
 
     when /the landing page/
       '/'
+    when /the about page/
+      '/about'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
