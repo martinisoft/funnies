@@ -3,8 +3,7 @@ Feature: Pages Feature
   As an unregistered user
   I want to view pages giving information about Funnies
 
-  Scenario: Landing Page Scenario
+  Scenario: Landing Page
     When I go to the landing page
-    Then I should see "Welcome to Funnies"
-    And I should see "This is the landing page"
+    Then I should see "This is the landing page"
 
