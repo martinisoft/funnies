@@ -1,4 +1,4 @@
-Feature: Pages Feature
+Feature: Static Pages
   In order to get more information about Funnies
   As an unregistered user
   I want to view pages giving information about Funnies
