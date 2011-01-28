@@ -97,6 +97,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     nokogiri (1.4.4)
+    pg (0.10.1)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -170,6 +171,7 @@ DEPENDENCIES
   haml
   haml-rails
   launchy
+  pg
   rails (= 3.0.3)
   rspec (= 2.3.0)
   rspec-rails (= 2.3.0)

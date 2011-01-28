@@ -9,6 +9,8 @@ gem 'formtastic', '1.2.3'
 gem 'haml'
 gem 'haml-rails'
 
+gem 'pg'
+
 group :development do
   gem 'rspec-rails', '2.3.0'
 end
