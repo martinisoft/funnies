@@ -8,12 +8,16 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /the landing page/
+    when /the homepage/
       '/'
     when /the about page/
       '/about'
     when /register/
       new_user_registration_path
+    when /login/
+      new_user_session_path
+    when 'logout'
+      destroy_user_session_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

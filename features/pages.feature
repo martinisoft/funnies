@@ -4,7 +4,7 @@ Feature: Static Pages
   I want to view pages giving information about Funnies
 
   Scenario: Landing Page
-    When I go to the landing page
+    When I go to the homepage
     Then I should see "This is the landing page"
 
   Scenario: About Page
