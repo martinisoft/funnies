@@ -21,9 +21,8 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'email_spec', '~> 1.1.1'
-  gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 group :development, :test do
-  gem 'mysql'
+  gem 'ruby-debug19', :require => 'ruby-debug'
 end
