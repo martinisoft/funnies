@@ -1,0 +1,8 @@
+= link_to "Add comic", new_comic_path
+
+- comics.each do |comic|
+  %div= comic.name
+  %div= comic.homepage
+  %div= comic.feed_url
+  %div
+    = link_to "edit", edit_comic_path(comic)

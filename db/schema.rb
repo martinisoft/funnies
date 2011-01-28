@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110127162937) do
+ActiveRecord::Schema.define(:version => 20110128214208) do
+
+  create_table "comics", :force => true do |t|
+    t.string   "name"
+    t.string   "homepage"
+    t.string   "feed_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -34,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20110127162937) do
     t.string   "authentication_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

@@ -18,6 +18,8 @@ module NavigationHelpers
       new_user_session_path
     when 'logout'
       destroy_user_session_path
+    when 'the comics page'
+      comics_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

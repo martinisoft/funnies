@@ -5,6 +5,8 @@ Funnies::Application.routes.draw do
     get "/logout", :to => "devise/sessions#destroy", :as => 'logout'
   end
 
+  resources :comics
+
   match '/about' => 'pages#about'
 
   root :to => "pages#landing"
