@@ -19,7 +19,7 @@ group :test do
   gem 'rspec', '2.3.0'
   gem 'factory_girl_rails'
   gem 'cucumber-rails'
-  gem 'capybara'
+  gem 'capybara', '0.3.9'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'email_spec', '~> 1.1.1'
