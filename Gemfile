@@ -20,6 +20,7 @@ end
 
 group :test do
   gem 'rspec', '2.3.0'
+  gem 'shoulda', '2.11.2'
   gem 'factory_girl_rails'
   gem 'cucumber-rails'
   gem 'capybara', '0.3.9'
