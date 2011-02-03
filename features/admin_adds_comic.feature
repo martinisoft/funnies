@@ -4,9 +4,7 @@ Feature: Admin adds a comic
   So other users can subscribe to the comics
 
   Scenario: Add a comic with an RSS feed
-    Given I am logged in as the following user:
-      | username | admin |
-      | admin    | true  |
+    Given I am signed in as an admin
     When I go to the comics page
     And I follow "Add comic"
     And I fill in "Name" with "xkcd"

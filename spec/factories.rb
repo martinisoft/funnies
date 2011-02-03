@@ -9,3 +9,7 @@ Factory.define :user do |f|
   f.password_confirmation   { |u| u.password }
   f.confirmed_at            { 2.hours.ago }
 end
+
+Factory.define :admin, :parent => :user do |f|
+  f.admin true
+end
