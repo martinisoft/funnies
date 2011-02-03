@@ -2,41 +2,34 @@ require 'spec_helper'
 
 describe User do
 
-  before(:each) do
-    @user = Factory.build(:user)
-  end
-
-  it "should allow valid attributes to save" do
-    @user.should be_valid
-    @user.save!
+  describe "associations" do
+    it { should have_many(:subscriptions) }
+    it { should have_many(:comics).through(:subscriptions) }
   end
 
   describe "validations" do
+    it { should validate_presence_of(:username) }
+  end
 
-    it "should reject a blank username" do
-      @user.username = ""
-      @user.should_not be_valid
+  describe "subscriptions" do
+    let(:user) { Factory(:user) }
+    let(:comic) { Factory(:comic) }
+
+    it "has no subscribed comics" do
+      user.subscriptions.should be_empty
     end
 
-    it "should reject a blank email" do
-      @user.email = ""
-      @user.should_not be_valid
+    it "can subscribe to a comic" do
+      expect {
+        user.subscribe!(comic)
+      }.to change { user.subscriptions.count }.by(1)
     end
 
-    it "should reject an improperly formatted email" do
-      @user.email = "foo@bar"
-      @user.should_not be_valid
-    end
-
-    it "should reject a blank password" do
-      @user.password = ""
-      @user.should_not be_valid
-    end
-
-    it "should reject a mis-matched password confirmation" do
-      @user.password = "foo"
-      @user.password_confirmation = "bar"
-      @user.should_not be_valid
+    it "cannot subscribe to the same comic twice" do
+      user.subscribe!(comic)
+      expect {
+        user.subscribe!(comic)
+      }.to_not change { user.subscriptions.count }
     end
   end
 end

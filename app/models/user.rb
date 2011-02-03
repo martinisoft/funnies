@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :subscriptions
+  has_many :comics, :through => :subscriptions
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticateable, :confirmable, :lockable
@@ -8,6 +11,14 @@ class User < ActiveRecord::Base
                   :password, :password_confirmation, :remember_me
 
   validates :username, :presence => true
+
+  def subscribed?(comic)
+    comics.include?(comic)
+  end
+
+  def subscribe!(comic)
+    comics << comic unless subscribed?(comic)
+  end
 
   protected
 

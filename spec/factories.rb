@@ -13,3 +13,9 @@ end
 Factory.define :admin, :parent => :user do |f|
   f.admin true
 end
+
+Factory.define :comic do |f|
+  f.name     "xkcd"
+  f.homepage "http://xkcd.com"
+  f.feed_url "http://xkcd.com/rss.xml"
+end

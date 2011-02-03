@@ -1,8 +1,15 @@
 = link_to "Add comic", new_comic_path
 
-- comics.each do |comic|
-  %div= comic.name
-  %div= comic.homepage
-  %div= comic.feed_url
-  %div
-    = link_to "edit", edit_comic_path(comic)
+- if comics.any?
+  - comics.each do |comic|
+    %div= comic.name
+    %div= comic.homepage
+    %div= comic.feed_url
+    %div
+      - if current_user.subscribed?(comic)
+        = link_to "Unsubscribe", comic_subscriptions_path(comic), :method => :delete
+      - else
+        = link_to "Subscribe", comic_subscriptions_path(comic), :method => :post
+      = link_to "edit", edit_comic_path(comic)
+- else
+  %h3 There are no comics here, make sure you add one
