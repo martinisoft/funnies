@@ -14,6 +14,9 @@ gem 'haml-rails'
 
 gem 'pg'
 
+# Just for Heroku, to serve things out of /tmp for stylesheets
+gem 'hassle', :git => "git://github.com/koppen/hassle.git"
+
 group :development do
   gem 'rspec-rails', '2.3.0'
 end

@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/koppen/hassle.git
+  revision: 97512c65f4c6fa34a4d4e284c416e8e6ebecbd44
+  specs:
+    hassle (0.0.1)
+      haml
+      rack
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -177,6 +185,7 @@ DEPENDENCIES
   fuubar
   haml
   haml-rails
+  hassle!
   launchy
   pg
   rails (= 3.0.3)
