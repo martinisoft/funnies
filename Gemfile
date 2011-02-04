@@ -14,6 +14,9 @@ gem 'haml-rails'
 
 gem 'pg'
 
+# Hoptoad for error capture
+gem 'hoptoad_notifier'
+
 # Just for Heroku, to serve things out of /tmp for stylesheets
 gem 'hassle', :git => "git://github.com/koppen/hassle.git"
 
