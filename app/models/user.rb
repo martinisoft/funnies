@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     comics << comic unless subscribed?(comic)
   end
 
+  def unsubscribe!(comic)
+    subscriptions.find_by_comic_id(comic).destroy unless !subscribed?(comic)
+  end
+
   protected
 
   def self.find_for_database_authentication(conditions)

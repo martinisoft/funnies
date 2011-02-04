@@ -31,5 +31,12 @@ describe User do
         user.subscribe!(comic)
       }.to_not change(user.subscriptions, :count)
     end
+
+    it "can unsubscribe from a comic" do
+      user.subscribe!(comic)
+      expect {
+        user.unsubscribe!(comic)
+      }.to change(user.subscriptions, :count).by(-1)
+    end
   end
 end
