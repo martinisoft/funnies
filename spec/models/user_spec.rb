@@ -22,14 +22,14 @@ describe User do
     it "can subscribe to a comic" do
       expect {
         user.subscribe!(comic)
-      }.to change { user.subscriptions.count }.by(1)
+      }.to change(user.subscriptions, :count).by(1)
     end
 
     it "cannot subscribe to the same comic twice" do
       user.subscribe!(comic)
       expect {
         user.subscribe!(comic)
-      }.to_not change { user.subscriptions.count }
+      }.to_not change(user.subscriptions, :count)
     end
   end
 end
