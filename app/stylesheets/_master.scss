@@ -1,0 +1,172 @@
+// Master Stylesheet
+// Site-Wide styles
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 62.5;
+  color: #000;
+  background: #F0F0F0;
+}
+
+a {
+  &:link, &:visited {
+    outline: none;
+    text-decoration: none;
+    color: #4C6083;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.notice {
+  text-align: center;
+  padding: 8px;
+  color: white;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00CE0D), to(#00B70C));
+  text-shadow: #009600 -1px -1px 0px;
+
+  &.alert {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#D10000), to(#BC0600));
+    text-shadow: #960000 -1px -1px 0px;
+  }
+}
+
+.ui-dialog-titlebar {
+  display: none;
+}
+
+#header {
+  color: #FFF;
+}
+
+#header-inner {
+  width: 940px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+#logo {
+  float: left;
+  margin: 0;
+
+  img {
+    height: 0;
+  }
+}
+
+#logo a {
+  display: block;
+  width: 144px;
+  height: 30px;
+  background: url(/images/logo.png) no-repeat 0 0;
+}
+
+#account {
+  float: right;
+  margin: 8px 20px 0 0;
+  font-size: 1em;
+  color: #BBB;
+
+  a {
+    color: #111;
+
+    &:hover {
+      color: #CCC;
+    }
+  }
+}
+
+#session-inner {
+  margin: 0px auto;
+  width: 450px;
+  padding: 60px 0;
+}
+
+#session h2 {
+  color: #111;
+  font-size: 2.8em;
+  text-align: center;
+}
+
+#session form {
+  fieldset {
+    margin-bottom: 10px;
+
+    &.inputs input {
+      width: 400px;
+      padding: 10px;
+      font-size: 2em;
+      border: none;
+      border-top: 1px solid #DDD;
+      border-left: 1px solid #DDD;
+      border-bottom: 1px solid #CCC;
+      border-right: 1px solid #CCC;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+    }
+
+    &.buttons input {
+      float: left;
+      margin: 0;
+      font-size: 1.8em;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border: none;
+      padding: 10px 20px;
+      color: #FFF;
+      cursor: pointer;
+
+      &:hover, &:focus {
+        text-decoration: none;
+        background-color: #999;
+      }
+    }
+  }
+
+  label {
+    color: #111;
+    display: block;
+    font-size: 1.4em;
+    line-height: 1.5em;
+
+    a {
+      margin-left: 10px;
+    }
+  }
+}
+
+#wrap {
+}
+
+#wrap-inner {
+  padding: 25px 0;
+}
+
+#content {
+  position: relative;
+  width: 940px;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 1.2em;
+}
+
+#content h1 {
+  text-align: center;
+}
+
+#content div.comic {
+  margin: 0 auto;
+}
+
+/* New School Clearfix */
+
+.group:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
