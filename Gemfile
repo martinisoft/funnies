@@ -27,6 +27,7 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'email_spec', '~> 1.1.1'
+  gem 'fuubar'
 end
 
 group :development, :test do
