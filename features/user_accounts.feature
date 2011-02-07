@@ -20,7 +20,7 @@ Feature: User Accounts
 
   Scenario Outline: Logging in
     Given a confirmed user exists
-    And I am not authenticated
+    And I am signed out
     When I go to login
     And I fill in "user_login" with "<login>"
     And I fill in "user_password" with "<password>"

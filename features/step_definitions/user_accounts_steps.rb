@@ -1,4 +1,4 @@
-Given /^I am not authenticated$/ do
+Given /^I am signed out$/ do
   visit destroy_user_session_path
 end
 
