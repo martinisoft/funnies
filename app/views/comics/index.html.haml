@@ -1,4 +1,4 @@
-= link_to "Add comic", new_comic_path
+= link_to "Add Comic", new_comic_path unless !current_user.admin?
 
 - if comics.any?
   - comics.each do |comic|
