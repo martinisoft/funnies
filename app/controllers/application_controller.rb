@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
       super
     end
   end
+
+  def authenticated
+    redirect_to root_url unless user_signed_in?
+  end
 end

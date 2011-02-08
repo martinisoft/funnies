@@ -1,4 +1,6 @@
 class ComicsController < ApplicationController
+  before_filter :authenticated
+
   expose(:comic)
   expose(:comics) do
     User.find_by_username(params[:username]).try(:comics) || Comic.all
