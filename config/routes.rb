@@ -1,17 +1,20 @@
 Funnies::Application.routes.draw do
+
+  match '/about' => 'pages#about'
+
   devise_for :users do
-    resources :subscriptions
+    resources :subscriptions, :only => [:index, :create, :destroy]
+    resources :comics
   end
-  as :user do
-    get "/login", :to => "devise/sessions#new", :as => 'login'
-    get "/logout", :to => "devise/sessions#destroy", :as => 'logout'
+
+  scope "/:username", :as => "user" do
+    resources :comics
+    root :to => "comics#index"
   end
 
   resources :comics do
-    resource :subscriptions
+    resource :subscriptions, :only => [:index, :create, :destroy]
   end
-
-  match '/about' => 'pages#about'
 
   root :to => "pages#landing"
 end
