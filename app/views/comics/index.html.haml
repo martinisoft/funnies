@@ -12,4 +12,11 @@
         = link_to "Subscribe", comic_subscriptions_path(comic), :method => :post
       = link_to "edit", edit_comic_path(comic)
 - else
-  %h3 There are no comics here, make sure you add one
+  - if params[:username]
+    - if params[:username] == current_user.username
+      %h3
+        You are not subscribed to any comics, head over to the #{link_to "comics", comics_path} page to subscribe
+    - else
+      %h3 This user is not subscribing to any comics
+  - else
+    %h3 There are no comics currently in the system

@@ -5,6 +5,7 @@ Funnies::Application.routes.draw do
   devise_for :users do
     resources :subscriptions, :only => [:index, :create, :destroy]
     resources :comics
+    get "comics", :to => "comics#index", :as => :user_root
   end
 
   scope "/:username", :as => "user" do

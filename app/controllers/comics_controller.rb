@@ -1,6 +1,8 @@
 class ComicsController < ApplicationController
   expose(:comic)
-  expose(:comics) { Comic.all }
+  expose(:comics) do
+    User.find_by_username(params[:username]).try(:comics) || Comic.all
+  end
 
   def index
   end
@@ -9,9 +11,8 @@ class ComicsController < ApplicationController
   end
 
   def create
-    if comic.save
-      redirect_to comics_path, :notice => "Comic added successfully."
-    end
+    comic.save
+    redirect_to comics_path, :notice => "Comic added successfully."
   end
 
   def edit

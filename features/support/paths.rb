@@ -20,6 +20,8 @@ module NavigationHelpers
       destroy_user_session_path
     when 'the comics page'
       comics_path
+    when /^(.*)'s comics page$/i
+      user_comics_path(User.find_by_username($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
