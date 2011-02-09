@@ -10,7 +10,7 @@
         = link_to "Unsubscribe", comic_subscriptions_path(comic), :method => :delete
       - else
         = link_to "Subscribe", comic_subscriptions_path(comic), :method => :post
-      = link_to "edit", edit_comic_path(comic)
+      = link_to "Edit Comic", edit_comic_path(comic) unless !current_user.admin?
 - else
   - if params[:username]
     - if params[:username] == current_user.username

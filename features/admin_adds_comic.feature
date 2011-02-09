@@ -14,7 +14,7 @@ Feature: Admin adds a comic
     Then I should see "xkcd"
     And I should see "Comic added successfully"
 
-    When I follow "edit"
+    When I follow "Edit Comic"
     Then the "Name" field should contain "xkcd"
     And the "Homepage" field should contain "http://xkcd.com"
     And the "Feed URL" field should contain "http://xkcd.com/rss.xml"
