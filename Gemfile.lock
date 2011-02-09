@@ -191,6 +191,7 @@ DEPENDENCIES
   hassle!
   hoptoad_notifier
   launchy
+  nokogiri
   pg
   rails (= 3.0.4)
   rspec (= 2.3.0)

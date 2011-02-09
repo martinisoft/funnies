@@ -14,6 +14,9 @@ gem 'haml-rails'
 
 gem 'pg'
 
+# My Nokogiri brings all the comics to the yard
+gem 'nokogiri'
+
 # Hoptoad for error capture
 gem 'hoptoad_notifier'
 
