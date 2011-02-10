@@ -15,7 +15,8 @@ Factory.define :admin, :parent => :user do |f|
 end
 
 Factory.define :comic do |f|
-  f.name     "xkcd"
-  f.homepage "http://xkcd.com"
-  f.feed_url "http://xkcd.com/rss.xml"
+  f.name        "xkcd"
+  f.homepage    "http://xkcd.com"
+  f.xpath_title "id('middleContent')/div[2]/div/div/h1"
+  f.xpath_image "id('middleContent')/div[2]/div/div/img"
 end

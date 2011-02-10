@@ -1,5 +1,6 @@
 = semantic_form_for comic do |f|
   = f.input :name
   = f.input :homepage
-  = f.input :feed_url, :label => "Feed URL"
+  = f.input :xpath_title, :label => "Title XPath"
+  = f.input :xpath_image, :label => "Image XPath"
   = f.commit_button :label => "Save"

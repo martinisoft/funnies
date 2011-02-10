@@ -3,21 +3,22 @@ Feature: Admin adds a comic
   I want to add a new comic
   So other users can subscribe to the comics
 
-  Scenario: Add a comic with an RSS feed
+  Scenario: Add a comic with an XPath
     Given I am signed in as an admin
     When I go to the comics page
     And I follow "Add Comic"
     And I fill in "Name" with "xkcd"
     And I fill in "Homepage" with "http://xkcd.com"
-    And I fill in "Feed URL" with "http://xkcd.com/rss.xml"
+    And I fill in "Title XPath" with a title xpath
+    And I fill in "Image XPath" with an image xpath
     And I press "Save"
     Then I should see "xkcd"
     And I should see "Comic added successfully"
 
     When I follow "Edit Comic"
     Then the "Name" field should contain "xkcd"
-    And the "Homepage" field should contain "http://xkcd.com"
-    And the "Feed URL" field should contain "http://xkcd.com/rss.xml"
+    And the "Title XPath" field should contain a title xpath
+    And the "Image XPath" field should contain an image xpath
 
   Scenario: User does not see add comic link
     Given I am signed in as a user

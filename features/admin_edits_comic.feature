@@ -10,7 +10,8 @@ Feature: Admin edits a comic
     And I follow "Edit Comic"
     And I fill in "Name" with "VG Cats"
     And I fill in "Homepage" with "http://www.vgcats.com"
-    And I fill in "Feed URL" with "http://xkcd.com/rss.xml"
+    And I fill in "Title XPath" with a title xpath
+    And I fill in "Image XPath" with an image xpath
     And I press "Save"
     Then I should see "VG Cats"
     And I should see "Comic updated successfully"
