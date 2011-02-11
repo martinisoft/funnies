@@ -11,9 +11,17 @@ class Comic < ActiveRecord::Base
   validates :xpath_image, presence: true
 
   def latest_comic
-    # Open the URL
-    doc = Nokogiri::HTML(open(self.comic_page))
-    image = doc.xpath(self.xpath_image).to_html
-    return image if image =~ /img/
+    begin
+      # Open the URL
+      doc = Nokogiri::HTML(open(self.comic_page))
+      image_tag = doc.xpath(self.xpath_image)
+      if !image_tag.attribute("src").value.match(/^http:\/\//)
+        # Needs reformatting
+        image_tag.attribute("src").value = "#{self.homepage}/#{image_tag.attribute('src').value}"
+      end
+      image = image_tag.to_html
+      return image if image =~ /img/
+    rescue Exception => e
+    end
   end
 end
