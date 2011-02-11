@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110209205037) do
+ActiveRecord::Schema.define(:version => 20110211003132) do
 
   create_table "comics", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110209205037) do
     t.datetime "updated_at"
     t.string   "xpath_title"
     t.string   "xpath_image"
+    t.string   "comic_page"
   end
 
   create_table "subscriptions", :force => true do |t|

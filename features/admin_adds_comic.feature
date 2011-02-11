@@ -9,6 +9,7 @@ Feature: Admin adds a comic
     And I follow "Add Comic"
     And I fill in "Name" with "xkcd"
     And I fill in "Homepage" with "http://xkcd.com"
+    And I fill in "Comic Page" with "http://xkcd.com"
     And I fill in "Title XPath" with a title xpath
     And I fill in "Image XPath" with an image xpath
     And I press "Save"

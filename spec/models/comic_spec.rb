@@ -8,6 +8,9 @@ describe Comic do
   end
 
   describe "validations" do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:homepage) }
+    it { should validate_presence_of(:comic_page) }
     it { should validate_presence_of(:xpath_title) }
     it { should validate_presence_of(:xpath_image) }
   end
