@@ -3,7 +3,7 @@
 
 # PostgreSQL
 #   gem install pg
-defaults: & defaults
+defaults: &defaults
   adapter: postgresql
   encoding: unicode
   pool: 5
