@@ -1,7 +1,6 @@
 - comics.each do |comic|
   %div.comic
-    %div= comic.name
-    %div= comic.homepage
+    %div= link_to comic.name, comic.homepage
     = raw comic.latest_comic
     %div
       - if current_user.subscribed?(comic)

@@ -24,7 +24,7 @@ Feature: User Accounts
     When I go to login
     And I fill in "user_login" with "<login>"
     And I fill in "user_password" with "<password>"
-    And I press "Sign in"
+    And I press "Sign In"
     Then I should <action>
 
     Scenarios:

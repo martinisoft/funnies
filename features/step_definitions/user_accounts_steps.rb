@@ -11,6 +11,6 @@ Given /^I am logged in$/ do
   visit path_to('the login page')
   fill_in('user_login', :with => @user.email)
   fill_in('user_password', :with => @user.password)
-  click_button('Sign in')
+  click_button('Sign In')
   page.should have_content("Signed in as #{@user.username}")
 end
