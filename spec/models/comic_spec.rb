@@ -14,8 +14,8 @@ describe Comic do
     specify { should validate_presence_of(:xpath_title) }
     specify { should validate_presence_of(:xpath_image) }
 
-    # TODO: Shelved until I can figure this out
-    # specify { should_not allow_value("id(')").for(:xpath_image) }
+    specify { should_not allow_value("id(')").for(:xpath_title) }
+    specify { should_not allow_value("id(')").for(:xpath_image) }
   end
 
   describe "#latest_comic" do

@@ -7,8 +7,12 @@ class ComicsController < ApplicationController
   end
 
   def create
-    comic.save
-    redirect_to comics_path, :notice => "Comic added successfully."
+    if comic.save
+      flash[:notice] = "Comic added successfully."
+      redirect_to comics_path
+    else
+      redirect_to new_comic_path, alert: "Comic could not be saved"
+    end
   end
 
   def update

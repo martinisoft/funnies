@@ -7,8 +7,8 @@ class Comic < ActiveRecord::Base
   validates :name, presence: true
   validates :homepage, presence: true
   validates :comic_page, presence: true
-  validates :xpath_title, presence: true
-  validates :xpath_image, presence: true
+  validates :xpath_title, presence: true, xpath: true
+  validates :xpath_image, presence: true, xpath: true
 
   def latest_comic
     begin
