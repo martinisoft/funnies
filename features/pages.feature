@@ -5,7 +5,7 @@ Feature: Static Pages
 
   Scenario: Landing Page
     When I go to the homepage
-    Then I should see "This is the landing page"
+    Then I should see "Sign up"
 
   Scenario: About Page
     When I go to the about page
