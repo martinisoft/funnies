@@ -1,4 +1,6 @@
-= link_to "Add Comic", new_comic_path unless !current_user.admin?
+-if current_user.admin?
+  %ul#admin_nav
+    %li= link_to "Add Comic", new_comic_path, id: "admin_add_comic"
 
 - if comics.any?
   = render :partial => 'comic'
