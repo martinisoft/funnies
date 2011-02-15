@@ -14,3 +14,9 @@ Given /^I am logged in$/ do
   click_button('Sign In')
   page.should have_content("Signed in as #{@user.username}")
 end
+
+Then /^I should see an error on the (.*) field$/ do |fieldname|
+  within(:xpath, "//li[@id='user_#{fieldname}_input']") do
+    find('p.inline-errors').should_not be_nil
+  end
+end
