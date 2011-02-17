@@ -1,10 +1,11 @@
 - comics.each do |comic|
   %div.comic
-    %div= link_to comic.name, comic.homepage
+    %div.title= link_to comic.name, comic.homepage
     = raw comic.latest_comic
-    %div
+    %ul.comic_nav
       - if current_user.subscribed?(comic)
-        = link_to "Unsubscribe", comic_subscriptions_path(comic), :method => :delete
+        %li= link_to "Unsubscribe", comic_subscriptions_path(comic), method: :delete, class: "button unsubscribe"
       - else
-        = link_to "Subscribe", comic_subscriptions_path(comic), :method => :post
-      = link_to "Edit Comic", edit_comic_path(comic) unless !current_user.admin?
+        %li= link_to "Subscribe", comic_subscriptions_path(comic), method: :post, class: "button subscribe"
+      - if current_user.admin?
+        %li= link_to "Edit Comic", edit_comic_path(comic), class: "button admin_edit_comic"
