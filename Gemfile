@@ -14,6 +14,8 @@ gem 'haml-rails'
 
 gem 'pg'
 
+gem 'state_machine', '0.9.4'
+
 # My Nokogiri brings all the comics to the yard
 gem 'nokogiri'
 
