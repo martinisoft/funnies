@@ -5,6 +5,7 @@ describe User do
   describe "associations" do
     it { should have_many(:subscriptions) }
     it { should have_many(:comics).through(:subscriptions) }
+    it { should have_many(:posts) }
   end
 
   describe "validations" do

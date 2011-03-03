@@ -6,4 +6,4 @@ Feature: User views blog page
   Scenario: success
     Given I am on the homepage
     When I follow "Blog"
-    Then I should be on the blog page
+    Then I should be on the posts page

@@ -2,7 +2,7 @@ Funnies::Application.routes.draw do
 
   match '/about' => 'pages#about'
 
-  namespace :blog do
+  scope "/blog" do
     resources :posts
     root to: "posts#index"
   end
