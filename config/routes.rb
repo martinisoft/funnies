@@ -2,6 +2,11 @@ Funnies::Application.routes.draw do
 
   match '/about' => 'pages#about'
 
+  namespace :blog do
+    resources :posts
+    root to: "posts#index"
+  end
+
   devise_for :users do
     resources :subscriptions, :only => [:index, :create, :destroy]
     resources :comics

@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /the about page/
       '/about'
+    when /the blog page/
+      '/blog'
     when /register/
       new_user_registration_path
     when /login/
