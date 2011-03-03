@@ -11,4 +11,12 @@ class PostsController < ApplicationController
       respond_with(post)
     end
   end
+
+  def update
+    if post.save
+      redirect_to posts_path, notice: "Successfully updated post!"
+    else
+      render :edit, alert: "Post could not be saved"
+    end
+  end
 end
