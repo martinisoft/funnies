@@ -14,12 +14,3 @@ Feature: Admin adds blog post
     And I should see "New Blog Post"
     And I should see "Hello World"
     And I should see "Successfully created post!"
-
-  Scenario: Add a blog post
-    Given I am signed in as an admin
-    When I go to the blog page
-    And I follow "New Post"
-    And I fill in "Title" with "New Blog Post"
-    And I press "Save"
-    Then I should be on the posts page
-    And I should see "Post could not be saved"
