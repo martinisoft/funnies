@@ -19,4 +19,9 @@ class PostsController < ApplicationController
       render :edit, alert: "Post could not be saved"
     end
   end
+
+  def destroy
+    post.destroy
+    redirect_to posts_path, notice: "Successfully deleted post!"
+  end
 end
