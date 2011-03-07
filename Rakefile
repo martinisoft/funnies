@@ -3,5 +3,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
+require 'whiskey_disk/rake'
 
 Funnies::Application.load_tasks
