@@ -4,3 +4,4 @@ log/*.log
 tmp/
 public/stylesheets/*
 config/database.yml
+config/appconfig.yml

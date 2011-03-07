@@ -49,3 +49,5 @@ module Funnies
     config.filter_parameters += [:password]
   end
 end
+
+AppConfig = YAML.load_file(Rails.root.join("config", "appconfig.yml"))[Rails.env]
