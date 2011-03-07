@@ -3,5 +3,4 @@
 log/*.log
 tmp/
 public/stylesheets/*
-*.swp
 config/database.yml
