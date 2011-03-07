@@ -15,8 +15,10 @@ gem 'state_machine', '0.9.4'
 gem 'nokogiri'
 # Hoptoad for error capture
 gem 'hoptoad_notifier'
-# Just for Heroku, to serve things out of /tmp for stylesheets
-gem 'hassle', :git => "git://github.com/koppen/hassle.git"
+# pg gem for PostgreSQL Database
+gem 'pg'
+# Whiskey Disk for deployment
+gem 'whiskey_disk'
 
 group :development do
   gem 'rspec-rails', '2.3.0'
