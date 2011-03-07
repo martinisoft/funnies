@@ -20,7 +20,7 @@ gem 'pg'
 gem 'whiskey_disk'
 
 # Optional, for error capture on production
-group :production do
+group :production, :staging do
   gem 'hoptoad_notifier'
 end
 
