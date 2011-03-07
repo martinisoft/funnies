@@ -311,6 +311,14 @@ li.error {
       .admin_edit_comic:hover {
         background-color: #872300;
       }
+
+      .admin_delete_comic, .admin_delete_comic:visited {
+        background-color: #e33100;
+      }
+
+      .admin_delete_comic:hover {
+        background-color: #872300;
+      }
     }
   }
 }
