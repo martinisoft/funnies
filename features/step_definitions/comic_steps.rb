@@ -8,6 +8,12 @@ Given /^I am subscribed to a comic$/ do
   And %(I follow "Subscribe")
 end
 
+Given /^I run the "([^"]*)" rake task$/ do |task_name|
+  require 'rake'
+  load 'Rakefile' unless Rake::Task.task_defined? task_name
+  Rake::Task[task_name].invoke
+end
+
 When /^I fill in "([^"]*)" with an? (title|image) xpath$/ do |field, type|
   title_xpath = "id('middleContent')/div[2]/div/div/h1"
   image_xpath = "id('middleContent')/div[2]/div/div/img"

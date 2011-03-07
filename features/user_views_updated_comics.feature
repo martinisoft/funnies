@@ -6,6 +6,7 @@ Feature: User views updated comics
   Scenario: View latest comics
     Given I am signed in
     And I am subscribed to a comic
+    And I run the "comics:update" rake task
     When I go to martinisoft's comics page
     Then I should see "xkcd"
     And I should see a new comic

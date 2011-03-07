@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110303200628) do
+ActiveRecord::Schema.define(:version => 20110304061424) do
+
+  create_table "comic_strips", :force => true do |t|
+    t.integer  "comic_id"
+    t.string   "title"
+    t.string   "comic_image"
+    t.string   "md5_hash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comics", :force => true do |t|
     t.string   "name"

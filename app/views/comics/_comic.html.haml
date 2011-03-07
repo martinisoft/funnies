@@ -1,7 +1,8 @@
 - comics.each do |comic|
   %div.comic
     %div.title= link_to comic.name, comic.homepage
-    = raw comic.latest_comic
+    - if comic.comic_strips.any?
+      = image_tag comic.comic_strips.last.comic_image_url
     %ul.comic_nav
       - if current_user.subscribed?(comic)
         %li= link_to "Unsubscribe", comic_subscriptions_path(comic), method: :delete, class: "button unsubscribe"

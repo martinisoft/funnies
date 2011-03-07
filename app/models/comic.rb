@@ -3,6 +3,7 @@ require 'open-uri'
 class Comic < ActiveRecord::Base
   has_many :subscriptions
   has_many :readers, through: :subscriptions, source: :user
+  has_many :comic_strips
 
   validates :name, presence: true
   validates :homepage, presence: true
@@ -10,17 +11,22 @@ class Comic < ActiveRecord::Base
   validates :xpath_title, presence: true, xpath: true
   validates :xpath_image, presence: true, xpath: true
 
-  def latest_comic
+  def update_strip
+    hash = Digest::MD5.hexdigest(open(source_image_url).read)
+    unless ComicStrip.find_by_md5_hash(hash)
+      comic_strips.create(:remote_comic_image_url => source_image_url)
+    end
+  end
+
+  def source_image_url
     begin
-      # Open the URL
       doc = Nokogiri::HTML(open(self.comic_page))
       image_tag = doc.xpath(self.xpath_image)
-      if !image_tag.attribute("src").value.match(/^http:\/\//)
-        # Needs reformatting
-        image_tag.attribute("src").value = "#{self.homepage}/#{image_tag.attribute('src').value}"
+      image_url = image_tag.attribute("src").value
+      unless image_url.match(/^http:\/\//)
+        image_url = "#{self.homepage}/#{image_url}"
       end
-      image = image_tag.to_html
-      return image if image =~ /img/
+      image_url
     rescue Exception => e
     end
   end
