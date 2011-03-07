@@ -48,5 +48,5 @@ Funnies::Application.configure do
   config.active_support.deprecation = :notify
 
   # Change default host URL
-  config.action_mailer.default_url_options = { :host => "funnies.heroku.com" }
+  config.action_mailer.default_url_options = { :host => "www.funniesapp.com" }
 end
