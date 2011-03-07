@@ -9,3 +9,4 @@
         %li= link_to "Subscribe", comic_subscriptions_path(comic), method: :post, class: "button subscribe"
       - if current_user.admin?
         %li= link_to "Edit Comic", edit_comic_path(comic), class: "button admin_edit_comic"
+        %li= link_to "Delete Comic", comic_path(comic), method: :delete, confirm: "Really delete this comic?", class: "button admin_delete_comic"
