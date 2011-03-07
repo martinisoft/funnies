@@ -19,4 +19,9 @@ class ComicsController < ApplicationController
     comic.update_attributes(params[:comic])
     redirect_to comics_path, :notice => "Comic updated successfully."
   end
+
+  def destroy
+    comic.destroy
+    redirect_to comics_path, notice: "Comic deleted successfully!"
+  end
 end
