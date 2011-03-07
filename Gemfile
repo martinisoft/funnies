@@ -14,12 +14,15 @@ gem 'rails', '3.0.5'
 gem 'state_machine', '0.9.4'
 
 # Optional Gems
-# Hoptoad for error capture
-gem 'hoptoad_notifier'
 # pg gem for PostgreSQL Database
 gem 'pg'
 # Whiskey Disk for deployment
 gem 'whiskey_disk'
+
+# Optional, for error capture on production
+group :production do
+  gem 'hoptoad_notifier'
+end
 
 group :development do
   gem 'rspec-rails', '2.3.0'
