@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+# App dependent gems
 gem 'carrierwave'
 gem 'decent_exposure'
 gem 'devise'
@@ -7,12 +8,12 @@ gem 'escape_utils'
 gem 'formtastic', '1.2.3'
 gem 'haml'
 gem 'haml-rails'
-gem 'pg'
+# My Nokogiri brings all the comics to the yard!
+gem 'nokogiri'
 gem 'rails', '3.0.5'
 gem 'state_machine', '0.9.4'
 
-# My Nokogiri brings all the comics to the yard
-gem 'nokogiri'
+# Optional Gems
 # Hoptoad for error capture
 gem 'hoptoad_notifier'
 # pg gem for PostgreSQL Database
