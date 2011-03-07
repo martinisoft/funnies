@@ -1,27 +1,20 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.4'
-
-gem 'devise'
-
+gem 'carrierwave'
 gem 'decent_exposure'
+gem 'devise'
 gem 'escape_utils'
-
 gem 'formtastic', '1.2.3'
-
 gem 'haml'
 gem 'haml-rails'
-
 gem 'pg'
-
+gem 'rails', '3.0.5'
 gem 'state_machine', '0.9.4'
 
 # My Nokogiri brings all the comics to the yard
 gem 'nokogiri'
-
 # Hoptoad for error capture
 gem 'hoptoad_notifier'
-
 # Just for Heroku, to serve things out of /tmp for stylesheets
 gem 'hassle', :git => "git://github.com/koppen/hassle.git"
 
