@@ -1,0 +1,16 @@
+production:
+  branch: "production"
+  config_repository: "git@github.com:martinisoft/funnies-config.git"
+  config_target: "production"
+  deploy_config_to: "/var/www/funnies-config"
+  deploy_to: "/var/www/funniesapp.com"
+  domain: "deploy@funniesapp.com"
+  repository: "git@github.com:martinisoft/funnies.git"
+staging:
+  branch: "staging"
+  config_repository: "git@github.com:martinisoft/funnies-config.git"
+  config_target: "staging"
+  deploy_config_to: "/var/www/funnies-config"
+  deploy_to: "/var/www/staging.funniesapp.com"
+  domain: "deploy@funniesapp.com"
+  repository: "git@github.com:martinisoft/funnies.git"
