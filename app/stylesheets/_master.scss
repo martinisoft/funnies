@@ -62,10 +62,16 @@ a {
   float: right;
   margin: 8px 20px 0 0;
   font-size: 1.5em;
-  color: #999;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  color: #333;
+
+  span {
+    color: #154D78;
+  }
 
   a {
     color: #333;
+    font-weight: bold;
 
     &:hover {
       color: rgba(0,0,0,.5);
@@ -121,6 +127,39 @@ a {
   }
 }
 
+/* Buttons */
+
+
+a.button, a.button:visited {
+  display: inline-block;
+  padding: 5px 10px 6px;
+  color: #FFF;
+  text-decoration: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  position: relative;
+  cursor: pointer;
+
+  &:hover, &:active {
+    background-color: #111;
+    color: #FFF;
+  }
+}
+
+a.button {
+  &.admin_button, &.admin_button:visited {
+    background-color: #e33100;
+  }
+
+  &.admin_button:hover {
+    background-color: #872300;
+  }
+}
+
 /* Form Styles */
 
 p.inline-hints {
@@ -140,26 +179,7 @@ li.error {
   }
 }
 
-/* Session Layout  */
-
-#session-inner {
-  margin: 0px auto;
-  width: 450px;
-  padding: 80px 0;
-}
-
-#session h2 {
-  color: #111;
-  font-size: 2.8em;
-  text-align: center;
-  margin: 0 0 25px 0;
-}
-
-#session a {
-  font-size: 1.8em;
-}
-
-#session form.user {
+form {
   fieldset {
     margin-bottom: 10px;
 
@@ -173,6 +193,20 @@ li.error {
     }
 
     &.inputs input {
+      width: 400px;
+      padding: 10px;
+      font-size: 2em;
+      border: none;
+      border-top: 1px solid #DDD;
+      border-left: 1px solid #DDD;
+      border-bottom: 1px solid #CCC;
+      border-right: 1px solid #CCC;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+    }
+
+    &.inputs textarea {
       width: 400px;
       padding: 10px;
       font-size: 2em;
@@ -231,6 +265,31 @@ li.error {
   }
 }
 
+/* Session Layout  */
+
+#session-inner {
+  margin: 0px auto;
+  width: 450px;
+  padding: 80px 0;
+}
+
+#session-inner h2 {
+  color: #111;
+  font-size: 2.8em;
+  text-align: center;
+  margin: 0 0 25px 0;
+}
+
+#session-inner #account_links {
+  li {
+    margin: 0 0 10px 0;
+  }
+
+  a {
+    font-size: 1.4em;
+  }
+}
+
 /* Regular Layout */
 
 #wrap {
@@ -253,73 +312,92 @@ li.error {
   font-size: 2.35em;
 }
 
-#content div.comic {
-  text-align: center;
-  margin: 0 0 30px 0;
+/* Comic Styles */
+
+div.comic {
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+  background-color: #FFF;
+  margin: 20px 0 0 0;
 
   .title {
-    font-size: 1.6em;
-  }
+    text-align: left;
+    position: relative;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #7abcff;
+    background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 );
+    -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
 
-  .comic_nav {
-    font-size: 1.4em;
-    margin: 6px 0 0 0;
+    h4 {
+      padding: 4px 0 4px 10px;
+      font-size: 1.8em;
+      color: #FFF;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 
-    li {
-      display: inline;
+      a {
+        &:link, &:visited {
+          color: #FFF;
+        }
 
-      .button, .button:visited {
-        display: inline-block;
-        padding: 5px 10px 6px;
-        color: #fff;
-        text-decoration: none;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-        -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-        text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-        border-bottom: 1px solid rgba(0,0,0,0.25);
-        position: relative;
-        cursor: pointer;
-      }
-
-      .button:hover {
-        background-color: #111;
-        color: #fff;
-      }
-
-      .unsubscribe, .unsubscribe:visited {
-        background-color: #ff5c00;
-      }
-
-      .unsubscribe:hover {
-        background-color: #d45500;
-      }
-
-      .subscribe, .subscribe:visited {
-        background-color: #2daebf;
-      }
-
-      .subscribe:hover {
-        background-color: #007d9a;
-      }
-
-      .admin_edit_comic, .admin_edit_comic:visited {
-        background-color: #e33100;
-      }
-
-      .admin_edit_comic:hover {
-        background-color: #872300;
-      }
-
-      .admin_delete_comic, .admin_delete_comic:visited {
-        background-color: #e33100;
-      }
-
-      .admin_delete_comic:hover {
-        background-color: #872300;
+        &:hover, &:active {
+          color: #CCC;
+        }
       }
     }
+  }
+
+  .comic_strip {
+    text-align: center;
+    padding: 30px 0;
+
+    h5 {
+      font-size: 1.8em;
+    }
+  }
+}
+
+ul.comic_nav {
+  font-size: 1.4em;
+  margin: 6px 0 0 0;
+  text-align: center;
+
+  li {
+    display: inline;
+
+    .unsubscribe, .unsubscribe:visited {
+      background-color: #ff5c00;
+    }
+
+    .unsubscribe:hover {
+      background-color: #d45500;
+    }
+
+    .subscribe, .subscribe:visited {
+      background-color: #2daebf;
+    }
+
+    .subscribe:hover {
+      background-color: #007d9a;
+    }
+  }
+}
+
+form.comic {
+  margin: 0 auto;
+  width: 700px;
+
+  fieldset.inputs input {
+    width: 100%;
   }
 }
 
@@ -339,25 +417,17 @@ li.error {
 #admin_nav {
   text-align: center;
   margin: 0 0 20px 0;
+  font-size: 1.4em;
+}
 
-  & a, & a:visited {
-    display: inline-block;
-    padding: 4px 8px 6px;
-    line-height: 1;
-    font-size: 1.2em;
-    color: #FFF;
-    background-color: #e33100;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    text-shadow: 0 -1px -1px rgba(0,0,0,0.25);
-    border-bottom: 1px solid rgba(0,0,0,0.25);
-    position: relative;
-    cursor: pointer;
-  }
-  & a:hover {
-    background-color: #872300;
+/* Blog Styles */
+
+form.post {
+  margin: 0 auto;
+  width: 700px;
+
+  fieldset.inputs input, fieldset.inputs textarea {
+    width: 100%;
   }
 }
 

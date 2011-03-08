@@ -1,13 +1,17 @@
 - comics.each do |comic|
   %div.comic
-    %div.title= link_to comic.name, comic.homepage
-    - if comic.comic_strips.any?
-      = image_tag comic.comic_strips.last.comic_image_url
-    %ul.comic_nav
-      - if current_user.subscribed?(comic)
-        %li= link_to "Unsubscribe", comic_subscriptions_path(comic), method: :delete, class: "button unsubscribe"
+    %div.title
+      %h4= link_to comic.name, comic.homepage
+    .comic_strip
+      - if comic.comic_strips.any?
+        = image_tag comic.comic_strips.last.comic_image_url
       - else
-        %li= link_to "Subscribe", comic_subscriptions_path(comic), method: :post, class: "button subscribe"
-      - if current_user.admin?
-        %li= link_to "Edit Comic", edit_comic_path(comic), class: "button admin_edit_comic"
-        %li= link_to "Delete Comic", comic_path(comic), method: :delete, confirm: "Really delete this comic?", class: "button admin_delete_comic"
+        %h5 Sorry, no comic strips have been downloaded yet
+  %ul.comic_nav
+    - if current_user.subscribed?(comic)
+      %li= link_to "Unsubscribe", comic_subscriptions_path(comic), method: :delete, class: "button unsubscribe"
+    - else
+      %li= link_to "Subscribe", comic_subscriptions_path(comic), method: :post, class: "button subscribe"
+    - if current_user.admin?
+      %li= link_to "Edit Comic", edit_comic_path(comic), class: "button admin_button"
+      %li= link_to "Delete Comic", comic_path(comic), method: :delete, confirm: "Really delete this comic?", class: "button admin_button"

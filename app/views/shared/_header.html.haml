@@ -11,6 +11,10 @@
       %li= link_to "Blog", posts_path
     #account
       - if user_signed_in?
-        Signed in as #{current_user.username}. Not you? #{link_to "Sign out", destroy_user_session_path}
+        Signed in as
+        %span
+          #{current_user.username}
+        Not you?
+        #{link_to "Sign out", destroy_user_session_path}
       - else
         #{link_to "Sign in", new_user_session_path}

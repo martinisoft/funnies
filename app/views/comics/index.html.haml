@@ -1,6 +1,6 @@
 -if current_user.admin?
   %ul#admin_nav
-    %li#admin_add_comic= link_to "Add Comic", new_comic_path
+    %li= link_to "Add Comic", new_comic_path, class: "button admin_button"
 
 - if comics.any?
   = render :partial => 'comic'
