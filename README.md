@@ -1,18 +1,20 @@
 ## Funnies
 
-Read your favorite Web Comics in one spot, just like a Newspaper.
+Read your favorite Web Comics on one page, just like a Newspaper.
 
 ### Why?
 
-I love reading my web comics every week. In real life I have a newspaper with it all in one section.
-Why not online? RSS Feeds are usually useless because you have to separartely go to each page for updates.
+I love reading my web comics every week. In real life I have a newspaper
+with it all in one section.  Why not online? RSS Feeds are useless
+because you have to separartely go to each page for updates.
 
 ### Requirements
 
 Ruby 1.9.2-p180 (I live dangerously on the edge)
 Ruby on Rails 3.0.5
-PostgreSQL Database (this can be changed, see the database.yml.example)
+PostgreSQL Database (this can be changed, see database.yml.example)
 Nokogiri Gem (scrapes all the comic image data)
+Some XPath Skills (this app uses XPath to locate image data)
 
 ### Installation
 
@@ -37,9 +39,8 @@ database.yml file.
 
 ### Deployment locations
 
-Staging: [Linode](http://staging.funniesapp.com)
-
-Production: [Linode](http://www.funniesapp.com)
+Staging: [http://staging.funniesapp.com](http://staging.funniesapp.com)
+Production: [www.funniesapp.com](http://www.funniesapp.com)
 
 ### Production Stack
 
@@ -54,15 +55,24 @@ Database: PostgreSQL 8.4
 I publicly storycarded this app at [Pivotal Tracker](https://www.pivotaltracker.com/projects/201253)
 Any issues can be reported to the [Github Issues Tracker](https://github.com/martinisoft/funnies/issues)
 
-Any design help would be *awesome*
+Generally, the master branch won't be too far ahead of staging and is where you
+should start with patches. Fork this repo, make your patch, test it, then send
+a pull request.
 
-### Thanks:
+Make sure your patch includes tests or there is a *strong* chance the request
+will get closed.
 
-BIG Thanks go to [Hashrocket](http://www.hashrocket.com/) for accepting me as an Apprentice Developer
-in their Chicago office. Finally getting to do what you love (and get paid for it) is amazing.
+Design help would be *awesome*!
 
-Contributors: (Helped patch or paired with me)
+### Special Thanks:
 
-* [Joshua Davey](http://joshuadavey.com/)
-* [Desi McAdam](http://twitter.com/desi)
-* [Veezus Kreist](http://veez.us/)
+*BIG* Thanks go to [Hashrocket](http://www.hashrocket.com/) for accepting me
+as an Apprentice Developer in their Chicago office. Finally getting to do what
+you love (and get paid for it) is amazing.
+
+### Contributors: (Helped patch or paired with me)
+
+* [Joshua Davey](http://joshuadavey.com/) "Paried with me initially to get the project going"
+* [Desi McAdam](http://twitter.com/desi) "Doing my acceptance testing on Pivotal"
+* [Veezus Kreist](http://veez.us/) "Pairing with me on the comic strip updating"
+* [Dave Lyon](http://davelyon.net/) "Pairing and Contributing Patches"
