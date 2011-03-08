@@ -8,7 +8,7 @@ namespace :deploy do
   task :bundle_gems => [:environment] do
     puts "bundling..."
     Dir.chdir(Rails.root)
-    system("bundle")
+    system("sudo bundle --without=development --without=test")
   end
 
   task :db_migrate => [:environment] do
