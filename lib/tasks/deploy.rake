@@ -5,13 +5,13 @@ namespace :deploy do
     system("mkdir -p log tmp")
   end
 
-  task :bundle_gems do
+  task :bundle_gems => [:environment] do
     puts "bundling..."
     Dir.chdir(Rails.root)
     system("bundle")
   end
 
-  task :db_migrate do
+  task :db_migrate => [:environment] do
     Rake::Task['db:migrate']
   end
 
