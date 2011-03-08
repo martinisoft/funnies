@@ -12,9 +12,11 @@ class Comic < ActiveRecord::Base
   validates :xpath_image, presence: true, xpath: true
 
   def update_strip
-    hash = Digest::MD5.hexdigest(open(source_image_url).read)
-    unless ComicStrip.find_by_md5_hash(hash)
-      comic_strips.create(:remote_comic_image_url => source_image_url)
+    if source_image_url.present?
+      hash = Digest::MD5.hexdigest(open(source_image_url).read)
+      unless ComicStrip.find_by_md5_hash(hash)
+        comic_strips.create(:remote_comic_image_url => source_image_url)
+      end
     end
   end
 

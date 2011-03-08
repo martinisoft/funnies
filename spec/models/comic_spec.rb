@@ -22,25 +22,37 @@ describe Comic do
   describe "#update_strip" do
     let(:comic) { Factory(:comic) }
     let(:comic_image_url) { Rails.root.join("spec", "fixtures", "xkcd.png") }
-    before { comic.stub :source_image_url => comic_image_url }
+    before { comic.stub source_image_url: comic_image_url }
+
     context "with a new comic available" do
       it "creates a comic strip with a correct url" do
-        comic.comic_strips.should_receive(:create).with(:remote_comic_image_url => comic_image_url)
+        comic.comic_strips.should_receive(:create).with(remote_comic_image_url: comic_image_url)
         comic.update_strip
       end
     end
+
     context "without a new comic available" do
       let(:existing_strip) { Factory(:comic_strip) }
-      before { ComicStrip.stub(:find_by_md5_hash => existing_strip) }
+      before { ComicStrip.stub(find_by_md5_hash: existing_strip) }
       it "does nothing" do
         comic.comic_strips.should_not_receive(:create)
         comic.update_strip
+      end
+    end
+
+    context "with no source_image_url" do
+      let(:other_comic) { Factory(:comic) }
+      before { other_comic.stub source_image_url: nil }
+      it "does not update" do
+        other_comic.comic_strips.should_not_receive(:create)
+        other_comic.update_strip
       end
     end
   end
 
   describe "#source_image_url" do
     let(:comic) { Factory(:comic) }
+
     context "with a valid image xpath" do
       context "and an absoulute image reference" do
         it "returns the image url" do
