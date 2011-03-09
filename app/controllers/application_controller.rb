@@ -16,6 +16,12 @@ class ApplicationController < ActionController::Base
     redirect_to root_url unless user_signed_in?
   end
 
+  def authenticate_admin
+    unless user_signed_in? && current_user.admin?
+      redirect_to :back, alert: "You do not have access to that action"
+    end
+  end
+
   def layout_by_resource
     if devise_controller?
       "session"

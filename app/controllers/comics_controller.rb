@@ -1,5 +1,6 @@
 class ComicsController < ApplicationController
   before_filter :authenticated
+  before_filter :authenticate_admin, except: :index
 
   expose(:comic)
   expose(:comics) do

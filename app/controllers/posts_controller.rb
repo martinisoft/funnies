@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
   respond_to :html
+
+  before_filter :authenticated, except: :index
+  before_filter :authenticate_admin, except: :index
+
   expose :post
   expose(:posts) { Post.all }
 
