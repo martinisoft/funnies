@@ -12,7 +12,7 @@ namespace :deploy do
   end
 
   task :db_migrate => [:environment] do
-    Rake::Task['db:migrate']
+    Rake::Task['db:migrate'].invoke
   end
 
   task :bounce_passenger do
