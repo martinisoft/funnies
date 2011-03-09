@@ -6,6 +6,7 @@ describe User do
     it { should have_many(:subscriptions) }
     it { should have_many(:comics).through(:subscriptions) }
     it { should have_many(:posts) }
+    it { should have_many(:suggestions) }
   end
 
   describe "validations" do

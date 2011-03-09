@@ -26,3 +26,10 @@ Factory.define :post do |f|
   f.title "Oh my god its a blog post!"
   f.body "And it has very little content"
 end
+
+Factory.define :suggestion do |f|
+  f.association :user, factory: :user
+  f.name "Dominic Deegan"
+  f.website "http://www.dominic-deegan.com/"
+  f.reason "It's an awesome comic"
+end

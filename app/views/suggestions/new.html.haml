@@ -1,0 +1,10 @@
+%h2 Suggest a comic
+
+= semantic_form_for suggestion do |f|
+  = f.semantic_errors
+  = f.inputs do
+    = f.input :name
+    = f.input :website
+    = f.input :reason, label: "Reason to add this comic"
+  = f.buttons do
+    = f.commit_button label: "Submit"

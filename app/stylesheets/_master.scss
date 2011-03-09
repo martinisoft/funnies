@@ -401,6 +401,20 @@ form.comic {
   }
 }
 
+#suggestion {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+/* Suggestions */
+
+form.suggestion {
+
+  fieldset.inputs textarea {
+    height: 60px;
+  }
+}
+
 /* Content styles */
 
 #content h2 {

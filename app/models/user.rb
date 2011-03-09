@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :subscriptions
   has_many :comics, :through => :subscriptions
   has_many :posts
+  has_many :suggestions
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,

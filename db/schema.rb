@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110304061424) do
+ActiveRecord::Schema.define(:version => 20110308234254) do
 
   create_table "comic_strips", :force => true do |t|
     t.integer  "comic_id"
@@ -42,6 +42,17 @@ ActiveRecord::Schema.define(:version => 20110304061424) do
   create_table "subscriptions", :force => true do |t|
     t.integer  "user_id"
     t.integer  "comic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "suggestions", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "website"
+    t.text     "reason"
+    t.text     "rejected_reason"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

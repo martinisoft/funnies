@@ -8,9 +8,10 @@ Funnies::Application.routes.draw do
   end
 
   devise_for :users do
-    resources :subscriptions, :only => [:index, :create, :destroy]
+    resources :suggestions, except: [:destroy]
+    resources :subscriptions, only: [:index, :create, :destroy]
     resources :comics
-    get "comics", :to => "comics#index", :as => :user_root
+    get "comics", :to => "comics#index", as: :user_root
   end
 
   scope "/:username", :as => "user" do
@@ -19,7 +20,7 @@ Funnies::Application.routes.draw do
   end
 
   resources :comics do
-    resource :subscriptions, :only => [:index, :create, :destroy]
+    resource :subscriptions, only: [:index, :create, :destroy]
   end
 
   root :to => "pages#landing"
