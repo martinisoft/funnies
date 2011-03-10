@@ -1,28 +1,26 @@
 class ComicsController < ApplicationController
+  respond_to :html
+
   before_filter :authenticated
   before_filter :authenticate_admin, except: :index
 
-  expose(:comic)
+  expose :comic
   expose(:comics) do
     User.find_by_username(params[:username]).try(:comics) || Comic.all
   end
 
   def create
-    if comic.save
-      flash[:notice] = "Comic added successfully."
-      redirect_to comics_path
-    else
-      redirect_to new_comic_path, alert: "Comic could not be saved"
-    end
+    comic.save
+    respond_with(comic)
   end
 
   def update
     comic.update_attributes(params[:comic])
-    redirect_to comics_path, :notice => "Comic updated successfully."
+    respond_with(comic)
   end
 
   def destroy
     comic.destroy
-    redirect_to comics_path, notice: "Comic deleted successfully!"
+    respond_with(comic)
   end
 end

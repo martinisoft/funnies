@@ -1,8 +1,16 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
   activemodel:
     attributes:
       user:
         login: "Username or email"
+  flash:
+    comics:
+      create:
+        notice: "Comic added successfully"
+        alert: "Comic could not be saved"
+      update:
+        notice: "Comic updated successfully"
+        alert: "Comic could not be updated"
+      destroy:
+        notice: "Comic deleted successfully"
+        alert: "Comic could not be deleted"
