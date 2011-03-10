@@ -14,3 +14,13 @@ en:
       destroy:
         notice: "Comic deleted successfully"
         alert: "Comic could not be deleted"
+    posts:
+      create:
+        notice: "Post created successfully"
+        alert: "Post could not be saved"
+      update:
+        notice: "Post updated successfully"
+        alert: "Post could not be updated"
+      destroy:
+        notice: "Post deleted successfully"
+        alert: "Post could not be deleted"

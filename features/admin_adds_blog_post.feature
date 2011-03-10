@@ -13,4 +13,9 @@ Feature: Admin adds blog post
     Then I should be on the posts page
     And I should see "New Blog Post"
     And I should see "Hello World"
-    And I should see "Successfully created post!"
+    And I should see "Post created successfully"
+
+  Scenario: User does not see new post link
+    Given I am signed in as a user
+    When I go to the blog page
+    Then I should not see "New Post"

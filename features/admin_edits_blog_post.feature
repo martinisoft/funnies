@@ -12,4 +12,10 @@ Feature: Admin edits blog post
     And I press "Save"
     Then I should be on the posts page
     And I should see "I changed my mind"
-    And I should see "Successfully updated post!"
+    And I should see "Post updated successfully"
+
+  Scenario: User does not see edit post link
+    Given I am signed in as a user
+    And a blog post exists
+    When I go to the blog page
+    Then I should not see "Edit Post"

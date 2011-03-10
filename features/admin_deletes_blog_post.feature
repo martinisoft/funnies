@@ -13,4 +13,10 @@ Feature: Admin deletes blog post
     Then I should be on the posts page
     And I should not see "New Blog Post"
     And I should not see "Hello World"
-    And I should see "Successfully deleted post!"
+    And I should see "Post deleted successfully"
+
+  Scenario: User does not see delete post link
+    Given I am signed in as a user
+    And a blog post exists
+    When I go to the blog page
+    Then I should not see "Delete Post"
