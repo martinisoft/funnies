@@ -11,6 +11,7 @@ gem 'haml-rails'
 # My Nokogiri brings all the comics to the yard!
 gem 'nokogiri'
 gem 'rails', '3.0.5'
+gem 'responders'
 gem 'state_machine', '0.9.4'
 
 # Optional Gems
