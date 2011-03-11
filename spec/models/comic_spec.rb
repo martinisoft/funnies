@@ -51,30 +51,41 @@ describe Comic do
   end
 
   describe "#source_image_url" do
-    let(:comic) { Factory(:comic) }
+    let(:comic) { Factory(:comic, homepage: "http://example.com") }
+    before do
+      comic.stub :open do
+        %{
+          <!html>
+          <html>
+            <head/>
+            <body>
+              <img id='absolute' src='http://example.com/xkcd.jpg'>
+              <img id='relative' src='xkcd.jpg'>
+            </body>
+          </html>
+        }
+      end
+    end
 
     context "with a valid image xpath" do
       context "and an absoulute image reference" do
+        before { comic.xpath_image = "//img[@id='absolute']" }
         it "returns the image url" do
-          comic.source_image_url.should include("http://")
+          comic.source_image_url.should eq("http://example.com/xkcd.jpg")
         end
       end
 
       context "and a relative image reference" do
-        let(:comic) do
-          Factory.build(:comic,
-                        comic_page: "http://www.reallifecomics.com/",
-                        xpath_image: "//div[@class='comic_image']/img")
-        end
+        before { comic.xpath_image = "//img[@id='relative']" }
         it "reformats the image url" do
-          comic.source_image_url.should include("http://")
+          comic.source_image_url.should eq("http://example.com/xkcd.jpg")
         end
       end
     end
 
     context "with an invalid image xpath" do
+      before { comic.xpath_image = "id('middleContent')/div[2]/div/div/h1" }
       it "returns nil" do
-        comic.xpath_image = "id('middleContent')/div[2]/div/div/h1"
         comic.source_image_url.should be_nil
       end
     end

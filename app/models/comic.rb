@@ -23,13 +23,15 @@ class Comic < ActiveRecord::Base
   def source_image_url
     begin
       doc = Nokogiri::HTML(open(self.comic_page))
-      image_tag = doc.xpath(self.xpath_image)
-      image_url = image_tag.attribute("src").value
+      image_url = doc.xpath("#{xpath_image}/@src").to_s
+      return unless image_url.present?
       unless image_url.match(/^http:\/\//)
         image_url = "#{self.homepage}/#{image_url}"
       end
       image_url
     rescue Exception => e
+      logger.info "failed to parse image:", e
+      nil
     end
   end
 end

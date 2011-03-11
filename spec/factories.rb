@@ -19,7 +19,7 @@ Factory.define :comic do |f|
   f.homepage    "http://xkcd.com"
   f.comic_page  "http://xkcd.com"
   f.xpath_title "id('middleContent')/div[2]/div/div/h1"
-  f.xpath_image "id('middleContent')/div[2]/div/div/img"
+  f.xpath_image "id('middleContent')/div[2]/div/div//img"
 end
 
 Factory.define :post do |f|
