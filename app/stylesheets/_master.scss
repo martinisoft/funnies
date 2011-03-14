@@ -162,23 +162,6 @@ a.button {
 
 /* Form Styles */
 
-p.inline-hints {
-  float: right;
-  margin: 0 25px 0 0;
-}
-
-li.error {
-  p.inline-errors {
-    font-size: 1.6em;
-    float: left;
-    color: rgba(220,0,0,.6);
-  }
-
-  input {
-    background: rgba(220,0,0,.6);
-  }
-}
-
 form {
   fieldset {
     margin-bottom: 10px;
@@ -262,6 +245,25 @@ form {
       margin-left: 10px;
       font-size: 1em;
     }
+  }
+}
+
+p.inline-hints {
+  float: right;
+  margin: 0 25px 0 0;
+}
+
+.inputs li.error {
+  p.inline-errors {
+    font-size: 1.6em;
+    float: left;
+    color: rgba(220,0,0,.6);
+  }
+
+  input {
+    background: #FECDC6 url("/images/icons/exclamation.png") no-repeat 10px center;
+    border-color: #F45D43;
+    padding-left: 30px;
   }
 }
 
