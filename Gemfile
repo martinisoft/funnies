@@ -25,12 +25,8 @@ group :production, :staging do
   gem 'hoptoad_notifier'
 end
 
-group :development do
-  gem 'rspec-rails', '2.3.0'
-end
-
 group :test do
-  gem 'rspec', '2.3.0'
+  gem 'rspec', '>= 2.5.0'
   gem 'shoulda', '2.11.2'
   gem 'cucumber-rails'
   gem 'capybara', '0.3.9'
@@ -43,5 +39,6 @@ end
 
 group :development, :test do
   gem 'fabrication'
+  gem 'rspec-rails', '>= 2.5.0'
   gem 'ruby-debug19', :require => 'ruby-debug'
 end
