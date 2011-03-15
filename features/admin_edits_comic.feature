@@ -4,8 +4,8 @@ Feature: Admin edits a comic
   So that I can keep up with comics that change
 
   Scenario: Edit a comic
-    Given I am signed in as an admin
-    And a comic already exists
+    Given 1 comic
+    And I am signed in as an admin
     When I go to the comics page
     And I follow "Edit Comic"
     And I fill in "Name" with "VG Cats"

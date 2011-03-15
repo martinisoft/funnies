@@ -5,8 +5,8 @@ Feature: Admin deletes a comic
 
   @javascript
   Scenario: Delete a comic
-    Given I am signed in as an admin
-    And a comic already exists
+    Given 1 comic
+    And I am signed in as an admin
     When I go to the comics page
     And I follow "Delete Comic"
     And I will confirm my choice

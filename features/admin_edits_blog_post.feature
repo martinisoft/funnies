@@ -4,8 +4,8 @@ Feature: Admin edits blog post
   So I can correct any mistakes or post updates
 
   Scenario: Edit post
-    Given I am signed in as an admin
-    And a blog post exists
+    Given 1 post
+    And I am signed in as an admin
     When I go to the posts page
     And I follow "Edit Post"
     And I fill in "Title" with "I changed my mind"
@@ -15,7 +15,7 @@ Feature: Admin edits blog post
     And I should see "Post updated successfully"
 
   Scenario: User does not see edit post link
-    Given I am signed in as a user
-    And a blog post exists
+    Given 1 post
+    And I am signed in as a user
     When I go to the blog page
     Then I should not see "Edit Post"

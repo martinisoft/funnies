@@ -4,8 +4,8 @@ Feature: User views their comics
   So that I can easily enjoy my web comics
 
   Scenario: No subscribed comics
-    Given I am signed in
-    And a comic already exists
+    Given 1 comic
+    And I am signed in
     When I follow "My Comics"
     Then I should see "You are not subscribed to any comics"
 

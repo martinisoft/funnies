@@ -4,8 +4,8 @@ Feature: user subscribes to a comic from a list
   So that I can easily add more comics to my list
 
   Scenario: Subscribe to a comic
-    Given I am signed in
-    And a comic already exists
+    Given 1 comic
+    And I am signed in
     When I go to the comics page
     And I follow "Subscribe"
     Then I should see "Subscribed to xkcd"

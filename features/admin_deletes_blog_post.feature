@@ -5,8 +5,8 @@ Feature: Admin deletes blog post
 
   @javascript
   Scenario: Delete a blog post
-    Given I am signed in as an admin
-    And a blog post exists
+    Given 1 post
+    And I am signed in as an admin
     When I go to the blog page
     And I follow "Delete Post"
     And I will confirm my choice
@@ -16,7 +16,7 @@ Feature: Admin deletes blog post
     And I should see "Post deleted successfully"
 
   Scenario: User does not see delete post link
-    Given I am signed in as a user
-    And a blog post exists
+    Given 1 post
+    And I am signed in as a user
     When I go to the blog page
     Then I should not see "Delete Post"

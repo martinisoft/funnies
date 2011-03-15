@@ -1,9 +1,5 @@
-Given /^a comic already exists$/ do
-  @comic ||= Fabricate(:comic)
-end
-
 Given /^I am subscribed to a comic$/ do
-  Given 'a comic already exists'
+  Given '1 comic'
   When 'I go to the comics page'
   And %(I follow "Subscribe")
 end
@@ -16,7 +12,7 @@ end
 
 When /^I fill in "([^"]*)" with an? (title|image) xpath$/ do |field, type|
   title_xpath = "id('middleContent')/div[2]/div/div/h1"
-  image_xpath = "id('middleContent')/div[2]/div/div/img"
+  image_xpath = "id('middleContent')/div[2]/div/div//img"
   if type == "title"
     fill_in field, :with => title_xpath
   elsif type == "image"
@@ -26,7 +22,7 @@ end
 
 Then /^the "([^"]*)" field should contain an? (title|image) xpath$/ do |field, type|
   title_xpath = "id('middleContent')/div[2]/div/div/h1"
-  image_xpath = "id('middleContent')/div[2]/div/div/img"
+  image_xpath = "id('middleContent')/div[2]/div/div//img"
   field = find_field(field)
   field_value = (field.tag_name == 'textarea') ? field.text : field.value
   if type == "title"
