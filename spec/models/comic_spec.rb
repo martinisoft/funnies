@@ -20,7 +20,7 @@ describe Comic do
   end
 
   describe "#update_strip" do
-    let(:comic) { Factory(:comic) }
+    let(:comic) { Fabricate(:comic) }
     let(:comic_image_url) { Rails.root.join("spec", "fixtures", "xkcd.png") }
     before { comic.stub source_image_url: comic_image_url }
 
@@ -32,7 +32,7 @@ describe Comic do
     end
 
     context "without a new comic available" do
-      let(:existing_strip) { Factory(:comic_strip) }
+      let(:existing_strip) { Fabricate(:comic_strip) }
       before { ComicStrip.stub(find_by_md5_hash: existing_strip) }
       it "does nothing" do
         comic.comic_strips.should_not_receive(:create)
@@ -41,7 +41,7 @@ describe Comic do
     end
 
     context "with no source_image_url" do
-      let(:other_comic) { Factory(:comic) }
+      let(:other_comic) { Fabricate(:comic) }
       before { other_comic.stub source_image_url: nil }
       it "does not update" do
         other_comic.comic_strips.should_not_receive(:create)
@@ -51,7 +51,7 @@ describe Comic do
   end
 
   describe "#source_image_url" do
-    let(:comic) { Factory(:comic, homepage: "http://example.com") }
+    let(:comic) { Fabricate(:comic, homepage: "http://example.com") }
     before do
       comic.stub :open do
         %{

@@ -14,7 +14,7 @@ describe ComicStrip do
 
   describe "uploader" do
     let(:cache_id) { "20110226-2116-27023-6024" }
-    let(:comic) { Factory(:comic) }
+    let(:comic) { Fabricate(:comic) }
     let(:comic_strip) { ComicStrip.new(comic_id: comic) }
     let(:comic_strip_uploader) { ComicStripUploader.new(comic_strip, :comic_strip) }
     let(:comic_tmp_path) { "tmp/uploads/#{cache_id}/nanobots.png" }
@@ -55,7 +55,7 @@ describe ComicStrip do
   end
 
   describe "#md5_hash" do
-    let(:comic_strip) { Factory.build(:comic_strip, :comic_image => nil) }
+    let(:comic_strip) { Fabricate.build(:comic_strip, :comic_image => nil) }
 
     context "when it has been persisted to the database" do
       before { comic_strip.update_attribute(:md5_hash, 'a hash!') }

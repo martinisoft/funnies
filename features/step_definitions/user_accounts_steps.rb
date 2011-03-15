@@ -3,11 +3,11 @@ Given /^I am signed out$/ do
 end
 
 Given /^a confirmed user exists$/ do
-  @user = Factory(:user)
+  @user = Fabricate(:user)
 end
 
 Given /^I am logged in$/ do
-  @user ||= Factory(:user)
+  @user ||= Fabricate(:user)
   visit path_to('the login page')
   fill_in('user_login', :with => @user.email)
   fill_in('user_password', :with => @user.password)

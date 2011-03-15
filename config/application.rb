@@ -33,7 +33,8 @@ module Funnies
     # Generator Settings
     config.generators do |g|
       g.template_engine :haml
-      g.test_framework :rspec, :fixture => false, :views => false
+      g.test_framework :rspec, fixture: true, views: false
+      g.fixture_replacement :fabrication
     end
 
     # Global Sass Option

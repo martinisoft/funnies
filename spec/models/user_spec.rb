@@ -14,8 +14,8 @@ describe User do
   end
 
   describe "subscriptions" do
-    let(:user) { Factory(:user) }
-    let(:comic) { Factory(:comic) }
+    let(:user) { Fabricate(:user) }
+    let(:comic) { Fabricate(:comic) }
 
     it "has no subscribed comics" do
       user.subscriptions.should be_empty

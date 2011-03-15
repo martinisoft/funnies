@@ -13,7 +13,7 @@ describe Suggestion do
   end
 
   describe "has state" do
-    let(:suggestion) { Factory(:suggestion) }
+    let(:suggestion) { Fabricate(:suggestion) }
     it "starts as 'open'" do
       suggestion.state.should == "open"
     end

@@ -10,12 +10,12 @@ Given /^I am logged in as the following user:$/ do |table|
 end
 
 Given /^I (?:am signed|sign) in as an? (\w+)$/ do |role|
-  @me = Factory(role.to_sym)
+  @me = Fabricate(role.to_sym)
   Given 'I am signed in'
 end
 
 Given 'I am signed in' do
-  @me ||= Factory(:user)
+  @me ||= Fabricate(:user)
   When %(I go to the new user session page)
   When %(I fill in "Username or Email" with "#{@me.email}")
   When %(I fill in "Password" with "#{@me.password}")

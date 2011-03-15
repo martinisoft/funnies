@@ -1,5 +1,5 @@
 Given /^a comic already exists$/ do
-  @comic ||= Factory(:comic)
+  @comic ||= Fabricate(:comic)
 end
 
 Given /^I am subscribed to a comic$/ do
