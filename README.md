@@ -40,24 +40,32 @@ database.yml file.
 ### Deployment locations
 
 Staging: [http://staging.funniesapp.com](http://staging.funniesapp.com)
+
 Production: [www.funniesapp.com](http://www.funniesapp.com)
 
 ### Production Stack
 
 Funnies runs on a Linode 512 out of Dallas (more central location)
 
-OS: Ubuntu 10.04 LTS (I like apt and pkgsrc)
+OS: Ubuntu 10.04 LTS (I like apt)
+
 App Server: nginx (with passenger)
+
 Database: PostgreSQL 8.4
 
 ### Contribute:
 
 I publicly storycarded this app at [Pivotal Tracker](https://www.pivotaltracker.com/projects/201253)
+
 Any issues can be reported to the [Github Issues Tracker](https://github.com/martinisoft/funnies/issues)
 
 Generally, the master branch won't be too far ahead of staging and is where you
-should start with patches. Fork this repo, make your patch, test it, then send
-a pull request.
+should start with patches. Here's the process:
+
+* Fork this repo
+* Make your changes
+* Add test coverage (and make sure the current tests pass)
+* Send a pull request
 
 Make sure your patch includes tests or there is a *strong* chance the request
 will get closed.
@@ -69,6 +77,8 @@ Design help would be *awesome*!
 *BIG* Thanks go to [Hashrocket](http://www.hashrocket.com/) for accepting me
 as an Apprentice Developer in their Chicago office. Finally getting to do what
 you love (and get paid for it) is amazing.
+
+[Mark James](http://famfamfam.com/) aka FamFamFam for the awesome Silk icons.
 
 ### Contributors: (Helped patch or paired with me)
 
