@@ -26,7 +26,6 @@ group :production, :staging do
 end
 
 group :test do
-  gem 'rspec', '>= 2.5.0'
   gem 'shoulda', '2.11.2'
   gem 'cucumber-rails'
   gem 'capybara', '0.3.9'
@@ -35,6 +34,7 @@ group :test do
   gem 'email_spec', '~> 1.1.1'
   gem 'fuubar'
   gem 'fuubar-cucumber'
+  gem 'simplecov', '>= 0.4.0', :require => false
 end
 
 group :development, :test do
