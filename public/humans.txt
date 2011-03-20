@@ -1,0 +1,52 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+/* TEAM */
+  Big Nerd: Aaron Kalin
+  Site: martinisoftware.com
+  Twitter: martinisoft
+  Location: Chicago, IL, USA
+
+  Another Nerd: Cory Stephenson
+  Site: martinisoftware.com
+  Twitter: aevin1387
+  Location: Chicago, IL, USA
+
+/* THANKS */
+  Joshua Davey: http://joshuadavey.com/
+
+  Desi McAdam: http://twitter.com/desi
+
+  Veezus Kreist: http://veez.us/
+
+  Dave Lyon: http://davelyon.net/
+
+  Mark James: http://famfamfam.com/
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+  Software: Rails 3, PostgreSQL, nginx, Passenger
+  Brought to you by: The letter A
+
+
+                           `  /s:
+     +/+ssyhhhhhhhhhyyyyyo+//-.-. .
+  :o+sssyyhhhhyhyyyyyyyyy/:/://+//+.-.
+  omyNMmmddhhhhyyyyyyhhhy:-/+oyhyhh.--
+  oMmMMNddhhyyyssssssso++.`+hhmmNMN:/-
+  oMmNNNMNhyysyyyyyyyysoooossyNNmmd-:-
+  -:-mddNdooossoooooooo++oo+/+sy+::```
+  .``o+sdhyyo++oooo+---::///o+:/-`.
+     - /yodds++//+o+.`` `://oo...
+       .` hyymh-.:oo++.  sd/.-
+          ` :o+hd:     ...-`
+          ` `.`//ohhyy/`. ``
+            `` -`sMNdm+ `
+          - .-`. oMNyh:   `` `
+          ` -/-.`oNmos:   `` `
+     +`sMNMMNMm/-sNd//:.:sy+::```
+     mhmNNNNNNNhyhmdhyhhhmmdddss:
+     NhdmmmNNNNmmmmmmNmmmmmddh//.
+     hsyhhhhhhhhhhhhhhhyyyyo+/```
+       `  .```
