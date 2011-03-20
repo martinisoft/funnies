@@ -1,6 +1,7 @@
 Funnies::Application.routes.draw do
 
   match '/about' => 'pages#about'
+  match '/copyright' => 'pages#copyright'
 
   scope "/blog" do
     resources :posts
@@ -11,17 +12,17 @@ Funnies::Application.routes.draw do
     resources :suggestions, except: [:destroy]
     resources :subscriptions, only: [:index, :create, :destroy]
     resources :comics
-    get "comics", :to => "comics#index", as: :user_root
+    get "comics", to: "comics#index", as: :user_root
   end
 
-  scope "/:username", :as => "user" do
+  scope "/:username", as: "user" do
     resources :comics
-    root :to => "comics#index"
+    root to: "comics#index"
   end
 
   resources :comics do
     resource :subscriptions, only: [:index, :create, :destroy]
   end
 
-  root :to => "pages#landing"
+  root to: "pages#landing"
 end

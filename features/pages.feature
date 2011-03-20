@@ -1,12 +1,14 @@
 Feature: Static Pages
   In order to get more information about Funnies
-  As an unregistered user
+  As a website visitor
   I want to view pages giving information about Funnies
 
-  Scenario: Landing Page
-    When I go to the homepage
-    Then I should see "Sign up"
+  Scenario Outline: Content Pages
+    When I go to the <page>
+    Then I should <message>
 
-  Scenario: About Page
-    When I go to the about page
-    Then I should see "This is the about page"
+    Scenarios:
+      | page           | message                          |
+      | homepage       | see "Sign up"                    |
+      | about page     | see "This is the about page"     |
+      | copyright page | see "This is the copyright page" |
