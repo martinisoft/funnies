@@ -41,7 +41,7 @@ module Funnies
     Sass::Plugin.options[:template_location] = { 'app/stylesheets' => 'public/stylesheets' }
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w(http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js rails.js)
+    config.action_view.javascript_expansions[:defaults] = %w(//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js rails.js)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
