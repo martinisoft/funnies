@@ -16,10 +16,10 @@ Feature: User Accounts
     And I follow "Confirm my account" in the email
     Then I should see "Your account was successfully confirmed."
     And I should not see "Sign up"
-    And I should see "Signed in as Bishop"
+    And I should see "Bishop"
 
   Scenario Outline: Logging in
-    Given a confirmed user exists
+    Given 1 user
     And I am signed out
     When I go to login
     And I fill in "user_login" with "<login>"

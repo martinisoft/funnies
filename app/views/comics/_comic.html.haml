@@ -1,6 +1,6 @@
 - comics.each do |comic|
-  %div.comic
-    %div.title
+  %article.comic
+    %header.title
       %h4= link_to comic.name, comic.homepage
     .comic_strip
       - if comic.comic_strips.any?

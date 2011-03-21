@@ -1,20 +1,14 @@
--if current_user.admin?
-  %ul#admin_nav
-    %li= link_to "Add Comic", new_comic_path, class: "button admin_button"
-
 - unless params[:username]
   #suggestion
-    Comic not listed here?
-    = link_to "Suggest a comic", new_suggestion_path
+    %h3 Comic not listed here? #{link_to "Suggest a comic", new_suggestion_path}
 
 - if comics.any?
   = render :partial => 'comic'
 - else
   - if params[:username]
     - if params[:username] == current_user.username
-      %h3
-        You are not subscribed to any comics, head over to the #{link_to "comics", comics_path} page to subscribe
+      %h1 You are not subscribed to any comics, head over to the #{link_to "comics", comics_path} page to subscribe
     - else
-      %h3 This user is not subscribing to any comics
+      %h1 This user is not subscribing to any comics
   - else
-    %h3 There are no comics currently in the system
+    %h1 There are no comics currently in the system

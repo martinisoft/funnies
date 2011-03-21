@@ -4,11 +4,10 @@
  *            Each comic strip comes with its own copyright notice.
  */
 
-/* Reset Stylesheet */
 @import "reset";
 
-/* Formtastic */
-/* @import "formtastic"; */
+@import "base";
 
-/* Master Stylesheet */
 @import "master";
+
+@import "helpers";

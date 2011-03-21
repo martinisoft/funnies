@@ -1,5 +1,4 @@
-// Master Stylesheet
-// Site-Wide styles
+/* Master Styles */
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -23,7 +22,7 @@ a {
 
 /* Header */
 
-#header {
+#wrap-banner {
   color: #FFF;
   background-color: #EEE;
   background-image: -webkit-gradient(linear, 0 0, 0 100%,
@@ -34,77 +33,94 @@ a {
                     rgb(240,240,240) 0%,
                     rgb(238,238,238) 5%,
                     rgb(187,187,187) 100%);
+  padding: 5px 0;
 }
 
-#header-inner {
-  width: 940px;
+#banner-inner {
+  width: 960px;
   margin: 0 auto;
-  padding: 15px 0;
-}
 
-#logo {
-  float: left;
-  margin: 0;
+  h1 {
+    float: left;
 
-  img {
-    height: 0;
+    a {
+      display: block;
+      width: 160px;
+    }
   }
 }
 
-#logo a {
-  display: block;
-  width: 144px;
-  height: 30px;
-  background: url(/images/logo.png) no-repeat 0 0;
+/* Footer */
+
+footer {
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.4em;
+  padding: 10px;
+}
+
+/* Nav */
+
+#top-menu ul {
+  float: left;
+
+  li {
+    float: left;
+
+    a {
+      display: block;
+      padding: 6px 10px;
+      font-size: 1.5em;
+
+      &:hover {
+        background: rgba(0,0,0,.2);
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+      }
+    }
+  }
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  min-width: 100px;
+  max-width: 200px;
+  background-color: #CCC;
+  z-index: 2;
+
+  ul {
+    width: 100%;
+
+    li {
+      clear: both;
+      display: block;
+      width: 100%;
+    }
+  }
 }
 
 #account {
   float: right;
-  margin: 8px 20px 0 0;
+  text-align: right;
+  margin: 6px 0 0 0;
   font-size: 1.5em;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   color: #333;
-
-  span {
-    color: #154D78;
-  }
 
   a {
     color: #333;
     font-weight: bold;
 
+    &.username {
+      border-right: 1px solid #444;
+      padding-right: 8px;
+    }
+
     &:hover {
       color: rgba(0,0,0,.5);
-    }
-  }
-}
-
-/* Nav */
-
-#nav {
-  float: left;
-  width: 400px;
-  margin: 2px 0 0 25px;
-
-  li {
-    float: left;
-    margin: 0 4px 0 0;
-    font-size: 1.5em;
-    line-height: 1;
-
-    a {
-      display: block;
-      padding: 7px 10px 7px 10px;
-      text-decoration: none;
-      color: rgba(0,0,0,.75);
-
-      &:hover {
-        color: #fff;
-        background-color: rgba(0,0,0,.1);
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
-      }
     }
   }
 }
@@ -297,26 +313,20 @@ p.inline-hints {
 #wrap {
 }
 
-#wrap-inner {
-  padding: 25px 0;
-}
-
 #content {
-  position: relative;
-  width: 940px;
+  width: 960px;
   margin: 0 auto;
-  padding: 0;
-  font-size: 1.2em;
+  padding: 20px 0;
 }
 
-#content h1 {
+section#content.comics h1 {
   text-align: center;
-  font-size: 2.35em;
+  font-size: 1.6em;
 }
 
 /* Comic Styles */
 
-div.comic {
+article.comic {
   -moz-border-radius: 3px;
   -khtml-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -493,12 +503,3 @@ form.post {
   }
 }
 
-/* New School Clearfix */
-
-.group:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}

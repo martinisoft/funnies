@@ -1,20 +1,23 @@
-#header.group
-  #header-inner.group
-    #logo
-      = link_to root_path do
-        = image_tag("logo-lowres.gif", :alt => "Funnies")
-    %ul#nav
-      - if user_signed_in?
-        %li= link_to "My Comics", user_comics_path(current_user.username)
-        %li= link_to "Comics List", comics_path
-      %li= link_to "About", about_path
-      %li= link_to "Blog", posts_path
+#wrap-banner.clearfix
+  #banner-inner.clearfix
+    %header
+      %h1
+        = link_to root_path do
+          = image_tag("/images/logo.png", alt: "Funnies")
+    %nav#top-menu
+      #top-menu-wrap
+        %ul#main-menu
+          - if user_signed_in?
+            %li= link_to "My Comics", user_comics_path(current_user.username)
+            %li= link_to "Comics List", comics_path
+          %li= link_to "About", about_path
+          %li= link_to "Blog", posts_path
+          - if user_signed_in? && current_user.admin?
+            %li= admin_nav_link
+
     #account
       - if user_signed_in?
-        Signed in as
-        %span
-          #{current_user.username}
-        Not you?
-        #{link_to "Sign out", destroy_user_session_path}
+        = link_to current_user.username, "#", class: "username"
+        = link_to "Sign out", destroy_user_session_path
       - else
-        #{link_to "Sign in", new_user_session_path}
+        = link_to "Sign in", new_user_session_path

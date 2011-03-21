@@ -4,7 +4,7 @@ Feature: User is redirected after login
   So that I can enjoy my comics quickly
 
   Scenario: Redirect after login
-    Given I am signed out
-    And a confirmed user exists
+    Given 1 user
+    And I am signed out
     When I sign in as "martini@soft.com"
     Then I am redirected to "/martinisoft/comics"
