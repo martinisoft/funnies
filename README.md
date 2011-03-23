@@ -86,3 +86,4 @@ you love (and get paid for it) is amazing.
 * [Desi McAdam](http://twitter.com/desi) "Doing my acceptance testing on Pivotal"
 * [Veezus Kreist](http://veez.us/) "Pairing with me on the comic strip updating"
 * [Dave Lyon](http://davelyon.net/) "Pairing and Contributing Patches"
+* [Brian Dunn](https://twitter.com/higgaion) "Pairing with me on the comic update code and tests"
