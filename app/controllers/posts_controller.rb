@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   expose(:posts) { Post.all }
 
   def create
+    post.user = current_user
     post.save
     respond_with(post)
   end
