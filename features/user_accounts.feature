@@ -30,7 +30,6 @@ Feature: User Accounts
     Scenarios:
       | login            | username    | password | action                       |
       | martinisoft      | martinisoft | foobar   | see "Signed in successfully" |
-      | martini@soft.com | martinisoft | foobar   | see "Signed in successfully" |
       | bad@login.com    | verybad     | barbaz   | see "Invalid login"          |
 
   Scenario: Logging out

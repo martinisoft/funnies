@@ -23,7 +23,7 @@ Given 'I am signed in' do
 end
 
 When /^I sign in as "([^"]*)"$/ do |email|
-  @me = User.find_by_email(email)
+  @me = User.find_by_username(email)
   @me.password ||= 'foobar'
   Given 'I am signed in'
 end

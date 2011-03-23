@@ -1,9 +1,9 @@
 Fabricator(:user) do
-  username                "martinisoft"
-  email                   "martini@soft.com"
-  password                "foobar"
-  password_confirmation   { |f| f.password }
-  confirmed_at            2.hours.ago
+  username "martinisoft"
+  email { Fabricate.sequence(:email) { |i| "user#{i}@example.com" } }
+  password "foobar"
+  password_confirmation { |f| f.password }
+  confirmed_at 2.hours.ago
 end
 
 Fabricator(:admin, from: :user) do
