@@ -319,12 +319,24 @@ p.inline-hints {
   padding: 20px 0;
 }
 
+/* Pages Styles */
+
+section#content.pages {
+  h1 {
+    font-size: 2.2em;
+
+    &#tagline {
+      text-align: center;
+    }
+  }
+}
+
+/* Comic Styles */
+
 section#content.comics h1 {
   text-align: center;
   font-size: 1.6em;
 }
-
-/* Comic Styles */
 
 article.comic {
   -moz-border-radius: 3px;
@@ -427,17 +439,6 @@ form.suggestion {
   }
 }
 
-/* Content styles */
-
-#content h2 {
-  font-size: 2.1em;
-  margin: 20px 0;
-}
-
-#content h3 {
-  font-size: 1.8em;
-}
-
 /* Admin Styles */
 
 #admin_nav {
@@ -454,6 +455,43 @@ form.post {
 
   fieldset.inputs input, fieldset.inputs textarea {
     width: 100%;
+  }
+}
+
+section.posts {
+  article {
+    width: 560px;
+    margin: 0 auto;
+
+    header {
+      margin-bottom: 20px;
+
+      h1 {
+        font-size: 2.4em;
+      }
+
+      span {
+        margin-right: 10px;
+      }
+
+      span, time {
+        font-size: 1.4em;
+      }
+    }
+
+    p {
+      font-size: 1.4em;
+      padding: 6px 0;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin: 10px 0;
+    }
+
+    nav.admin-menu {
+      text-align: right;
+    }
   }
 }
 

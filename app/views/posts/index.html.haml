@@ -1,7 +1,11 @@
 - posts.each do |post|
   %article
-    %h3= post.title
-    %p= post.body
+    %header
+      %h1= post.title
+      %span= post.user.username
+      %time{datetime: post.created_at.strftime("%F")}= post.created_at.strftime("%d, %b %Y")
+    =raw RDiscount.new(post.body, :smart).to_html
     - if user_signed_in? && current_user.admin?
-      = link_to "Edit Post", edit_post_path(post)
-      = link_to "Delete Post", post_path(post), method: :delete, confirm: "Are you REALLY sure?"
+      %nav.admin-menu
+        = link_to "Edit Post", edit_post_path(post), class: "button admin_button"
+        = link_to "Delete Post", post_path(post), method: :delete, confirm: "Are you REALLY sure?", class: "button admin_button"
