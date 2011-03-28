@@ -8,8 +8,7 @@ Feature: Static Pages
     Then I should <message>
 
     Scenarios:
-      | page           | message                          |
-      | homepage       | see "Sign up"                    |
-      | about page     | see "This is the about page"     |
-      | copyright page | see "This is the copyright page" |
+      | page           | message              |
+      | homepage       | see "Sign up"        |
+      | about page     | see "The story"      |
       | copyright page | see "DMCA Takedowns" |
