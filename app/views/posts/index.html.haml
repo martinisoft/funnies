@@ -2,6 +2,7 @@
   %article
     %header
       %h1= post.title
+      = gravatar_for(post.user, size: 20)
       %span= post.user.username
       %time{datetime: post.created_at.strftime("%F")}= post.created_at.strftime("%d, %b %Y")
     =raw RDiscount.new(post.body, :smart).to_html
