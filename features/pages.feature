@@ -12,3 +12,4 @@ Feature: Static Pages
       | homepage       | see "Sign up"                    |
       | about page     | see "This is the about page"     |
       | copyright page | see "This is the copyright page" |
+      | copyright page | see "DMCA Takedowns" |
