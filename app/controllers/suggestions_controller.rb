@@ -2,12 +2,10 @@ class SuggestionsController < ApplicationController
   respond_to :html
   expose :suggestion
 
+  before_filter :authenticated
+
   def create
-    if suggestion.save
-      redirect_to comics_path, notice: "Thank you for suggesting a comic!"
-    else
-      flash[:alert] = "There was a problem submitting your suggestion"
-      respond_with(suggestion)
-    end
+    suggestion.save
+    respond_with(suggestion, location: comics_path)
   end
 end

@@ -24,3 +24,7 @@ en:
       destroy:
         notice: "Post deleted successfully"
         alert: "Post could not be deleted"
+    suggestions:
+      create:
+        notice: "Thank you for suggesting a comic!"
+        alert: "There was a problem submitting your suggestion"
