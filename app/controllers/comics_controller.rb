@@ -1,7 +1,7 @@
 class ComicsController < ApplicationController
-  respond_to :html
+  respond_to :html, :rss
 
-  before_filter :authenticated
+  before_filter :authenticate_unless_rss
   before_filter :authenticate_admin, except: :index
 
   expose :comic
@@ -23,4 +23,10 @@ class ComicsController < ApplicationController
     comic.destroy
     respond_with(comic)
   end
+
+  private
+  def authenticate_unless_rss
+    authenticated unless request.format.to_s[/rss/]
+  end
+  hide_action :authenticate_unless_rss
 end
