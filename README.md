@@ -87,3 +87,4 @@ you love (and get paid for it) is amazing.
 * [Veezus Kreist](http://veez.us/) "Pairing with me on the comic strip updating"
 * [Dave Lyon](http://davelyon.net/) "Pairing and Contributing Patches"
 * [Brian Dunn](https://twitter.com/higgaion) "Pairing with me on the comic update code and tests"
+* [Robert Pitts](https://github.com/rbxbx) "Pairing with me on RSS feeds"
