@@ -10,7 +10,10 @@ describe User do
   end
 
   describe "validations" do
+    let(:user) { Fabricate(:user) }
+    subject { user }
     it { should validate_presence_of(:username) }
+    it { should validate_uniqueness_of(:username) }
   end
 
   describe "subscriptions" do
