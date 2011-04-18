@@ -1,5 +1,6 @@
 class ComicsController < ApplicationController
-  respond_to :html, :rss
+  respond_to :html
+  respond_to :rss, only: :index
 
   before_filter :authenticate_unless_rss
   before_filter :authenticate_admin, except: :index
