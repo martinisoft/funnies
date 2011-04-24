@@ -19,7 +19,10 @@ Feature: User Accounts
     And I should see "Bishop"
 
   Scenario Outline: Logging in
-    Given 1 user
+    Given the following user:
+      | username | martinisoft      |
+      | email    | martini@soft.com |
+      | password | foobar           |
     And I am signed out
     When I go to login
     And I fill in "user_login" with "<login>"
@@ -28,9 +31,9 @@ Feature: User Accounts
     Then I should <action>
 
     Scenarios:
-      | login            | username    | password | action                       |
-      | martinisoft      | martinisoft | foobar   | see "Signed in successfully" |
-      | bad@login.com    | verybad     | barbaz   | see "Invalid login"          |
+      | login            | username    | password | action                                                |
+      | martinisoft      | martinisoft | foobar   | see "Signed in successfully" within the notice flash  |
+      | bad@login.com    | verybad     | barbaz   | see "Invalid login" within the alert flash            |
 
   Scenario: Logging out
     Given I am logged in

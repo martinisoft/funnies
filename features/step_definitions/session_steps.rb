@@ -4,13 +4,8 @@ Given /^I am signed in as the following (\w+):$/ do |role, table|
   Given 'I am signed in'
 end
 
-Given /^I am logged in as the following user:$/ do |table|
-  Given "the following user:", table
-  When %Q{I sign in as "#{@user.email}"}
-end
-
 Given /^I (?:am signed|sign) in as an? (\w+)$/ do |role|
-  @me = Fabricate(role.to_sym)
+  @me ||= Fabricate(role.to_sym)
   Given 'I am signed in'
 end
 
@@ -23,7 +18,7 @@ Given 'I am signed in' do
 end
 
 When /^I sign in as "([^"]*)"$/ do |email|
-  @me = User.find_by_username(email)
+  @me = User.find_by_email(email)
   @me.password ||= 'foobar'
   Given 'I am signed in'
 end

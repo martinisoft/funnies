@@ -4,7 +4,7 @@ Feature: User suggests a comic to be added
   So that I can enjoy more of the comics I want to see
 
   Scenario: Suggest a comic
-    Given I am signed in
+    Given I am signed in as a user
     And I am on the comics page
     When I follow "Suggest a comic"
     And I fill in "Name" with "Dominic Deegan"

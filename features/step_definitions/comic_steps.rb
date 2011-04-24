@@ -32,8 +32,8 @@ Then /^the "([^"]*)" field should contain an? (title|image) xpath$/ do |field, t
   end
 end
 
-Then /^(.+) a new comic$/ do |step|
-  with_scope("article.comic") do
+Then /^(.+) a new comic strip$/ do |step|
+  with_scope("a comic") do
     page.should have_xpath("//img")
   end
 end

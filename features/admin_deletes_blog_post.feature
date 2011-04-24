@@ -9,7 +9,7 @@ Feature: Admin deletes blog post
     And I am signed in as an admin
     When I go to the blog page
     And I follow "Delete Post"
-    And I will confirm my choice
+    And I accept the "Are you REALLY sure?" alert
     Then I should be on the posts page
     And I should not see "New Blog Post"
     And I should not see "Hello World"

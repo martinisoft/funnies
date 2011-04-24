@@ -9,7 +9,7 @@ Feature: Admin deletes a comic
     And I am signed in as an admin
     When I go to the comics page
     And I follow "Delete Comic"
-    And I will confirm my choice
+    And I accept the "Really delete this comic?" alert
     Then I should not see "xkcd"
     And I should see "Comic deleted successfully"
 

@@ -5,12 +5,12 @@ Feature: User views their comics
 
   Scenario: No subscribed comics
     Given 1 comic
-    And I am signed in
+    And I am signed in as a user
     When I follow "My Comics"
     Then I should see "You are not subscribed to any comics"
 
   Scenario: View subscribed comics
-    Given I am signed in
+    Given I am signed in as a user
     And I am subscribed to a comic
     When I follow "My Comics"
     Then I should see "xkcd"

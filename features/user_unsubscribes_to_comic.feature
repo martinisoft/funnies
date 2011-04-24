@@ -4,7 +4,7 @@ Feature: user unsubscribes a comic
   So that I can keep reading the comics I like
 
   Scenario: Unsubscribe from a comic
-    Given I am signed in
+    Given I am signed in as a user
     And I am subscribed to a comic
     When I go to the comics page
     And I follow "Unsubscribe"

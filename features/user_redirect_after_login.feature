@@ -6,5 +6,5 @@ Feature: User is redirected after login
   Scenario: Redirect after login
     Given 1 user
     And I am signed out
-    When I sign in as "martinisoft"
-    Then I am redirected to "/martinisoft/comics"
+    When I sign in as a user
+    Then I am on my user comics page

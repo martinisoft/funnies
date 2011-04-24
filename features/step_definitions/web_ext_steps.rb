@@ -1,3 +1,5 @@
-When /^I will confirm my choice$/ do
-  page.driver.browser.switch_to.alert.accept
+When /^I (accept|dismiss) the "([^"]*)" alert$/ do |action, text|
+  alert = page.driver.browser.switch_to.alert
+  alert.text.should eq(text)
+  alert.send(action)
 end

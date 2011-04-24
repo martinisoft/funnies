@@ -4,8 +4,8 @@ Feature: Admin edits blog post
   So I can correct any mistakes or post updates
 
   Scenario: Edit post
-    Given 1 post
-    And I am signed in as an admin
+    Given I am signed in as an admin
+    And 1 post
     When I go to the posts page
     And I follow "Edit Post"
     And I fill in "Title" with "I changed my mind"

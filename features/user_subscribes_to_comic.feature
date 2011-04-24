@@ -5,7 +5,7 @@ Feature: user subscribes to a comic from a list
 
   Scenario: Subscribe to a comic
     Given 1 comic
-    And I am signed in
+    And I am signed in as a user
     When I go to the comics page
     And I follow "Subscribe"
     Then I should see "Subscribed to xkcd"
