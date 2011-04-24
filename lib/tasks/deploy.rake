@@ -5,12 +5,6 @@ namespace :deploy do
     system("mkdir -p log tmp")
   end
 
-  task :bundle_gems => :environment do
-    puts "bundling..."
-    Dir.chdir(Rails.root)
-    system("RAILS_ENV=#{Rails.env} sudo bundle install --without=development test")
-  end
-
   task :db_migrate => :environment do
     Rake::Task['db:migrate'].invoke
   end
@@ -22,5 +16,5 @@ namespace :deploy do
   end
 
   task :post_setup  => [ :create_rails_directories ]
-  task :post_deploy => [ :bundle_gems, :db_migrate, :bounce_passenger ]
+  task :post_deploy => [ :db_migrate, :bounce_passenger ]
 end

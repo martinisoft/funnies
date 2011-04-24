@@ -5,6 +5,7 @@ production:
   deploy_config_to: "/var/www/funnies-config"
   deploy_to: "/var/www/funniesapp.com"
   domain: "deploy@funniesapp.com"
+  post_deploy_script: "bin/post-deploy.sh"
   project: "funnies"
   repository: "git@github.com:martinisoft/funnies.git"
   rake_env:
@@ -16,6 +17,7 @@ staging:
   deploy_config_to: "/var/www/funnies-config"
   deploy_to: "/var/www/staging.funniesapp.com"
   domain: "deploy@funniesapp.com"
+  post_deploy_script: "bin/post-deploy.sh"
   project: "funnies"
   repository: "git@github.com:martinisoft/funnies.git"
   rake_env:
