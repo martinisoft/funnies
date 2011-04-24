@@ -8,7 +8,7 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /the homepage/
+    when /the home\s?page/
       '/'
     when /the about page/
       '/about'
@@ -18,12 +18,14 @@ module NavigationHelpers
       new_user_registration_path
     when /login/
       new_user_session_path
-    when 'logout'
+    when /logout/
       destroy_user_session_path
-    when 'the comics page'
+    when /the comics page/
       comics_path
     when /^(.*)'s comics page$/i
       user_comics_path(User.find_by_username($1))
+    when /^my user comics page$/
+      user_comics_path(@me)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
