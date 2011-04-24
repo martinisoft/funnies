@@ -1,9 +1,9 @@
 require 'open-uri'
 
 class Comic < ActiveRecord::Base
-  has_many :subscriptions
+  has_many :subscriptions, dependent: :destroy
   has_many :readers, through: :subscriptions, source: :user
-  has_many :comic_strips
+  has_many :comic_strips, dependent: :destroy
 
   validates :name, presence: true
   validates :homepage, presence: true

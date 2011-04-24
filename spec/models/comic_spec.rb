@@ -6,6 +6,25 @@ describe Comic do
     it { should have_many(:subscriptions) }
     it { should have_many(:readers).through(:subscriptions) }
     it { should have_many(:comic_strips) }
+
+    describe "comic_strips" do
+      let(:comic) { Fabricate(:comic) }
+      let(:comic_strip) { Fabricate(:comic_strip, comic: comic) }
+      it "destroys all dependent subscriptions" do
+        comic.destroy
+        ComicStrip.all.should be_empty
+      end
+    end
+
+    describe "subscriptions" do
+      let(:comic) { Fabricate(:comic) }
+      let(:user) { Fabricate(:user) }
+      let(:subscription) { user.subscribe!(comic) }
+      it "destroys all dependent subscriptions" do
+        user.destroy
+        Subscription.all.should be_empty
+      end
+    end
   end
 
   describe "validations" do
