@@ -30,7 +30,7 @@ end
 group :test do
   gem 'shoulda', '2.11.2'
   gem 'cucumber-rails'
-  gem 'capybara', '0.3.9'
+  gem 'capybara', '0.4.1.2'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'email_spec', '~> 1.1.1'
