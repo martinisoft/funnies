@@ -8,6 +8,7 @@ gem 'escape_utils'
 gem 'formtastic', '1.2.3'
 gem 'gravatar_image_tag', '1.0.0'
 gem 'haml'
+gem 'sass'
 gem 'haml-rails'
 # My Nokogiri brings all the comics to the yard!
 gem 'nokogiri'
