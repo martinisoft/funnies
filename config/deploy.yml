@@ -11,7 +11,7 @@ production:
   rake_env:
       RAILS_ENV: 'production'
 staging:
-  branch: "staging"
+  branch: "master"
   config_repository: "git@github.com:martinisoft/funnies-config.git"
   config_target: "staging"
   deploy_config_to: "/var/www/funnies-config"
