@@ -8,6 +8,14 @@ I love reading my web comics every week. In real life I have a newspaper
 with it all in one section.  Why not online? RSS Feeds are useless
 because you have to separartely go to each page for updates.
 
+### Donate!
+
+<a href='http://www.pledgie.com/campaigns/15373'><img alt='Click here to lend your support to: Funnies Redesign and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/15373.png?skin_name=chrome' border='0' /></a>
+
+Do you use Funnies? Want a better design? I'm raising a budget for a
+professional re-design of the application. After the budget is raised
+future donations will go towards server costs.
+
 ### Requirements
 
 Ruby 1.9.2-p180 (I live dangerously on the edge)
