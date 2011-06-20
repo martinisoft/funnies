@@ -72,7 +72,7 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     escape_utils (0.2.3)
-    fabrication (0.9.5)
+    fabrication (1.0.0)
     ffi (1.0.7)
       rake (>= 0.8.7)
     formtastic (1.2.3)
@@ -198,7 +198,7 @@ DEPENDENCIES
   devise
   email_spec (~> 1.1.1)
   escape_utils
-  fabrication
+  fabrication (= 1.0.0)
   formtastic (= 1.2.3)
   fuubar
   fuubar-cucumber
