@@ -7,9 +7,8 @@ gem 'devise'
 gem 'escape_utils'
 gem 'formtastic', '1.2.3'
 gem 'gravatar_image_tag', '1.0.0'
-gem 'haml'
-gem 'sass'
-gem 'haml-rails'
+gem 'haml', '3.1.2'
+gem 'sass', '3.1.3'
 # My Nokogiri brings all the comics to the yard!
 gem 'nokogiri'
 gem 'rails', '3.0.7'
@@ -43,5 +42,6 @@ end
 group :development, :test do
   gem 'fabrication', '1.0.0'
   gem 'rspec-rails', '>= 2.5.0'
+  gem 'haml-rails', '0.3.4'
   gem 'ruby-debug19', :require => 'ruby-debug'
 end
