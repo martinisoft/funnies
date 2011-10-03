@@ -19,6 +19,8 @@ gem 'state_machine', '0.9.4'
 # Optional Gems
 # pg gem for PostgreSQL Database
 gem 'pg', '0.11.0'
+# Unicorns FTW
+gem 'unicorn'
 # Whiskey Disk for deployment
 gem 'whiskey_disk'
 
