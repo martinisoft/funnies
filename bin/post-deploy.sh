@@ -1,4 +1,4 @@
 #!/bin/sh
 # Bundle post-deploy task
 
-sudo bundle install --without=development test
+bundle install --without=development test
