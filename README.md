@@ -19,11 +19,11 @@ future donations will go towards server costs.
 
 ### Requirements
 
-Ruby 1.9.2-p290 (I live dangerously on the edge)
-Ruby on Rails 3.0.9 (Rails 3.1 upgrade pending)
-PostgreSQL Database (this can be changed, see database.yml.example)
-Nokogiri Gem (scrapes all the comic image data)
-Some XPath Skills (this app uses XPath to locate image data)
+* Ruby 1.9.2-p290 (I live dangerously on the edge)
+* Ruby on Rails 3.0.9 (Rails 3.1 upgrade pending)
+* PostgreSQL Database (this can be changed, see database.yml.example)
+* Nokogiri Gem (scrapes all the comic image data)
+* Some XPath Skills (this app uses XPath to locate image data)
 
 ### Installation
 
