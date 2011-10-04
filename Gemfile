@@ -22,7 +22,7 @@ gem 'pg', '0.11.0'
 # Unicorns FTW
 gem 'unicorn'
 # Whiskey Disk for deployment
-gem 'whiskey_disk', '~> 0.6.23'
+gem 'whiskey_disk', '0.6.22'
 
 # Optional, for error capture on production
 group :production, :staging do
