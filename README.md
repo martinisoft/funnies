@@ -1,4 +1,5 @@
-## Funnies
+Funnies
+=======
 
 Read your favorite Web Comics on one page, just like a Newspaper.
 
@@ -10,7 +11,7 @@ because you have to separartely go to each page for updates.
 
 ### Donate!
 
-<a href='http://www.pledgie.com/campaigns/15373'><img alt='Click here to lend your support to: Funnies Redesign and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/15373.png?skin_name=chrome' border='0' /></a>
+[![Click here to lend your support to: Funnies and make a donation at www.pledgie.com !](https://www.pledgie.com/campaigns/15373.png?skin_name=chrome)](http://www.pledgie.com/campaigns/15373)
 
 Do you use Funnies? Want a better design? I'm raising a budget for a
 professional re-design of the application. After the budget is raised
@@ -18,8 +19,8 @@ future donations will go towards server costs.
 
 ### Requirements
 
-Ruby 1.9.2-p180 (I live dangerously on the edge)
-Ruby on Rails 3.0.5
+Ruby 1.9.2-p290 (I live dangerously on the edge)
+Ruby on Rails 3.0.9 (Rails 3.1 upgrade pending)
 PostgreSQL Database (this can be changed, see database.yml.example)
 Nokogiri Gem (scrapes all the comic image data)
 Some XPath Skills (this app uses XPath to locate image data)
@@ -30,36 +31,36 @@ This app uses a separate appconfig.yml file to store the pepper and secret
 token keys for security reasons. Before you can run the server (even locally)
 you'll need to copy over the appconfig.yml.example file:
 
-<code>
+```
   cp config/appconfig.yml.example config/appconfig.yml
-</code>
+```
 
 You'll also need to setup your database settings via the database.yml.example
 file in the config directory.
 
-<code>
+```
   cp config/database.yml.example config/database.yml
-</code>
+```
 
 If you're not using PostgreSQL, you'll need to also modify the Gemfile with
 your database gem of choice along with modifying the contents of the
 database.yml file.
 
-### Deployment locations
+### Deployment Locations & Stack
+
+Both deployment servers are on Linode 512 Instances
 
 Staging: [http://staging.funniesapp.com](http://staging.funniesapp.com)
+Location: Dallas, TX
+OS: Ubuntu 10.04 LTS
+App Server: nginx (with Passenger)
+Database: PostgreSQL 8.4
 
 Production: [www.funniesapp.com](http://www.funniesapp.com)
-
-### Production Stack
-
-Funnies runs on a Linode 512 out of Dallas (more central location)
-
-OS: Ubuntu 10.04 LTS (I like apt)
-
-App Server: nginx (with passenger)
-
-Database: PostgreSQL 8.4
+Location: Newark, NJ
+OS: CentOS 6 (64-bit)
+App Server: nginx (with Unicorn)
+Database: PostgreSQL 9.1
 
 ### Contribute:
 
@@ -75,16 +76,14 @@ should start with patches. Here's the process:
 * Add test coverage (and make sure the current tests pass)
 * Send a pull request
 
-Make sure your patch includes tests or there is a *strong* chance the request
-will get closed.
+Please include tests with your pull request if the patch calls for testing
+the code included. Documentation patches are also welcomed.
 
-Design help would be *awesome*!
+_Design help would be *awesome*!_
 
 ### Special Thanks:
 
-*BIG* Thanks go to [Hashrocket](http://www.hashrocket.com/) for accepting me
-as an Apprentice Developer in their Chicago office. Finally getting to do what
-you love (and get paid for it) is amazing.
+*BIG* Thanks go to [Hashrocket](http://www.hashrocket.com/)
 
 [Mark James](http://famfamfam.com/) aka FamFamFam for the awesome Silk icons.
 
