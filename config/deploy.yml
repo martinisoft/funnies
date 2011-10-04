@@ -1,6 +1,6 @@
 production:
   branch: "production"
-  config_repository: "git@github.com:martinisoft/funnies-config.git"
+  config_repository: "git@github.com:martinisoft/deploy_configs.git"
   config_target: "production"
   deploy_config_to: "/home/deploy/apps/funniesapp.com-config"
   deploy_to: "/home/deploy/apps/funniesapp.com"
@@ -12,7 +12,7 @@ production:
       RAILS_ENV: 'production'
 staging:
   branch: "master"
-  config_repository: "git@github.com:martinisoft/funnies-config.git"
+  config_repository: "git@github.com:martinisoft/deploy_configs.git"
   config_target: "staging"
   deploy_config_to: "/var/www/funnies-config"
   deploy_to: "/var/www/staging.funniesapp.com"
