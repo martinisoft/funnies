@@ -34,7 +34,6 @@ group :development, :test do
   gem 'fabrication', '1.0.0'
   gem 'rspec-rails', '>= 2.5.0'
   gem 'haml-rails', '0.3.4'
-  gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 group :test do
