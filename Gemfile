@@ -8,12 +8,11 @@ gem 'escape_utils'
 gem 'formtastic', '1.2.3'
 gem 'gravatar_image_tag', '1.0.0'
 gem 'haml', '3.1.2'
-gem 'sass', '3.1.3'
-# My Nokogiri brings all the comics to the yard!
 gem 'nokogiri', '~> 1.5.0'
 gem 'rails', '3.0.9'
 gem 'rdiscount', '1.6.8'
 gem 'responders'
+gem 'sass', '3.1.3'
 gem 'state_machine', '0.9.4'
 
 # Optional Gems
@@ -32,9 +31,9 @@ end
 group :development, :test do
   gem 'cucumber-rails', '~> 1.1.1'
   gem 'fabrication', '1.0.0'
-  gem 'rspec-rails', '>= 2.5.0'
   gem 'haml-rails', '0.3.4'
   gem 'pry'
+  gem 'rspec-rails', '>= 2.5.0'
 end
 
 group :test do
