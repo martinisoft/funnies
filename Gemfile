@@ -37,9 +37,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'shoulda', '2.11.2'
   gem 'database_cleaner'
-  gem 'launchy'
   gem 'email_spec', '~> 1.1.1'
   gem 'fuubar'
+  gem 'launchy'
+  gem 'shoulda', '2.11.2'
 end
