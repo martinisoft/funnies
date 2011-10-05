@@ -44,5 +44,4 @@ group :test do
   gem 'launchy'
   gem 'email_spec', '~> 1.1.1'
   gem 'fuubar'
-  gem 'fuubar-cucumber'
 end
