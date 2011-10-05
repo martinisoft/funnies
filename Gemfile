@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 # App dependent gems
 gem 'carrierwave'
-gem 'decent_exposure'
+gem 'decent_exposure', '~> 1.0.1'
 gem 'devise'
 gem 'escape_utils'
 gem 'formtastic', '1.2.3'
