@@ -11,7 +11,7 @@ gem 'haml', '3.1.2'
 gem 'nokogiri', '~> 1.5.0'
 gem 'rails', '3.0.9'
 gem 'rdiscount', '1.6.8'
-gem 'responders'
+gem 'responders', '~> 0.6.4'
 gem 'sass', '3.1.3'
 gem 'state_machine', '0.9.4'
 
