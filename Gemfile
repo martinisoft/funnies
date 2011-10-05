@@ -30,7 +30,7 @@ end
 
 group :development, :test do
   gem 'cucumber-rails', '~> 1.1.1'
-  gem 'fabrication', '1.0.0'
+  gem 'fabrication', '~> 1.2.0'
   gem 'haml-rails', '0.3.4'
   gem 'pry'
   gem 'rspec-rails', '>= 2.5.0'
