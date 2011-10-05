@@ -45,5 +45,4 @@ group :test do
   gem 'email_spec', '~> 1.1.1'
   gem 'fuubar'
   gem 'fuubar-cucumber'
-  gem 'simplecov', '>= 0.4.0', :require => false
 end
