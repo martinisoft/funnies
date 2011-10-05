@@ -29,6 +29,13 @@ group :production, :staging do
   gem 'hoptoad_notifier'
 end
 
+group :development, :test do
+  gem 'fabrication', '1.0.0'
+  gem 'rspec-rails', '>= 2.5.0'
+  gem 'haml-rails', '0.3.4'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+end
+
 group :test do
   gem 'shoulda', '2.11.2'
   gem 'cucumber-rails'
@@ -39,11 +46,4 @@ group :test do
   gem 'fuubar'
   gem 'fuubar-cucumber'
   gem 'simplecov', '>= 0.4.0', :require => false
-end
-
-group :development, :test do
-  gem 'fabrication', '1.0.0'
-  gem 'rspec-rails', '>= 2.5.0'
-  gem 'haml-rails', '0.3.4'
-  gem 'ruby-debug19', :require => 'ruby-debug'
 end
