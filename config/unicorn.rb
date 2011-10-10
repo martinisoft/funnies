@@ -8,8 +8,8 @@ worker_processes 4
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen "/tmp/funniesapp.socket", :backlog => 64
-pid "/tmp/unicorn.funniesapp.pid"
+listen "/tmp/funnies.socket", :backlog => 64
+pid "/tmp/unicorn.funnies.pid"
 
 # Preload our app for more speed
 preload_app true
