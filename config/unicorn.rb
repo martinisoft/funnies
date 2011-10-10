@@ -19,8 +19,7 @@ timeout 30
 
 # Production specific settings
 if env == "production" || env == "staging"
-  shared_path = "/home/deployer/apps/funniesapp.com"
-  working_directory shared_path
+  shared_path = "/home/deploy/apps/funniesapp.com"
 
   user 'deploy', 'deploy'
 
