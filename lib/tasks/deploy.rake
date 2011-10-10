@@ -15,14 +15,20 @@ namespace :deploy do
       Dir.chdir(Rails.root)
       system("touch tmp/restart.txt")
     else
-      puts "restarting Unicorns"
+      puts "restarting Unicorn"
       system("kill -s USR2 `cat /tmp/unicorn.funnies.pid`")
     end
   end
 
   task :stop_server do
-    puts "stopping Unicorns"
+    puts "stopping Unicorn"
     system("kill -s QUIT `cat /tmp/unicorn.funnies.pid`")
+  end
+
+  task :start_server do
+    puts "starting Unicorn"
+    Dir.chdir(Rails.root)
+    system("bundle exec unicorn_rails -c config/unicorn.rb -D")
   end
 
   task :post_setup  => [ :create_rails_directories ]
