@@ -1,7 +1,7 @@
 production:
   branch: "production"
   config_repository: "git@github.com:martinisoft/deploy_configs.git"
-  config_target: "production"
+  config_target: "master"
   deploy_config_to: "/home/deploy/apps/funniesapp.com-config"
   deploy_to: "/home/deploy/apps/funniesapp.com"
   domain: "deploy@funniesapp.com"
@@ -14,7 +14,7 @@ production:
 staging:
   branch: "master"
   config_repository: "git@github.com:martinisoft/deploy_configs.git"
-  config_target: "staging"
+  config_target: "master"
   deploy_config_to: "/var/www/funnies-config"
   deploy_to: "/var/www/staging.funniesapp.com"
   domain: "deploy@funniesapp.com"

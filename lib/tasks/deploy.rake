@@ -9,12 +9,22 @@ namespace :deploy do
     Rake::Task['db:migrate'].invoke
   end
 
-  task :bounce_passenger do
-    puts "restarting Passenger web server"
-    Dir.chdir(Rails.root)
-    system("touch tmp/restart.txt")
+  task :restart_server do
+    if ENV["RAILS_ENV"] == "staging"
+      puts "restarting Passenger web server"
+      Dir.chdir(Rails.root)
+      system("touch tmp/restart.txt")
+    else
+      puts "restarting Unicorns"
+      system("kill -s USR2 `cat /tmp/unicorn.funnies.pid`")
+    end
+  end
+
+  task :stop_server do
+    puts "stopping Unicorns"
+    system("kill -s QUIT `cat /tmp/unicorn.funnies.pid`")
   end
 
   task :post_setup  => [ :create_rails_directories ]
-  task :post_deploy => [ :db_migrate, :bounce_passenger ]
+  task :post_deploy => [ :db_migrate, :restart_server ]
 end
