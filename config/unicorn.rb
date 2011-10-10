@@ -19,13 +19,10 @@ timeout 30
 
 # Production specific settings
 if env == "production" || env == "staging"
-  # Help ensure your application will always spawn in the symlinked
-  # "current" directory that Capistrano sets up.
-  working_directory "/home/deploy/apps/funniesapp.com/public"
-
-  # feel free to point this anywhere accessible on the filesystem
-  user 'deploy', 'deploy'
   shared_path = "/home/deployer/apps/funniesapp.com"
+  working_directory shared_path
+
+  user 'deploy', 'deploy'
 
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
   stdout_path "#{shared_path}/log/unicorn.stdout.log"
