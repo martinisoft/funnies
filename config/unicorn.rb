@@ -17,8 +17,18 @@ preload_app true
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
 
+# Staging specific settings
+if env == "staging"
+  shared_path = "/home/deploy/apps/staging.funniesapp.com"
+
+  user 'deploy', 'deploy'
+
+  stderr_path "#{shared_path}/log/unicorn.stderr.log"
+  stdout_path "#{shared_path}/log/unicorn.stdout.log"
+end
+
 # Production specific settings
-if env == "production" || env == "staging"
+if env == "production"
   shared_path = "/home/deploy/apps/funniesapp.com"
 
   user 'deploy', 'deploy'
