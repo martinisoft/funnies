@@ -2,7 +2,7 @@ namespace :deploy do
   task :create_rails_directories do
     puts "creating log/ and tmp/ directories"
     Dir.chdir(Rails.root)
-    system("mkdir -p log tmp")
+    sh "mkdir -p log tmp"
   end
 
   task :db_migrate => :environment do
@@ -10,27 +10,34 @@ namespace :deploy do
   end
 
   task :restart_server do
-    if ENV["RAILS_ENV"] == "staging"
-      puts "restarting Passenger web server"
-      Dir.chdir(Rails.root)
-      system("touch tmp/restart.txt")
-    else
+    if File.exist?("/tmp/unicorn.funnies.pid")
       puts "restarting Unicorn"
-      system("kill -s USR2 `cat /tmp/unicorn.funnies.pid`")
+      sh "kill -s USR2 `cat /tmp/unicorn.funnies.pid`"
+    else
+      puts "Unicorn pidfile is missing, starting Unicorn"
+      Rake::Task['deploy:start_server'].invoke
     end
   end
 
   task :stop_server do
-    puts "stopping Unicorn"
-    system("kill -s QUIT `cat /tmp/unicorn.funnies.pid`")
+    if File.exist?("/tmp/unicorn.funnies.pid")
+      puts "stopping Unicorn"
+      sh "kill -s QUIT `cat /tmp/unicorn.funnies.pid`"
+    else
+      puts "Unicorn pidfile does not exist, is it running?"
+    end
   end
 
   task :start_server do
-    puts "starting Unicorn"
-    Dir.chdir(Rails.root)
-    system("bundle exec unicorn_rails -c config/unicorn.rb -D")
+    if File.exist?("/tmp/unicorn.funnies.pid")
+      puts "Unicorn pidfile exists, is it started already?"
+    else
+      puts "starting Unicorn"
+      Dir.chdir(Rails.root)
+      sh "bundle exec unicorn_rails -c config/unicorn.rb -D"
+    end
   end
 
-  task :post_setup  => [ :create_rails_directories ]
+  task :post_setup  => [ :create_rails_directories, :start_server ]
   task :post_deploy => [ :db_migrate, :restart_server ]
 end
