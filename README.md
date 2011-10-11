@@ -68,8 +68,9 @@ I publicly storycarded this app at [Pivotal Tracker](https://www.pivotaltracker.
 
 Any issues can be reported to the [Github Issues Tracker](https://github.com/martinisoft/funnies/issues)
 
-Generally, the master branch won't be too far ahead of staging and is where you
-should start with patches. Here's the process:
+Any contributions or stories you'd like to complete should be done off the
+master branch.  Both staging *and* production deploy from staging with topic
+branches merging back into master.
 
 * Fork this repo
 * Make your changes
