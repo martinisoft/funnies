@@ -46,6 +46,11 @@ If you're not using PostgreSQL, you'll need to also modify the Gemfile with
 your database gem of choice along with modifying the contents of the
 database.yml file.
 
+### Updating comics
+
+This app uses the Whenever gem to schedule a rake task to pull all the comics
+once a day.  Check out the lib/tasks/comics rake task for some more details.
+
 ### Deployment Locations & Stack
 
 Both deployment servers are on Linode 512 Instances
