@@ -14,6 +14,7 @@ gem 'rdiscount', '1.6.8'
 gem 'responders', '~> 0.6.4'
 gem 'sass', '3.1.3'
 gem 'state_machine', '0.9.4'
+gem 'whenever', require: false
 
 # Optional Gems
 # pg gem for PostgreSQL Database
