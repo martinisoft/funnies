@@ -159,8 +159,8 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    turnip (0.2.0)
-      gherkin
+    turnip (0.3.0)
+      gherkin (>= 2.5)
       rspec (~> 2.0)
     tzinfo (0.3.31)
     unicorn (4.1.1)
@@ -206,7 +206,7 @@ DEPENDENCIES
   sass (= 3.1.3)
   shoulda (= 2.11.2)
   state_machine (= 0.9.4)
-  turnip (~> 0.2.0)
+  turnip (~> 0.3.0)
   unicorn
   whenever
   whiskey_disk (= 0.6.22)

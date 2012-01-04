@@ -43,5 +43,5 @@ group :test do
   gem 'fuubar'
   gem 'launchy'
   gem 'shoulda', '2.11.2'
-  gem 'turnip', '~> 0.2.0'
+  gem 'turnip', '~> 0.3.0'
 end
