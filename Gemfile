@@ -39,7 +39,7 @@ end
 group :test do
   gem 'capybara', '~> 1.1.2'
   gem 'database_cleaner'
-  gem 'email_spec', '~> 1.1.1'
+  gem 'email_spec', '~> 1.2.1'
   gem 'fuubar'
   gem 'launchy'
   gem 'shoulda', '2.11.2'
