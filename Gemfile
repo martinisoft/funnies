@@ -33,7 +33,7 @@ group :development, :test do
   gem 'fabrication', '~> 1.2.0'
   gem 'haml-rails', '0.3.4'
   gem 'pry'
-  gem 'rspec-rails', '~> 2.7.0'
+  gem 'rspec-rails', '~> 2.8.0'
 end
 
 group :test do
