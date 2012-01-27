@@ -1,7 +1,7 @@
 Feature: User Account
   As a user
   I would like to manage my account
-  So I can save and share my reading preferences
+  So that I can save and share my reading preferences
 
   Scenario: Creating account
     Given I am on the registration page
