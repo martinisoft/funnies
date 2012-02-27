@@ -1,4 +1,4 @@
-Fabricator(:user) do
+Fabricator :user do
   # username "martinisoft"
   username { Fabricate.sequence(:username) { |i| "martinisoft-#{i}" } }
   email { Fabricate.sequence(:email) { |i| "user+#{i}@example.com" } }
@@ -10,6 +10,6 @@ Fabricator :confirmed_user, from: :user do
   after_create { |user| user.confirm! }
 end
 
-Fabricator(:admin, from: :user) do
+Fabricator :admin, from: :confirmed_user do
   admin true
 end
