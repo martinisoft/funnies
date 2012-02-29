@@ -17,4 +17,28 @@ steps_for :admin_manages_comics do
       page.should have_content @comic_info[:name]
     end
   end
+
+  step "there is a comic" do
+    @comic_info = { name: "xkcd" }
+    @comic = Fabricate :comic, @comic_info
+  end
+
+  step "I edit that comic" do
+    @new_comic_info = {
+      name: "foobar",
+      homepage: "http://example.com"
+    }
+    visit comics_path
+    click_link "Edit Comic"
+    fill_in "Name", with: @new_comic_info[:name]
+    fill_in "Homepage", with: @new_comic_info[:homepage]
+    click_button "Save"
+  end
+
+  step "I see the updated comic information" do
+    visit comics_path
+    click_link "Edit Comic"
+    find_field("Name").value.should eq @new_comic_info[:name]
+    find_field("Homepage").value.should eq @new_comic_info[:homepage]
+  end
 end
