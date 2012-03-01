@@ -14,3 +14,8 @@ Feature: Admin manages comics
     Given there is a comic
     When I edit that comic
     Then I see the updated comic information
+
+  Scenario: deletes a comic
+    Given there is a comic
+    When I delete that comic
+    Then I don't see that comic in the comics list

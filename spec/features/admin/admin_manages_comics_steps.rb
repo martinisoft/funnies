@@ -41,4 +41,15 @@ steps_for :admin_manages_comics do
     find_field("Name").value.should eq @new_comic_info[:name]
     find_field("Homepage").value.should eq @new_comic_info[:homepage]
   end
+
+  step "I delete that comic" do
+    visit comics_path
+    click_link "Delete Comic"
+  end
+
+  step "I don't see that comic in the comics list" do
+    within "#content" do
+      page.should_not have_content @comic_info[:name]
+    end
+  end
 end
