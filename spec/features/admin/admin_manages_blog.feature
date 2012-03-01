@@ -14,3 +14,8 @@ Feature: Admin manages blog
     Given a blog post
     When I edit that post
     Then I see the updated post
+
+  Scenario: delete blog post
+    Given a blog post
+    When I delete that post
+    Then I don't see that post

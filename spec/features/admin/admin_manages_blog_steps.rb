@@ -14,7 +14,11 @@ steps_for :admin_manages_blog do
   end
 
   step "a blog post" do
-    @post = Fabricate :post
+    @post_info = {
+      title: "An interesting post",
+      body: "Have you heard the one about the chef and the fish?"
+    }
+    @post = Fabricate :post, @post_info
   end
 
   step "I see that post" do
@@ -42,6 +46,19 @@ steps_for :admin_manages_blog do
     within "section.posts article" do
       page.should have_content @new_post_info[:title]
       page.should have_content @new_post_info[:body]
+    end
+  end
+
+  step "I delete that post" do
+    visit posts_path
+    click_link "Delete Post"
+  end
+
+  step "I don't see that post" do
+    visit posts_path
+    within "section.posts" do
+      page.should_not have_content @post_info[:title]
+      page.should_not have_content @post_info[:body]
     end
   end
 end
