@@ -1,9 +1,5 @@
 steps_for :reader_suggestions do
-  use_steps :user_account
-
-  step "I am signed in as a reader" do
-    step "I am logged in as a confirmed user"
-  end
+  use_steps :reader
 
   step "I suggest a comic" do
     visit comics_path

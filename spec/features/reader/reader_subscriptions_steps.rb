@@ -1,9 +1,5 @@
 steps_for :reader_subscriptions do
-  use_steps :user_account
-
-  step "I am signed in as a reader" do
-    step "I am logged in as a confirmed user"
-  end
+  use_steps :reader
 
   step "there is a subscribable comic" do
     @comic = Fabricate :comic
