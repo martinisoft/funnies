@@ -17,11 +17,17 @@ describe ComicStrip do
     let(:comic) { Fabricate(:comic) }
     let(:comic_strip) { ComicStrip.new(comic_id: comic) }
     let(:comic_strip_uploader) { ComicStripUploader.new(comic_strip, :comic_strip) }
-    let(:comic_tmp_path) { "tmp/uploads/#{cache_id}/nanobots.png" }
-    let(:comic_url) { "http://imgs.xkcd.com/comics/nanobots.png" }
+    let(:comic_tmp_path) { "tmp/uploads/#{cache_id}/late_night_pbs.png" }
+    let(:comic_url) { "http://imgs.xkcd.com/comics/late_night_pbs.png" }
+    let(:request_stub) { stub_request(:get, comic_url) }
+    let(:comic_data) do
+      File.open(Rails.root.join("spec", "fixtures", "late_night_pbs.png"))
+    end
 
     before do
       CarrierWave.stub!(:generate_cache_id).and_return(cache_id)
+      request_stub.to_return(body: comic_data,
+                             headers: { 'Content-Type' => 'image/png' })
     end
 
     it "accepts remote comic strip files" do
@@ -37,19 +43,32 @@ describe ComicStrip do
     end
 
     context "bad image url" do
-      let(:missing_comic_url) { "http://imgs.xkcd.com/comics/itsmissing.png" }
       let(:bad_comic_url) { "http://xkcd.com/rss.xml" }
+      let(:request_stub) { stub_request(:get, bad_comic_url) }
 
-      it "raises exception on bad comic url" do
+      before do
+        request_stub.to_return(body: "rss",
+                               headers: { 'Content-Type' => 'rss/xml' })
+      end
+
+      it "raises exception" do
         expect {
           comic_strip.remote_comic_image_url = bad_comic_url
         }.to raise_exception(CarrierWave::IntegrityError)
       end
+    end
 
-      it "raises error on missing image url" do
-        expect {
-          comic_strip.remote_comic_image_url = missing_comic_url
-        }.to raise_exception(OpenURI::HTTPError)
+    context "missing image url" do
+      let(:missing_comic_url) { "http://imgs.xkcd.com/comics/itsmissing.png" }
+      let(:request_stub) { stub_request(:get, missing_comic_url) }
+
+      before do
+        request_stub.to_return(status: [ 404, "Not Found" ])
+      end
+
+      it "raises validation error" do
+        comic_strip.remote_comic_image_url = missing_comic_url
+        comic_strip.should_not be_valid
       end
     end
   end
