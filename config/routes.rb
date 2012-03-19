@@ -1,7 +1,7 @@
 Funnies::Application.routes.draw do
 
-  match '/about' => 'pages#about'
-  match '/copyright' => 'pages#copyright'
+  match '/about' => 'pages#about', as: :about
+  match '/copyright' => 'pages#copyright', as: :copyright
 
   scope "/blog" do
     resources :posts
