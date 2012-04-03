@@ -1,19 +1,19 @@
 source 'http://rubygems.org'
 
 # App dependent gems
-gem 'carrierwave'
+gem 'carrierwave', '0.5.8'
 gem 'decent_exposure', '~> 1.0.1'
 gem 'devise'
 gem 'escape_utils'
 gem 'formtastic', '1.2.3'
 gem 'gravatar_image_tag', '1.0.0'
 gem 'haml', '3.1.2'
+gem 'jquery-rails'
 gem 'nokogiri', '~> 1.5.0'
-gem 'rails', '3.0.9'
+gem 'rails', '3.1.4'
 gem 'rdiscount', '1.6.8'
 gem 'responders', '~> 0.6.4'
-gem 'sass', '3.1.3'
-gem 'state_machine', '0.9.4'
+gem 'state_machine', '1.1.2'
 gem 'whenever', require: false
 
 # Optional Gems
@@ -23,6 +23,12 @@ gem 'pg', '0.11.0'
 gem 'unicorn'
 # Whiskey Disk for deployment
 gem 'whiskey_disk', '0.6.22'
+
+group :assets do
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'sass-rails', '~> 3.1.4'
+  gem 'uglifier', '>= 1.0.3'
+end
 
 # Optional, for error capture on production
 group :production, :staging do

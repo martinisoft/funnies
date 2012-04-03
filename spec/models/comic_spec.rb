@@ -39,10 +39,16 @@ describe Comic do
 
   describe "#update_strip" do
     let(:comic) { Fabricate(:comic) }
-    let(:comic_image_url) { Rails.root.join("spec", "fixtures", "xkcd.png") }
+    let(:comic_image_url) { Rails.root.join("spec", "fixtures", "xkcd.png").to_s }
     before { comic.stub source_image_url: comic_image_url }
 
     context "with a new comic available" do
+      let(:comic_strip) { double("ComicStrip").stub(:remote_comic_image_url) }
+
+      before do
+        comic.stub_chain(:comic_strips, :create).and_return(comic_strip)
+      end
+
       it "creates a comic strip with a correct url" do
         comic.comic_strips.should_receive(:create).with(remote_comic_image_url: comic_image_url)
         comic.update_strip
