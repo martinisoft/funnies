@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 # App dependent gems
 gem 'carrierwave', '0.5.8'
 gem 'decent_exposure', '~> 1.0.1'
-gem 'devise'
+gem 'devise', '~> 1.5.3'
 gem 'escape_utils'
 gem 'formtastic', '1.2.3'
 gem 'gravatar_image_tag', '1.0.0'
