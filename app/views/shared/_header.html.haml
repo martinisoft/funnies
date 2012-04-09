@@ -19,6 +19,6 @@
       - if user_signed_in?
         = gravatar_for(current_user, size: 20)
         = link_to current_user.username, "#", class: "username"
-        = link_to "Sign out", destroy_user_session_path
+        = link_to "Sign out", destroy_user_session_path, method: :delete
       - else
         = link_to "Sign in", new_user_session_path
