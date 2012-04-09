@@ -176,7 +176,7 @@ GEM
       multi_json (~> 1.0.4)
       rubyzip
     sexp_processor (3.0.7)
-    shoulda (2.11.2)
+    shoulda-matchers (1.0.0)
     slop (2.1.0)
     sprockets (2.0.3)
       hike (~> 1.2)
@@ -241,7 +241,7 @@ DEPENDENCIES
   responders (~> 0.6.4)
   rspec-rails (~> 2.8.0)
   sass-rails (~> 3.1.4)
-  shoulda (= 2.11.2)
+  shoulda-matchers (= 1.0.0)
   state_machine (= 1.1.2)
   turnip (~> 0.3.0)
   uglifier (>= 1.0.3)

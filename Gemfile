@@ -48,7 +48,7 @@ group :test do
   gem 'email_spec', '~> 1.2.1'
   gem 'fuubar'
   gem 'launchy'
-  gem 'shoulda', '2.11.2'
+  gem 'shoulda-matchers', '1.0.0'
   gem 'turnip', '~> 0.3.0'
   gem 'webmock', '~> 1.8.0'
 end
