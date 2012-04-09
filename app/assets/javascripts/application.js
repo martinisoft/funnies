@@ -6,6 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require modernizr-1.7.min
 //= require_tree .
 
 $(document).ready(function() {
