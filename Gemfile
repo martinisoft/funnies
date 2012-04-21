@@ -44,4 +44,5 @@ group :test do
   gem 'launchy'
   gem 'shoulda', '2.11.2'
   gem 'turnip', '~> 0.3.0'
+  gem 'webmock', '~> 1.8.0'
 end
