@@ -8,7 +8,6 @@
   %title Welcome to Funnies!
   = stylesheet_link_tag "funnies"
   = csrf_meta_tag
-  = javascript_include_tag "modernizr-1.7.min"
 %body
   - if flash[:notice] || flash[:alert]
     %div{:class => "notice #{'alert' if flash[:alert]}"}
@@ -18,5 +17,5 @@
     %section#content{class: controller_class}
       = yield
   = render "shared/footer"
-  = javascript_include_tag :defaults
+  = javascript_include_tag "application"
   = render "shared/analytics"
