@@ -3,5 +3,5 @@ task :rspec do
   # in the rspec task
   # ENV['SPEC_OPTS'] = "--format progress"
   # Rake::Task[:spec].invoke
-  system "rspec --format progress"
+  system "rspec --format Fivemat"
 end

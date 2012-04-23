@@ -71,6 +71,7 @@ GEM
       multi_json (~> 1.0)
     fabrication (1.2.0)
     ffi (1.0.11)
+    fivemat (1.0.0)
     formtastic (1.2.3)
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
@@ -225,6 +226,7 @@ DEPENDENCIES
   email_spec (~> 1.2.1)
   escape_utils
   fabrication (~> 1.2.0)
+  fivemat
   formtastic (= 1.2.3)
   fuubar
   gravatar_image_tag (= 1.0.0)
