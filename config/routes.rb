@@ -8,7 +8,8 @@ Funnies::Application.routes.draw do
     root to: "posts#index"
   end
 
-  devise_for :users do
+  devise_for :users
+  devise_scope :users do
     resources :suggestions, except: [:destroy]
     resources :subscriptions, only: [:index, :create, :destroy]
     resources :comics
