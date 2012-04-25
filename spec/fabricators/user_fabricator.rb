@@ -1,5 +1,4 @@
 Fabricator :user do
-  # username "martinisoft"
   username { Fabricate.sequence(:username) { |i| "martinisoft-#{i}" } }
   email { Fabricate.sequence(:email) { |i| "user+#{i}@example.com" } }
   password "foobar"
