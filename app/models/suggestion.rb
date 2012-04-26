@@ -5,6 +5,8 @@ class Suggestion < ActiveRecord::Base
   validates :website, presence: true
   validates :reason, presence: true
 
+  attr_accessible :name, :website, :reason
+
   state_machine initial: :open do
     event :accept do
       transition open: :accepted

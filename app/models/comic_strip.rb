@@ -4,6 +4,8 @@ class ComicStrip < ActiveRecord::Base
   validates :comic, presence: true
   validates :comic_image, presence: true
 
+  attr_accessible :comic_id
+
   mount_uploader :comic_image, ComicImageUploader
 
   def md5_hash
