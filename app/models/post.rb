@@ -6,4 +6,6 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
 
   default_scope order: 'created_at DESC'
+
+  attr_accessible :body, :title
 end

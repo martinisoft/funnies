@@ -11,6 +11,8 @@ class Comic < ActiveRecord::Base
   validates :xpath_title, presence: true, xpath: true
   validates :xpath_image, presence: true, xpath: true
 
+  attr_accessible :name, :homepage, :comic_page, :xpath_title, :xpath_image
+
   def update_strip
     if source_image_url.present?
       hash = Digest::MD5.hexdigest(open(source_image_url).read)
