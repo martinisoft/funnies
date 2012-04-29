@@ -5,8 +5,8 @@ production:
   deploy_config_to: "/home/deploy/apps/deploy_configs"
   deploy_to: "/home/deploy/apps/funniesapp.com"
   domain: "deploy@funniesapp.com"
-  post_setup_script: "bin/post-setup.sh"
-  post_deploy_script: "bin/post-deploy.sh"
+  post_setup_script: "script/post-setup.sh"
+  post_deploy_script: "script/post-deploy.sh"
   project: "funnies"
   repository: "git@github.com:martinisoft/funnies.git"
   rake_env:
@@ -18,8 +18,8 @@ staging:
   deploy_config_to: "/home/deploy/apps/deploy_configs"
   deploy_to: "/home/deploy/apps/staging.funniesapp.com"
   domain: "deploy@staging.funniesapp.com"
-  post_setup_script: "bin/post-setup.sh"
-  post_deploy_script: "bin/post-deploy.sh"
+  post_setup_script: "script/post-setup.sh"
+  post_deploy_script: "script/post-deploy.sh"
   project: "funnies"
   repository: "git@github.com:martinisoft/funnies.git"
   rake_env:
