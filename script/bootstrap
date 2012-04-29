@@ -1,0 +1,76 @@
+#!/bin/sh
+# vim: se ft=sh ts=2 sw=2:
+#
+# bootstrap funnies
+
+set -e
+
+#
+# Welcome to Funnies!
+#
+
+echo ""
+echo " funnies"
+echo " discover and enjoy your favorite web comics"
+echo ""
+
+#
+# Check for Bundler
+#
+if test ! $(which bundle)
+then
+  echo "  x You need to install Bundler:"
+  echo "    gem install bundler"
+  exit
+else
+  echo "  + Bundler found."
+fi
+
+#
+# Install gems
+#
+echo "  + Installing your bundle."
+bundle install --quiet
+
+#
+# Setup database config
+#
+if test -f "config/database.yml"
+then
+  echo "  + Database configuration found in config/database.yml"
+else
+  echo ""
+  echo "  - Database configuration not found."
+  echo ""
+  echo "  + Copying example configuration from config/database.example.yml"
+  echo ""
+  echo "  - Note: You will want to check this file to match your local DB config"
+  cp config/database.example.yml config/database.yml
+fi
+
+#
+# Setup appconfig
+#
+if test -f "config/appconfig.yml"
+then
+  echo "  + Application configuration found in config/appconfig.yml"
+else
+  echo ""
+  echo "  - Application configuration not found."
+  echo ""
+  echo "  + Copying example configuration from config/appconfig.example.yml"
+  cp config/appconfig.example.yml config/appconfig.yml
+fi
+
+# Yatta!
+echo ""
+echo "              _   _        _ "
+echo "             | | | |      | |"
+echo "  _   _  __ _| |_| |_ __ _| |"
+echo " | | | |/ _' | __| __/ _' | |"
+echo " | |_| | (_| | |_| |_ (_| |_|"
+echo "  \__, |\__,_|\__|\__\__,_(_)"
+echo "   __/ |                     "
+echo "  |___/                      "
+echo ""
+echo "  Funnies is ready to go!"
