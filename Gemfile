@@ -22,7 +22,7 @@ gem 'pg', '0.11.0'
 # Unicorns FTW
 gem 'unicorn'
 # Whiskey Disk for deployment
-gem 'whiskey_disk', '0.6.22'
+gem 'whiskey_disk', '0.6.24'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
