@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # App dependent gems
-gem 'carrierwave', '0.5.8'
+gem 'carrierwave', '0.6.2'
 gem 'decent_exposure', '~> 1.0.1'
 gem 'devise', '~> 2.0.4'
 gem 'escape_utils'
