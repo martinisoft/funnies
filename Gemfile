@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # App dependent gems
-gem 'carrierwave', '0.5.8'
+gem 'carrierwave', '0.6.2'
 gem 'decent_exposure', '~> 1.0.1'
 gem 'devise', '~> 2.0.4'
 gem 'escape_utils'
@@ -18,7 +18,7 @@ gem 'whenever', require: false
 
 # Optional Gems
 # pg gem for PostgreSQL Database
-gem 'pg', '0.11.0'
+gem 'pg', '~> 0.13.2'
 # Unicorns FTW
 gem 'unicorn'
 # Whiskey Disk for deployment
@@ -38,17 +38,17 @@ end
 group :development, :test do
   gem 'fabrication', '~> 1.2.0'
   gem 'haml-rails', '0.3.4'
-  gem 'pry'
+  gem 'pry', '~> 0.9.9.4'
+  gem 'pry-rails', '~> 0.1.6'
   gem 'rspec-rails', '~> 2.8.0'
 end
 
 group :test do
   gem 'capybara', '~> 1.1.2'
-  gem 'database_cleaner'
   gem 'email_spec', '~> 1.2.1'
   gem 'fivemat'
   gem 'launchy'
-  gem 'shoulda-matchers', '1.0.0'
+  gem 'shoulda-matchers', '1.1.0'
   gem 'turnip', '~> 0.3.0'
   gem 'webmock', '~> 1.8.0'
 end
