@@ -18,7 +18,7 @@ gem 'whenever', require: false
 
 # Optional Gems
 # pg gem for PostgreSQL Database
-gem 'pg', '0.11.0'
+gem 'pg', '~> 0.13.2'
 # Unicorns FTW
 gem 'unicorn'
 # Whiskey Disk for deployment
