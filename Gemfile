@@ -45,7 +45,6 @@ end
 
 group :test do
   gem 'capybara', '~> 1.1.2'
-  gem 'database_cleaner'
   gem 'email_spec', '~> 1.2.1'
   gem 'fivemat'
   gem 'launchy'
