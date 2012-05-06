@@ -110,10 +110,12 @@ GEM
     orm_adapter (0.0.7)
     pg (0.13.2)
     polyglot (0.3.3)
-    pry (0.9.9.3)
+    pry (0.9.9.4)
       coderay (~> 1.0.5)
       method_source (~> 0.7.1)
       slop (>= 2.4.4, < 3)
+    pry-rails (0.1.6)
+      pry
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -226,7 +228,8 @@ DEPENDENCIES
   launchy
   nokogiri (~> 1.5.0)
   pg (~> 0.13.2)
-  pry
+  pry (~> 0.9.9.4)
+  pry-rails (~> 0.1.6)
   rails (= 3.2.3)
   rdiscount (= 1.6.8)
   responders (~> 0.6.4)
