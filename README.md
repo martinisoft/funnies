@@ -1,12 +1,12 @@
 Funnies
 =======
 
-Read your favorite Web Comics on one page, just like a Newspaper.
+Discover and share your favorite web comics.
 
 ### Why?
 
 I love reading my web comics every week. In real life I have a newspaper
-with it all in one section.  Why not online? RSS Feeds are useless
+with it all in one section. Why not online? RSS Feeds are useless
 because you have to separartely go to each page for updates.
 
 ### Donate!
@@ -14,37 +14,28 @@ because you have to separartely go to each page for updates.
 [![Click here to lend your support to: Funnies and make a donation at www.pledgie.com !](https://www.pledgie.com/campaigns/15373.png?skin_name=chrome)](http://www.pledgie.com/campaigns/15373)
 
 Do you use Funnies? Want a better design? I'm raising a budget for a
-professional re-design of the application. After the budget is raised
+professional re-design of the application. After the budget is raised,
 future donations will go towards server costs.
 
 ### Requirements
 
 * Ruby 1.9.3-p125 (I live dangerously on the edge)
-* Ruby on Rails 3.0.9 (Rails 3.1 upgrade pending)
-* PostgreSQL Database (this can be changed, see database.yml.example)
-* Nokogiri Gem (scrapes all the comic image data)
+* Ruby on Rails 3.2.3
+* PostgreSQL Database (this can be changed, see database.example.yml)
+* Nokogiri (scrapes all the comic image data)
 * Some XPath Skills (this app uses XPath to locate image data)
 
 ### Installation
 
-This app uses a separate appconfig.yml file to store the pepper and secret
-token keys for security reasons. Before you can run the server (even locally)
-you'll need to copy over the appconfig.yml.example file:
+Get up and running quickly with the Bootstrap script:
 
 ```
-  cp config/appconfig.yml.example config/appconfig.yml
+./script/bootstrap
 ```
 
-You'll also need to setup your database settings via the database.yml.example
-file in the config directory.
+### Customization / Configuration
 
-```
-  cp config/database.yml.example config/database.yml
-```
-
-If you're not using PostgreSQL, you'll need to also modify the Gemfile with
-your database gem of choice along with modifying the contents of the
-database.yml file.
+See config/appconfig.yml after running bootstrap
 
 ### Updating comics
 
@@ -53,13 +44,13 @@ once a day.  Check out the lib/tasks/comics rake task for some more details.
 
 ### Deployment Locations & Stack
 
-Both deployment servers are on Linode 512 Instances
+Both deployment servers are on [Linode 512](http://www.linode.com/?r=e87bf8c62bf9a1802e9925f3b1bb07738de3c34f) Instances
 
 Staging: [http://staging.funniesapp.com](http://staging.funniesapp.com)
-Location: Dallas, TX
-OS: Ubuntu 10.04 LTS
-App Server: nginx (with Passenger)
-Database: PostgreSQL 8.4
+Location: Atlanta, GA
+OS: Ubuntu 12.04 (Precise Pangolin)
+App Server: nginx (with unicorn)
+Database: PostgreSQL 9.1.3
 
 Production: [www.funniesapp.com](http://www.funniesapp.com)
 Location: Newark, NJ
@@ -69,13 +60,12 @@ Database: PostgreSQL 9.1
 
 ### Contribute:
 
-I publicly storycarded this app at [Pivotal Tracker](https://www.pivotaltracker.com/projects/201253)
+I publicly storycard this app at [Pivotal Tracker](https://www.pivotaltracker.com/projects/201253)
 
 Any issues can be reported to the [Github Issues Tracker](https://github.com/martinisoft/funnies/issues)
 
-Any contributions or stories you'd like to complete should be done off the
-master branch.  Both staging *and* production deploy from staging with topic
-branches merging back into master.
+Master is always deployed, any features are started on a branch, then a pull request is opened to
+merge it back in to master:
 
 * Fork this repo
 * Make your changes
@@ -89,15 +79,15 @@ _Design help would be *awesome*!_
 
 ### Special Thanks:
 
-*BIG* Thanks go to [Hashrocket](http://www.hashrocket.com/)
+[Hashrocket](http://www.hashrocket.com/)
 
-[Mark James](http://famfamfam.com/) aka FamFamFam for the awesome Silk icons.
+[Mark James](http://famfamfam.com/) aka Fam^3 for the awesome Silk icons.
 
 ### Contributors: (Helped patch or paired with me)
 
-* [Joshua Davey](http://joshuadavey.com/) "Paried with me initially to get the project going"
-* [Desi McAdam](http://twitter.com/desi) "Doing my acceptance testing on Pivotal"
-* [Veezus Kreist](http://veez.us/) "Pairing with me on the comic strip updating"
-* [Dave Lyon](http://davelyon.net/) "Pairing and Contributing Patches"
-* [Brian Dunn](https://twitter.com/higgaion) "Pairing with me on the comic update code and tests"
-* [Robert Pitts](https://github.com/rbxbx) "Pairing with me on RSS feeds"
+* [Joshua Davey](http://joshuadavey.com/) for pairing with me initially to get the project going
+* [Desi McAdam](http://twitter.com/desi) for being my initial stake holder on Pivotal Tracker
+* [Veezus Kreist](http://veez.us/) for pairing with me on comic strip updating
+* [Dave Lyon](http://davelyon.net/) for pairing and contributing patches
+* [Brian Dunn](https://twitter.com/higgaion) for pairing with me on the comic update code and tests
+* [Robert Pitts](https://github.com/rbxbx) for pairing with me on RSS feeds
