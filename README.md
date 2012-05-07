@@ -35,7 +35,7 @@ Get up and running quickly with the Bootstrap script:
 
 ### Customization / Configuration
 
-See config/appconfig.yml after running bootstrap
+See config/application.yml after running bootstrap
 
 ### Updating comics
 

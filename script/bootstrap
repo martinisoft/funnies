@@ -49,7 +49,7 @@ else
 fi
 
 #
-# Setup appconfig
+# Setup application config
 #
 if test -f "config/application.yml"
 then
