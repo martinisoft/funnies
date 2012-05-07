@@ -1,11 +1,15 @@
 Funnies::Application.routes.draw do
 
-  match '/about' => 'pages#about', as: :about
-  match '/copyright' => 'pages#copyright', as: :copyright
+  get '/about' => 'pages#about', as: :about
+  get '/copyright' => 'pages#copyright', as: :copyright
 
   scope "/blog" do
     resources :posts
     root to: "posts#index"
+  end
+
+  resources :comics do
+    resource :subscriptions, only: [:index, :create, :destroy]
   end
 
   devise_for :users
@@ -19,10 +23,6 @@ Funnies::Application.routes.draw do
   scope "/:username", as: "user" do
     resources :comics
     root to: "comics#index"
-  end
-
-  resources :comics do
-    resource :subscriptions, only: [:index, :create, :destroy]
   end
 
   root to: "pages#landing"
