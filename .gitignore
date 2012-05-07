@@ -3,8 +3,8 @@
 log/*.log
 tmp/
 public/stylesheets/*
-config/database.yml
-config/appconfig.yml
+/config/database.yml
+/config/application.yml
 public/images/comics/
 .sass_cache
 vendor/gems
