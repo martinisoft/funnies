@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423024959) do
+ActiveRecord::Schema.define(:version => 20120507045414) do
 
   create_table "comic_strips", :force => true do |t|
     t.integer  "comic_id"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20120423024959) do
     t.datetime "updated_at"
     t.boolean  "admin"
     t.string   "unconfirmed_email"
+    t.string   "authentication_token"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

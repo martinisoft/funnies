@@ -6,13 +6,16 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :lockable
+         :confirmable, :lockable, :token_authenticatable
 
   attr_accessor :login
   attr_accessible :username, :email, :login,
                   :password, :password_confirmation, :remember_me
 
-  validates :username, presence: true, uniqueness: true
+  validates :username,
+    presence: true,
+    uniqueness: true,
+    exclusion: { in: %w(www blog about copyright comics) }
 
   def subscribed?(comic)
     comics.include?(comic)
@@ -30,11 +33,15 @@ class User < ActiveRecord::Base
     username.parameterize
   end
 
+  def self.find_by_login(login)
+    where(["username = :value OR email = :value", { value: login }]).first
+  end
+
   protected
 
   def self.find_for_database_authentication(conditions)
     login = conditions.delete(:login)
     where(conditions).where(["username = :value OR email = :value",
-                             { :value => login }]).first
+                             { value: login }]).first
   end
 end

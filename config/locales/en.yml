@@ -1,8 +1,14 @@
 en:
-  activemodel:
+  activerecord:
     attributes:
       user:
         login: "Username or email"
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              exclusion: "That username is reserved, please choose another."
   flash:
     comics:
       create:

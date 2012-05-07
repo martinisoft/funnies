@@ -8,21 +8,25 @@ Funnies::Application.routes.draw do
     root to: "posts#index"
   end
 
+  devise_scope :user do
+    get "comics", to: "comics#index", as: :user_root
+  end
+  devise_for :users
+
   resources :comics do
     resource :subscriptions, only: [:index, :create, :destroy]
   end
 
-  devise_for :users
-  devise_scope :users do
-    resources :suggestions, except: [:destroy]
-    resources :subscriptions, only: [:index, :create, :destroy]
-    resources :comics
-    get "comics", to: "comics#index", as: :user_root
+  resource :users do
+    resource :token, only: [:create, :destroy]
   end
 
-  scope "/:username", as: "user" do
-    resources :comics
-    root to: "comics#index"
+  authenticate do
+    resources :suggestions, except: [:destroy]
+    scope "/:username", as: "user" do
+      resources :comics
+      root to: "comics#index"
+    end
   end
 
   root to: "pages#landing"
