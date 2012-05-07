@@ -51,15 +51,15 @@ fi
 #
 # Setup appconfig
 #
-if test -f "config/appconfig.yml"
+if test -f "config/application.yml"
 then
-  echo "  + Application configuration found in config/appconfig.yml"
+  echo "  + Application configuration found in config/application.yml"
 else
   echo ""
   echo "  - Application configuration not found."
   echo ""
-  echo "  + Copying example configuration from config/appconfig.example.yml"
-  cp config/appconfig.example.yml config/appconfig.yml
+  echo "  + Copying example configuration from config/application.example.yml"
+  cp config/application.example.yml config/application.yml
 fi
 
 # Yatta!
