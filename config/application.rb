@@ -70,5 +70,3 @@ module Funnies
     config.assets.version = '1.0'
   end
 end
-
-AppConfig = YAML.load_file(Rails.root.join("config", "appconfig.yml"))[Rails.env]
