@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource_or_scope)
     case resource_or_scope
     when :user, User
-      user_comics_path(:username => current_user.username)
+      user_comics_path(username: current_user.username)
     else
       super
     end
