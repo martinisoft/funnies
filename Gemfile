@@ -2,7 +2,7 @@ source :rubygems
 
 gem 'carrierwave', '0.6.2'
 gem 'decent_exposure', '~> 1.0.1'
-gem 'devise', '~> 2.0.4'
+gem 'devise', '~> 2.1.2'
 gem 'escape_utils'
 gem 'figaro', '~> 0.4.1'
 gem 'formtastic', '1.2.3'
