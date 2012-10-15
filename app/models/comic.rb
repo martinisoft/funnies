@@ -32,13 +32,6 @@ class Comic < ActiveRecord::Base
       end
       image_url
     rescue Exception => e
-      if !Rails.env.development? && defined?(HoptoadNotifier)
-        HoptoadNotifier.notify(
-          :error_class   => "Comic#source_image_url",
-          :error_message => "Failed to parse image via XPath: #{e.message}",
-          :parameters    => { "name" => name, "xpath_image" => xpath_image }
-        )
-      end
       logger.info "failed to parse image:", e
       nil
     end
