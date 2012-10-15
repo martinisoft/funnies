@@ -28,6 +28,7 @@ end
 # Optional, for error capture on production
 group :production, :staging do
   gem 'crashlog'
+  gem 'foreman'
 end
 
 group :development, :test do
