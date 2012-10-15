@@ -27,7 +27,7 @@ end
 
 # Optional, for error capture on production
 group :production, :staging do
-  gem 'hoptoad_notifier'
+  gem 'crashlog'
 end
 
 group :development, :test do
