@@ -2,7 +2,9 @@
   #suggestion
     %h3 Comic not listed here? #{link_to "Suggest a comic", new_suggestion_path}
 
-- if comics.any?
+- if subscribed_comics.any?
+  = render :partial => 'comic', comics: subscribed_comics
+- elsif comics.any? && params[:username].nil?
   = render :partial => 'comic'
 - else
   - if params[:username]
