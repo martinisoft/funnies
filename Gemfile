@@ -36,7 +36,7 @@ group :development, :test do
   gem 'haml-rails', '0.3.4'
   gem 'pry', '~> 0.9.9.4'
   gem 'pry-rails', '~> 0.1.6'
-  gem 'rspec-rails', '~> 2.8.0'
+  gem 'rspec-rails', '~> 2.11.4'
 end
 
 group :test do
