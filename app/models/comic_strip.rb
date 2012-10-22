@@ -4,7 +4,7 @@ class ComicStrip < ActiveRecord::Base
   validates :comic, presence: true
   validates :comic_image, presence: true
 
-  attr_accessible :comic_id
+  attr_accessible :comic_id, :remote_comic_image_url
 
   mount_uploader :comic_image, ComicImageUploader
 
