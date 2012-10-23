@@ -31,6 +31,13 @@ class ComicScraper
 
     image_url
   rescue => e
+    log_exception("Exception raised when locating comic URL: ", e)
+
     nil
   end
+
+  def log_exception(message, exception)
+    logger.error("Exception raised when locating comic URL: ", e)
+  end
+
 end

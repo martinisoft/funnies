@@ -72,7 +72,16 @@ describe ComicScraper do
         comic.stub(:image_xpath) { "id(')" }
       end
 
+      before do
+        scraper.stub(:log_exception)
+      end
+
       it "returns nil" do
+        expect(scraper.comic_strip_url).to be_nil
+      end
+
+      it "logs an error" do
+        scraper.should_receive(:log_exception)
         expect(scraper.comic_strip_url).to be_nil
       end
     end
