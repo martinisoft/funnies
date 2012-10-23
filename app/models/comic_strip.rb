@@ -14,8 +14,10 @@ class ComicStrip < ActiveRecord::Base
 
   def generate_md5!
     save! if new_record?
+
     hash = Digest::MD5.hexdigest(File.read(comic_image.current_path))
     update_attribute(:md5_hash, hash)
+
     hash
   end
 end
