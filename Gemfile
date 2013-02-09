@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'carrierwave', '0.6.2'
+gem 'carrierwave', '0.8.0'
 gem 'decent_exposure', '~> 2.0.0'
 gem 'devise', '~> 2.1.2'
 gem 'escape_utils'
