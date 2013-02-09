@@ -4,5 +4,6 @@ rvm:
 before_script:
   - psql -c 'CREATE DATABASE funnies_test;' -U postgres
   - cp config/database.example.yml config/database.yml
+  - cp config/application.example.yml config/application.yml
 script:
   - bundle exec rake
