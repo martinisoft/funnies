@@ -3,3 +3,5 @@ rvm:
   - 1.9.3
 before_script:
   - psql -c 'CREATE DATABASE funnies_test;' -U postgres
+  - cp config/database.example.yml config/database.yml
+script: "bundle exec rspec"
