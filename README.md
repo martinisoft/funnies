@@ -7,7 +7,7 @@ Discover and share your favorite web comics.
 
 I love reading my web comics every week. In real life I have a newspaper
 with it all in one section. Why not online? RSS Feeds are useless
-because you have to separartely go to each page for updates.
+because you have to separately go to each page for updates.
 
 ### Donate!
 
@@ -52,7 +52,7 @@ Database: PostgreSQL 9.1
 
 ### Contribute:
 
-I publicly storycard this app at [Trello](https://trello.com/board/funnies/508407067ac60d1c4700f4f7)
+I publicly story carded this app at [Trello](https://trello.com/board/funnies/508407067ac60d1c4700f4f7)
 
 Any issues can be reported to the [Github Issues Tracker](https://github.com/martinisoft/funnies/issues)
 
