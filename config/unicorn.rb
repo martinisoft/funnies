@@ -1,52 +1,27 @@
 # config/unicorn.rb
-# Set environment to development unless something else is specified
-env = ENV["RAILS_ENV"] || "development"
+base_directory = "/srv/funnies"
+shared_directory = "#{base_directory}/shared"
+working_directory "#{base_directory}/current"
 
-# See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete
-# documentation.
-worker_processes 4
+pid "#{shared_directory}/pids/unicorn.pid"
+stderr_path "#{shared_directory}/log/unicorn.log"
+stdout_path "#{shared_directory}/log/unicorn.log"
 
-# listen on both a Unix domain socket and a TCP port,
-# we use a shorter backlog for quicker failover when busy
-listen "/tmp/funnies.socket", :backlog => 64
-pid "/tmp/unicorn.funnies.pid"
+listen "#{shared_directory}/sockets/unicorn.sock"
+worker_processes 2 # amount of unicorn workers to spin up
+timeout 30         # restarts workers that hang for 30 seconds
 
-# Preload our app for more speed
 preload_app true
 
-# nuke workers after 30 seconds instead of 60 seconds (the default)
-timeout 30
-
-# Staging specific settings
-if env == "staging"
-  shared_path = "/home/deploy/apps/staging.funniesapp.com"
-
-  user 'deploy', 'deploy'
-
-  stderr_path "#{shared_path}/log/unicorn.stderr.log"
-  stdout_path "#{shared_path}/log/unicorn.stdout.log"
-end
-
-# Production specific settings
-if env == "production"
-  shared_path = "/home/deploy/apps/funniesapp.com"
-
-  user 'deploy', 'deploy'
-
-  stderr_path "#{shared_path}/log/unicorn.stderr.log"
-  stdout_path "#{shared_path}/log/unicorn.stdout.log"
-end
-
 before_fork do |server, worker|
-  # the following is highly recomended for Rails + "preload_app true"
-  # as there's no need for the master process to hold a connection
+  # Disconnect since the database connection will not carry over
   if defined?(ActiveRecord::Base)
     ActiveRecord::Base.connection.disconnect!
+    Rails.logger.info('Disconnected from ActiveRecord')
   end
 
-  # Before forking, kill the master process that belongs to the .oldbin PID.
-  # This enables 0 downtime deploys.
-  old_pid = "/tmp/unicorn.funniesapp.pid.oldbin"
+  # Quit the old unicorn process
+  old_pid = "#{server.config[:pid]}.oldbin"
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
@@ -54,10 +29,14 @@ before_fork do |server, worker|
       # someone else did our job for us
     end
   end
+
 end
 
 after_fork do |server, worker|
+  # Start up the database connection again in the worker
   if defined?(ActiveRecord::Base)
     ActiveRecord::Base.establish_connection
+    Rails.logger.info('Connected to ActiveRecord')
   end
+
 end

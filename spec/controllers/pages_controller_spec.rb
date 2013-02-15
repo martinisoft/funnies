@@ -1,20 +1,33 @@
 require 'spec_helper'
 
 describe PagesController do
+  render_views
 
-  describe "'landing' page" do
-    
-    it "should be successful" do
+  describe "#landing" do
+
+    it "renders the landing page" do
       get :landing
-      response.should be_successful
+      expect(response).to render_template("landing")
     end
+
   end
 
-  describe "'about' page" do
-    
-    it "should be successful" do
+  describe "#about" do
+
+    it "renders the about page" do
       get :about
-      response.should be_successful
+      expect(response).to render_template("about")
     end
+
   end
+
+  describe "#copyright" do
+
+    it "renders the copyright page" do
+      get :copyright
+      expect(response).to render_template("copyright")
+    end
+
+  end
+
 end

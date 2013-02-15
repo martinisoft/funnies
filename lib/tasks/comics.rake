@@ -3,6 +3,7 @@ namespace :comics do
   task update: :environment do
     Comic.all.each do |c|
       Rails.logger.info "[#{Time.now.to_s(:db)}] Update Comic: #{c.name}"
+      puts "Updating comic: #{c.name}"
       c.update_strip
     end
   end

@@ -15,7 +15,7 @@ describe ComicStrip do
   describe "uploader" do
     let(:cache_id) { "20110226-2116-27023-6024" }
     let(:comic) { Fabricate(:comic) }
-    let(:comic_strip) { ComicStrip.new(comic_id: comic) }
+    let(:comic_strip) { ComicStrip.new(comic_id: comic.id) }
     let(:comic_strip_uploader) { ComicStripUploader.new(comic_strip, :comic_strip) }
     let(:comic_tmp_path) { "tmp/uploads/#{cache_id}/late_night_pbs.png" }
     let(:comic_url) { "http://imgs.xkcd.com/comics/late_night_pbs.png" }
@@ -54,7 +54,8 @@ describe ComicStrip do
       it "raises exception" do
         expect {
           comic_strip.remote_comic_image_url = bad_comic_url
-        }.to raise_exception(CarrierWave::IntegrityError)
+          comic_strip.save!
+        }.to raise_exception(ActiveRecord::RecordInvalid)
       end
     end
 
