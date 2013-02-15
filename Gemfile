@@ -1,6 +1,7 @@
 source 'https://rubygems.org/'
 
 gem 'carrierwave', '0.8.0'
+gem 'crashlog'
 gem 'decent_exposure', '~> 2.0.0'
 gem 'devise', '~> 2.1.2'
 gem 'escape_utils'
@@ -27,7 +28,6 @@ end
 
 # Optional, for error capture on production
 group :production, :staging do
-  gem 'crashlog'
   gem 'foreman'
 end
 
