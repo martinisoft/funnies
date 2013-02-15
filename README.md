@@ -11,7 +11,7 @@ because you have to separartely go to each page for updates.
 
 ### Donate!
 
-[![Click here to lend your support to: Funnies and make a donation at www.pledgie.com !](https://www.pledgie.com/campaigns/15373.png?skin_name=chrome)](http://www.pledgie.com/campaigns/15373)
+[![Click here to lend your support to: Funnies and make a donation at www.pledgie.com !](http://www.pledgie.com/campaigns/15373.png?skin_name=chrome)](http://www.pledgie.com/campaigns/15373)
 
 Do you use Funnies? Want a better design? I'm raising a budget for a
 professional re-design of the application. After the budget is raised,
