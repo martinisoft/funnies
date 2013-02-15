@@ -1,8 +1,19 @@
 module ApplicationHelper
+  # Public: What controller are we using?
+  #
+  # Examples
+  #
+  #   controller_class (When in PostsController)
+  #   # => 'posts'
+  #
+  # Returns a downcased, named controller
   def controller_class
     controller.class.name.match(/(.+)Controller/)[1].downcase
   end
 
+  # Public: Conditional admin navigation links
+  #
+  # Displays New Post or Comic link based on current controller
   def admin_nav_link
     if controller_class == "posts"
       link_to "New Post", new_post_path
@@ -11,6 +22,10 @@ module ApplicationHelper
     end
   end
 
+  # Public: Intercom application settings
+  #
+  # Returns a hash of settings Intercom expects based on if the user is logged
+  # in or not
   def intercom_settings
     settings = {}
     if current_user
