@@ -18,7 +18,7 @@ module ApplicationHelper
         email: "#{current_user.email}",
         created_at: current_user.created_at.to_i
       }
-      settings.merge user_data
+      settings.merge!(user_data)
     end
     settings.merge({ app_id: "7s0jlswz" })
   end
