@@ -81,7 +81,7 @@ GEM
     faraday (0.8.5)
       multipart-post (~> 1.1)
     ffi (1.1.5)
-    figaro (0.4.1)
+    figaro (0.5.3)
       rails (~> 3.0)
     fivemat (1.1.0)
     foreman (0.60.2)
@@ -244,7 +244,7 @@ DEPENDENCIES
   email_spec (~> 1.2.1)
   escape_utils
   fabrication (~> 1.2.0)
-  figaro (~> 0.4.1)
+  figaro (~> 0.5.3)
   fivemat
   foreman
   formtastic (= 1.2.3)
