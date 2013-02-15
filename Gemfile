@@ -34,9 +34,9 @@ end
 group :development, :test do
   gem 'fabrication', '~> 1.2.0'
   gem 'haml-rails', '0.3.4'
-  gem 'pry', '~> 0.9.9.4'
-  gem 'pry-rails', '~> 0.1.6'
-  gem 'rspec-rails', '~> 2.11.4'
+  gem 'pry', '~> 0.9.12'
+  gem 'pry-rails', '~> 0.2.2'
+  gem 'rspec-rails', '~> 2.12.2'
 end
 
 group :test do
