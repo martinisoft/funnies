@@ -18,4 +18,5 @@
       = yield
   = render "shared/footer"
   = javascript_include_tag "application"
-  = render "shared/analytics"
+  = render "shared/analytics" if Rails.env.production? || Rails.env.staging?
+  = render "shared/intercom" if Rails.env.production? || Rails.env.staging?

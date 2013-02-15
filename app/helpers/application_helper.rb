@@ -10,4 +10,16 @@ module ApplicationHelper
       link_to "Add Comic", new_comic_path
     end
   end
+
+  def intercom_settings
+    settings = {}
+    if current_user
+      user_data = {
+        email: "#{current_user.email}",
+        created_at: current_user.created_at.to_i
+      }
+      settings.merge user_data
+    end
+    settings.merge({ app_id: "7s0jlswz" })
+  end
 end
