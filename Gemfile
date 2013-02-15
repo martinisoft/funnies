@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org/'
 
 gem 'carrierwave', '0.8.0'
 gem 'decent_exposure', '~> 2.0.0'
