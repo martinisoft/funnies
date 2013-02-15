@@ -33,6 +33,8 @@ end
 
 group :development, :test do
   gem 'fabrication', '~> 1.2.0'
+  gem 'guard', '~> 1.6.2'
+  gem 'guard-rspec', '~> 2.4.0'
   gem 'haml-rails', '0.3.4'
   gem 'pry', '~> 0.9.12'
   gem 'pry-rails', '~> 0.2.2'
