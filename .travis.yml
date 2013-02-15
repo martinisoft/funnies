@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - 1.9.3
+env: "RAILS_ENV=test"
+before_script:
+  - psql -c 'CREATE DATABASE funnies_test;' -U postgres
+  - cp config/database.example.yml config/database.yml
+  - cp config/application.example.yml config/application.yml
+  - bundle exec rake db:migrate
+  - bundle exec rake db:test:prepare
+script:
+  - bundle exec rake

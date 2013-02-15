@@ -4,8 +4,8 @@ class PostsController < ApplicationController
   before_filter :authenticated, except: :index
   before_filter :authenticate_admin, except: :index
 
-  expose :post
-  expose(:posts) { Post.all }
+  expose(:post)
+  expose(:posts)
 
   def create
     post.user = current_user

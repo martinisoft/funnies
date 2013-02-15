@@ -5,10 +5,9 @@ class ComicsController < ApplicationController
   before_filter :authenticate_unless_rss
   before_filter :authenticate_admin, except: :index
 
-  expose :comic
-  expose(:comics) do
-    User.find_by_username(params[:username]).try(:comics) || Comic.all
-  end
+  expose(:comic)
+  expose(:comics)
+  expose(:subscribed_comics) { User.find_by_username(params[:username]).try(:comics) || [] }
 
   def create
     comic.save

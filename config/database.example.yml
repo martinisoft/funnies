@@ -7,7 +7,7 @@ defaults: &defaults
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: dev
+  username: postgres
   password:
   min_messages: warning
 
