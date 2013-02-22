@@ -63,7 +63,7 @@ GEM
       rabl (>= 0.6.13)
       uuid
     crashlog-auth-hmac (1.1.7)
-    decent_exposure (2.0.0)
+    decent_exposure (2.1.0)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -256,7 +256,7 @@ DEPENDENCIES
   carrierwave (= 0.8.0)
   coffee-rails (~> 3.2.1)
   crashlog
-  decent_exposure (~> 2.0.0)
+  decent_exposure (~> 2.1.0)
   devise (~> 2.1.2)
   email_spec (~> 1.2.1)
   escape_utils
