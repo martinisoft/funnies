@@ -64,7 +64,7 @@ GEM
       uuid
     crashlog-auth-hmac (1.1.7)
     decent_exposure (2.1.0)
-    devise (2.1.2)
+    devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
@@ -257,7 +257,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   crashlog
   decent_exposure (~> 2.1.0)
-  devise (~> 2.1.2)
+  devise (~> 2.2.3)
   email_spec (~> 1.2.1)
   escape_utils
   fabrication (~> 1.2.0)
