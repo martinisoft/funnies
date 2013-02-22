@@ -54,5 +54,5 @@ group :test do
   gem 'launchy'
   gem 'shoulda-matchers', '1.1.0'
   gem 'turnip', '~> 0.3.0'
-  gem 'webmock', '~> 1.8.0'
+  gem 'webmock', '~> 1.9.3'
 end
