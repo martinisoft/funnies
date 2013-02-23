@@ -15,7 +15,7 @@ gem 'nokogiri', '~> 1.5.6'
 gem 'pg', '~> 0.14.1'
 gem 'rails', '3.2.12'
 gem 'rdiscount', '1.6.8'
-gem 'responders', '~> 0.6.4'
+gem 'responders', '~> 0.9.3'
 gem 'state_machine', '1.1.2'
 gem 'unicorn'
 gem 'whenever', require: false
