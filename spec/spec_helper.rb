@@ -3,7 +3,6 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
-require 'turnip/capybara'
 require 'email_spec'
 require 'webmock/rspec'
 
@@ -39,6 +38,9 @@ RSpec.configure do |config|
 
   # Include devise helpers
   config.include Devise::TestHelpers, type: :controller
+
+  # Include session helpers
+  config.include SessionHelpers, type: :feature
 
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing
