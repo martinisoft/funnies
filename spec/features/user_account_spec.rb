@@ -5,11 +5,13 @@ feature "User account" do
     @email = "bishop@weylandindustries.com"
     visit new_user_registration_path
 
-    fill_in "Username", with: "Bishop"
-    fill_in "Email", with: @email
-    fill_in "Password", with: "secrets"
-    fill_in "Password confirmation", with: "secrets"
-    click_button "Sign up"
+    within "#new_user" do
+      fill_in "Username", with: "Bishop"
+      fill_in "Email", with: @email
+      page.find('#user_password').set "secrets"
+      fill_in "Password confirmation", with: "secrets"
+      click_button "Sign up"
+    end
 
     expect(mailbox_for(@email).size).to eq 1
 

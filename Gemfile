@@ -47,7 +47,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara', '~> 1.1.2'
+  gem 'capybara', '~> 2.0.2'
   gem 'email_spec', '~> 1.2.1'
   gem 'fivemat'
   gem 'launchy'
