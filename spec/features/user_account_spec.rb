@@ -20,23 +20,12 @@ feature "User account" do
   end
 
   scenario "Logging in" do
-    @user_info = { email: "user@example.com", password: "foobar" }
-    @user = Fabricate :confirmed_user, @user_info
-    visit new_user_session_path
-    fill_in "Username or Email", with: @user_info[:email]
-    fill_in "Password", with: @user_info[:password]
-    click_button "Sign In"
-
+    sign_in_user
     expect(page).to have_link("Sign out")
   end
 
   scenario "Logging out" do
-    @user_info = { email: "user@example.com", password: "foobar" }
-    @user = Fabricate :confirmed_user, @user_info
-    visit new_user_session_path
-    fill_in "Username or Email", with: @user_info[:email]
-    fill_in "Password", with: @user_info[:password]
-    click_button "Sign In"
+    sign_in_user
     click_link "Sign out"
 
     expect(page).to have_link("Sign in")

@@ -2,13 +2,8 @@ require 'spec_helper'
 
 feature "Reader subscriptions" do
   scenario "Reader subscribes" do
-    @user_info = { email: "user@example.com", password: "foobar" }
-    @user = Fabricate :confirmed_user, @user_info
+    sign_in_user
     @comic = Fabricate :comic
-    visit new_user_session_path
-    fill_in "Username or Email", with: @user_info[:email]
-    fill_in "Password", with: @user_info[:password]
-    click_button "Sign In"
     visit comics_path
     click_link "Subscribe"
     visit user_comics_path(@user)
@@ -18,13 +13,8 @@ feature "Reader subscriptions" do
   end
 
   scenario "Reader unsubscribes" do
-    @user_info = { email: "user@example.com", password: "foobar" }
-    @user = Fabricate :confirmed_user, @user_info
+    sign_in_user
     @comic = Fabricate :comic
-    visit new_user_session_path
-    fill_in "Username or Email", with: @user_info[:email]
-    fill_in "Password", with: @user_info[:password]
-    click_button "Sign In"
     visit comics_path
     click_link "Subscribe"
     click_link "Unsubscribe"

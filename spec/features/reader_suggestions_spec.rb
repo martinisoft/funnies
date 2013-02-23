@@ -2,12 +2,7 @@ require 'spec_helper'
 
 feature "Reader suggestions" do
   scenario "Suggesting a comic" do
-    @user_info = { email: "user@example.com", password: "foobar" }
-    @user = Fabricate :confirmed_user, @user_info
-    visit new_user_session_path
-    fill_in "Username or Email", with: @user_info[:email]
-    fill_in "Password", with: @user_info[:password]
-    click_button "Sign In"
+    sign_in_user
     visit comics_path
     click_link "Suggest a comic"
     fill_in "Name", with: "Dominic Deegan"

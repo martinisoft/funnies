@@ -2,12 +2,7 @@ require 'spec_helper'
 
 feature "Admin manages blog" do
   scenario "Adding a blog post" do
-    @admin_info = { email: "admin@example.com", password: "foobar" }
-    @admin = Fabricate :admin, @admin_info
-    visit new_user_session_path
-    fill_in "Username or Email", with: @admin_info[:email]
-    fill_in "Password", with: @admin_info[:password]
-    click_button "Sign In"
+    sign_in_admin
     @post_info = {
       title: "An interesting post",
       body: "Have you heard the one about the chef and the fish?"
@@ -25,12 +20,7 @@ feature "Admin manages blog" do
   end
 
   scenario "Editing a blog post" do
-    @admin_info = { email: "admin@example.com", password: "foobar" }
-    @admin = Fabricate :admin, @admin_info
-    visit new_user_session_path
-    fill_in "Username or Email", with: @admin_info[:email]
-    fill_in "Password", with: @admin_info[:password]
-    click_button "Sign In"
+    sign_in_admin
     @post_info = {
       title: "An interesting post",
       body: "Have you heard the one about the chef and the fish?"
@@ -53,12 +43,7 @@ feature "Admin manages blog" do
   end
 
   scenario "Deleting a blog post" do
-    @admin_info = { email: "admin@example.com", password: "foobar" }
-    @admin = Fabricate :admin, @admin_info
-    visit new_user_session_path
-    fill_in "Username or Email", with: @admin_info[:email]
-    fill_in "Password", with: @admin_info[:password]
-    click_button "Sign In"
+    sign_in_admin
     @post_info = {
       title: "An interesting post",
       body: "Have you heard the one about the chef and the fish?"
