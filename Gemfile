@@ -40,7 +40,7 @@ end
 
 group :development, :test do
   gem 'fabrication', '~> 1.2.0'
-  gem 'haml-rails', '0.3.4'
+  gem 'haml-rails', '0.4.0'
   gem 'pry', '~> 0.9.12'
   gem 'pry-rails', '~> 0.2.2'
   gem 'rspec-rails', '~> 2.13.0'
