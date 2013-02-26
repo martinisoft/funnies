@@ -32,7 +32,7 @@ end
 
 group :development do
   gem 'guard', '~> 1.6.2'
-  gem 'guard-rspec', '~> 2.4.0'
+  gem 'guard-rspec', '~> 2.4.1'
   gem 'rb-inotify', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-fchange', require: false
