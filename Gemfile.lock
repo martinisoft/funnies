@@ -72,9 +72,9 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     diff-lcs (1.2.1)
-    email_spec (1.2.1)
+    email_spec (1.4.0)
+      launchy (~> 2.1)
       mail (~> 2.2)
-      rspec (~> 2.0)
     erubis (2.7.0)
     escape_utils (0.2.4)
     execjs (1.4.0)
@@ -255,7 +255,7 @@ DEPENDENCIES
   crashlog
   decent_exposure (~> 2.1.0)
   devise (~> 2.2.3)
-  email_spec (~> 1.2.1)
+  email_spec (~> 1.4.0)
   escape_utils
   fabrication (~> 1.2.0)
   figaro (~> 0.6.0)

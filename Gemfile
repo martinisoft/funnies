@@ -48,7 +48,7 @@ end
 
 group :test do
   gem 'capybara', '~> 2.0.2'
-  gem 'email_spec', '~> 1.2.1'
+  gem 'email_spec', '~> 1.4.0'
   gem 'fivemat'
   gem 'launchy'
   gem 'shoulda-matchers', '~> 1.4.2'
