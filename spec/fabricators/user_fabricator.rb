@@ -2,7 +2,7 @@ Fabricator :user do
   username { Fabricate.sequence(:username) { |i| "martinisoft-#{i}" } }
   email { Fabricate.sequence(:email) { |i| "user+#{i}@example.com" } }
   password "foobar"
-  password_confirmation { |user| user.password }
+  password_confirmation { |attrs| attrs[:password] }
 end
 
 Fabricator :confirmed_user, from: :user do

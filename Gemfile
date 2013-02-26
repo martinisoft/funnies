@@ -39,7 +39,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'fabrication', '~> 1.2.0'
+  gem 'fabrication', '~> 2.6.1'
   gem 'haml-rails', '0.4.0'
   gem 'pry', '~> 0.9.12'
   gem 'pry-rails', '~> 0.2.2'
