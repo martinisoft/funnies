@@ -2,6 +2,7 @@ Funnies
 =======
 
 [![Build Status](https://travis-ci.org/martinisoft/funnies.png?branch=master)](https://travis-ci.org/martinisoft/funnies)
+[![Dependency Status](https://gemnasium.com/martinisoft/funnies.png)](https://gemnasium.com/martinisoft/funnies)
 [![Code Climate](https://codeclimate.com/github/martinisoft/funnies.png)](https://codeclimate.com/github/martinisoft/funnies)
 
 Discover and share your favorite web comics.
