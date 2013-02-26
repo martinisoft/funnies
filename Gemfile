@@ -51,6 +51,7 @@ group :test do
   gem 'email_spec', '~> 1.4.0'
   gem 'fivemat'
   gem 'launchy'
+  gem 'nyan-cat-formatter'
   gem 'shoulda-matchers', '~> 1.4.2'
   gem 'webmock', '~> 1.9.3'
 end

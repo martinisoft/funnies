@@ -136,6 +136,8 @@ GEM
     multi_json (1.6.1)
     multipart-post (1.1.5)
     nokogiri (1.5.6)
+    nyan-cat-formatter (0.5.0)
+      rspec (>= 2.13)
     orm_adapter (0.4.0)
     pg (0.14.1)
     polyglot (0.3.3)
@@ -271,6 +273,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   nokogiri (~> 1.5.6)
+  nyan-cat-formatter
   pg (~> 0.14.1)
   pry (~> 0.9.12)
   pry-rails (~> 0.2.2)
