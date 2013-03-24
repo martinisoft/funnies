@@ -14,6 +14,7 @@ gem 'pg', '~> 0.15'
 gem 'rails', '3.2.13'
 gem 'rdiscount', '~> 2.0.7'
 gem 'responders', '~> 0.9.3'
+gem 'simple_form', '~> 2.1.0'
 gem 'state_machine', '1.1.2'
 gem 'whenever', require: false
 
