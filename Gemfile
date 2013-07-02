@@ -1,7 +1,6 @@
 source 'https://rubygems.org/'
 
 gem 'carrierwave', '0.8.0'
-gem 'crashlog'
 gem 'decent_exposure', '~> 2.1.0'
 gem 'devise', '~> 2.2.3'
 gem 'escape_utils'
