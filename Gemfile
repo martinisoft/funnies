@@ -24,8 +24,8 @@ group :assets do
 end
 
 # Optional, for error capture on production
-group :production, :staging do
-  gem 'foreman'
+group :production do
+  gem 'postmark-rails', '~> 0.5.0'
 end
 
 group :development do
