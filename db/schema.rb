@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423024959) do
+ActiveRecord::Schema.define(:version => 20130702050937) do
 
   create_table "comic_strips", :force => true do |t|
     t.integer  "comic_id"
@@ -60,13 +60,13 @@ ActiveRecord::Schema.define(:version => 20120423024959) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "password_salt",                       :default => "", :null => false
+    t.string   "email",                                 :default => "", :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "password_salt",                         :default => "", :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
+    t.integer  "sign_in_count",                         :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -74,13 +74,14 @@ ActiveRecord::Schema.define(:version => 20120423024959) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.integer  "failed_attempts",                     :default => 0
+    t.integer  "failed_attempts",                       :default => 0
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
     t.string   "unconfirmed_email"
+    t.datetime "reset_password_sent_at"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
