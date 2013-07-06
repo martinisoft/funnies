@@ -1,7 +1,4 @@
-= semantic_form_for post do |f|
-  = f.semantic_errors
-  = f.inputs do
-    = f.input :title
-    = f.input :body
-  = f.buttons do
-    = f.commit_button label: "Save"
+= simple_form_for post do |f|
+  = f.input :title
+  = f.input :body
+  = f.submit "Save"

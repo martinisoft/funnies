@@ -34,7 +34,8 @@ class User < ActiveRecord::Base
 
   def self.find_for_database_authentication(conditions)
     login = conditions.delete(:login)
-    where(conditions).where(["username = :value OR email = :value",
-                             { :value => login }]).first
+    where(conditions).where([
+      "LOWER(username) = :value OR LOWER(email) = :value",
+      { value: login }]).first
   end
 end

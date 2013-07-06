@@ -1,8 +1,6 @@
 %h2 Sign In
-= semantic_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
-  = f.inputs do
-    = f.input :login, label: "Username or Email"
-    = f.input :password, label: "Password #{link_to 'Forgot it?', new_user_password_url}".html_safe
-  = f.buttons do
-    = f.commit_button :label => "Sign In"
+= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+  = f.input :login, label: "Username or Email"
+  = f.input :password, label: "Password #{link_to 'Forgot it?', new_user_password_url}"
+  = f.submit "Sign In"
 = render :partial => "devise/shared/links"
