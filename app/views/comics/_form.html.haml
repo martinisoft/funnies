@@ -1,10 +1,7 @@
-= semantic_form_for comic do |f|
-  = f.semantic_errors
-  = f.inputs do
-    = f.input :name
-    = f.input :homepage
-    = f.input :comic_page, label: "Comic Page"
-    = f.input :xpath_title, label: "Title XPath"
-    = f.input :xpath_image, label: "Image XPath"
-  = f.buttons do
-    = f.commit_button label: "Save"
+= simple_form_for comic do |f|
+  = f.input :name
+  = f.input :homepage
+  = f.input :comic_page, label: "Comic Page"
+  = f.input :xpath_title, label: "Title XPath"
+  = f.input :xpath_image, label: "Image XPath"
+  = f.submit "Save"
