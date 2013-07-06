@@ -1,7 +1,5 @@
 %h2 Resend unlock instructions
-= semantic_form_for resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post } do |f|
-  = f.inputs do
-    = f.input :email, hint: "mal@firefly.com", input_html: { placeholder: "mal@firefly.com" }
-  = f.buttons do
-    = f.commit_button label: "Resend unlock instructions"
+= simple_form_for resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post } do |f|
+  = f.input :email, hint: "mal@firefly.com", input_html: { placeholder: "mal@firefly.com" }
+  = f.submit "Resend unlock instructions"
 = render :partial => "devise/shared/links"
