@@ -116,6 +116,9 @@ GEM
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.7.7)
+    neat (1.3.0)
+      bourbon (>= 2.1)
+      sass (>= 3.2)
     nokogiri (1.5.6)
     nyan-cat-formatter (0.5.0)
       rspec (>= 2.13)
@@ -250,6 +253,7 @@ DEPENDENCIES
   haml-rails (= 0.4.0)
   jquery-rails
   launchy
+  neat (~> 1.3)
   nokogiri (~> 1.5.6)
   nyan-cat-formatter
   pg (~> 0.15)
