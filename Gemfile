@@ -31,8 +31,9 @@ group :production do
 end
 
 group :development do
-  gem 'guard', '~> 1.6.2'
+  gem 'guard', '~> 1.8'
   gem 'guard-rspec', '~> 2.4.1'
+  gem 'guard-livereload', '~> 1.4'
   gem 'rb-inotify', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-fchange', require: false
