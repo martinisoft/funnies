@@ -1,0 +1,27 @@
+/*
+ * Playtime With Hot Toddies
+ * Obtained via Font-Squirrel http://www.fontsquirrel.com/fonts/Playtime-With-Hot-Toddies
+*/
+@font-face {
+  font-family: 'playtimewithhottoddiesregular';
+  src:  url(font-path('playtime-webfont.eot') + "?#iefix") format('embedded-opentype'),
+        url(font-path('playtime-webfont.woff')) format('woff'),
+        url(font-path('playtime-webfont.ttf'))  format('truetype'),
+        url(font-path('playtime-webfont.svg') + "#playtimewithhottoddiesregular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+ * Titillium Text
+ * Obtained via Font-Squirrel http://www.fontsquirrel.com/fonts/TitilliumText
+*/
+@font-face {
+  font-family: 'titilliumtext25l250_wt';
+  src:  url(font-path('titilliumtext25l004-webfont.eot') + "?#iefix") format('embedded-opentype'),
+        url(font-path('titilliumtext25l004-webfont.woff')) format('woff'),
+        url(font-path('titilliumtext25l004-webfont.ttf'))  format('truetype'),
+        url(font-path('titilliumtext25l004-webfont.svg') + "#titilliumtext25l250_wt") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
