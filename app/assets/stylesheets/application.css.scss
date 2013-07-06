@@ -4,13 +4,15 @@
  *            Each comic strip comes with its own copyright notice.
  *= require_self
 */
+
+// Bourbon and Neat
 @import "bourbon";
 @import "neat";
 
-@import "reset";
+// 3rd Party
+@import "normalize";
 
-@import "base";
-
-@import "master";
-
-@import "helpers";
+// Funnies
+@import "settings";
+@import "global";
+@import "forms";
