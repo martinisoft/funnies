@@ -37,4 +37,16 @@ module ApplicationHelper
     end
     settings.merge({ app_id: "7s0jlswz" })
   end
+
+  # Public: Displays any flash messages if they are present
+  #
+  # This adds the 'success' class to notice messages for more semantic styling
+  def flash_messages
+    if flash[:notice] || flash[:alert]
+      type = flash[:notice] ? "success" : "alert"
+      content_tag(:div, class: "notice #{type}") do
+        flash[:notice] || flash[:alert]
+      end
+    end
+  end
 end
