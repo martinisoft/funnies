@@ -73,15 +73,10 @@ describe ComicScraper do
       end
 
       before do
-        scraper.stub(:log_exception)
+        Nokogiri::HTML::Document.should_receive(:parse).and_raise(Nokogiri::SyntaxError)
       end
 
       it "returns nil" do
-        expect(scraper.comic_strip_url).to be_nil
-      end
-
-      it "logs an error" do
-        scraper.should_receive(:log_exception)
         expect(scraper.comic_strip_url).to be_nil
       end
     end

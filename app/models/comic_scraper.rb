@@ -1,4 +1,4 @@
-require 'nokogiri'
+require 'spec_helper'
 
 class ComicScraper
   attr_reader :comic
@@ -21,7 +21,7 @@ class ComicScraper
   #
   # Returns an absolute url to a comic image, nil otherwise
   def comic_strip_url
-    doc = Nokogiri::HTML(open(comic.comic_page))
+    doc = Nokogiri::HTML::Document.parse(open(comic.comic_page))
     image_url = doc.xpath("#{comic.image_xpath}/@src").to_s
 
     return unless image_url.present?
@@ -36,8 +36,10 @@ class ComicScraper
     nil
   end
 
+  private
+
   def log_exception(message, exception)
-    logger.error("Exception raised when locating comic URL: ", e)
+    Rails.logger.error("Exception raised when locating comic URL: #{exception}")
   end
 
 end
