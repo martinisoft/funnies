@@ -30,7 +30,7 @@ class ComicScraper
   # Returns an absolute url to a comic image, nil otherwise
   def comic_strip_url
     doc = Nokogiri::HTML::Document.parse(open(comic.comic_page))
-    image_url = doc.xpath("#{comic.image_xpath}/@src").to_s
+    image_url = doc.xpath("#{comic.xpath_image}/@src").to_s
 
     return unless image_url.present?
     unless image_url.match(/\Ahttp:\/\//)

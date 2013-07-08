@@ -16,8 +16,8 @@ describe ComicScraper do
     let(:scraper) { ComicScraper.from_comic(comic) }
     let(:comic_strip_url) { "http://example.com/xkcd.jpg" }
 
-    let!(:image_xpath) do
-      comic.stub(:image_xpath) { "//img[@id='absolute']" }
+    let!(:xpath_image) do
+      comic.stub(:xpath_image) { "//img[@id='absolute']" }
     end
     let!(:comic_page) do
       comic.stub(:comic_page) { "http://example.com" }
@@ -45,8 +45,8 @@ describe ComicScraper do
     end
 
     context "with an invalid image xpath" do
-      let!(:image_xpath) do
-        comic.stub(:image_xpath) { "//img[@id='comic']" }
+      let!(:xpath_image) do
+        comic.stub(:xpath_image) { "//img[@id='comic']" }
       end
 
       it "returns nil" do
@@ -55,8 +55,8 @@ describe ComicScraper do
     end
 
     context "when the image url is relative to the website" do
-      let!(:image_xpath) do
-        comic.stub(:image_xpath) { "//img[@id='relative']" }
+      let!(:xpath_image) do
+        comic.stub(:xpath_image) { "//img[@id='relative']" }
       end
       let!(:homepage) do
         comic.stub(:homepage) { "http://example.com" }
@@ -68,8 +68,8 @@ describe ComicScraper do
     end
 
     context "when an exception is raised by Nokogiri" do
-      let!(:image_xpath) do
-        comic.stub(:image_xpath) { "id(')" }
+      let!(:xpath_image) do
+        comic.stub(:xpath_image) { "id(')" }
       end
 
       before do
