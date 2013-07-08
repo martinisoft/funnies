@@ -14,7 +14,7 @@ class Comic < ActiveRecord::Base
   attr_accessible :name, :homepage, :comic_page, :xpath_title, :xpath_image
 
   def update_strip
-    scraper = ComicScraper.from_comic(self)
+    scraper = ComicScraper.from_comic(self, Rails.logger)
     comic_strip_url = scraper.comic_strip_url
 
     return nil unless comic_strip_url.present?

@@ -1,20 +1,28 @@
 require 'nokogiri'
 
 class ComicScraper
-  attr_reader :comic
+  attr_reader :comic, :logger
 
-  # Public: Creates new ComicScraper object from a comic object
+  # Public: Creates new ComicScraper object from a comic object and optional
+  # logger object for errors
+  #
+  # comic - A Comic object
+  # logger - A Rails logger object
   #
   # Returns a new ComicScraper
-  def self.from_comic(comic)
-    ComicScraper.new(comic)
+  def self.from_comic(comic, logger=nil)
+    ComicScraper.new(comic, logger)
   end
 
   # Public: Creates a new ComicScraper object
   #
   # comic - A Comic object
-  def initialize(comic)
+  # logger - A Rails logger object
+  #
+  # Creates a new ComicScraper object
+  def initialize(comic, logger=nil)
     @comic = comic
+    @logger = logger
   end
 
   # Public: Fetches the latest comic image url for a comic
@@ -39,7 +47,9 @@ class ComicScraper
   private
 
   def log_exception(message, exception)
-    Rails.logger.error("Exception raised when locating comic URL: #{exception}")
+    if self.logger
+      logger.error("Exception raised when locating comic URL: #{exception}")
+    end
   end
 
 end

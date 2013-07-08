@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'plain_spec_helper'
 
 describe ComicScraper do
   describe ".from_comic" do
