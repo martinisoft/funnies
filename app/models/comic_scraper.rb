@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'nokogiri'
 
 class ComicScraper
   attr_reader :comic
