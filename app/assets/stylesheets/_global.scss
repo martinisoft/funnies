@@ -1,0 +1,21 @@
+body {
+  font-family: 'titilliumtext25l250_wt', $sans-serif;
+  font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'playtimewithhottoddiesregular', $sans-serif;
+}
+
+#wrap {
+  @include outer-container;
+}
+
+#banner-inner {
+  @include outer-container;
+}
+
+footer {
+  @include outer-container;
+  text-align: center;
+}

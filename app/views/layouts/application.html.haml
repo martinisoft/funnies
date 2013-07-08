@@ -11,7 +11,7 @@
 %body
   = flash_messages
   = render "shared/header"
-  %section#wrap.clearfix
+  %section#wrap
     %section#content{class: controller_class}
       = yield
   = render "shared/footer"
