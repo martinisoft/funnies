@@ -22,6 +22,13 @@ h1, h2, h3, h4, h5, h6 {
 #session-inner {
   @include span-columns(6);
   @include shift(3);
+
+}
+
+#account_links {
+  ul li {
+    list-style-type: none;
+  }
 }
 
 footer {
