@@ -19,6 +19,7 @@ gem 'responders', '~> 0.9.3'
 gem 'simple_form', '~> 2.1.0'
 gem 'state_machine', '1.1.2'
 gem 'whenever', require: false
+gem 'zurb-foundation', '~> 4.3'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
