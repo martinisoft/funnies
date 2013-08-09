@@ -5,12 +5,15 @@
  *= require_self
 */
 
+// Force UTF-8
+@charset "UTF-8";
+
 // Bourbon and Neat
 @import "bourbon";
 @import "neat";
 
-// 3rd Party
-@import "normalize";
+// Foundation
+@import "foundation_and_overrides";
 
 // Funnies
 @import "settings";
