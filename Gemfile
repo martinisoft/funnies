@@ -3,7 +3,7 @@ source 'https://rubygems.org/'
 gem 'bourbon', '~> 3.1'
 gem 'carrierwave', '0.8.0'
 gem 'decent_exposure', '~> 2.1.0'
-gem 'devise', '~> 2.2.3'
+gem 'devise', '~> 2.2.0'
 gem 'escape_utils'
 gem 'figaro', '~> 0.6.0'
 gem 'gravatar_image_tag', '~> 1.1.3'
@@ -11,6 +11,7 @@ gem 'haml', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'neat', '~> 1.3'
 gem 'nokogiri', '~> 1.5.6'
+gem 'passenger'
 gem 'pg', '~> 0.15'
 gem 'rails', '3.2.13'
 gem 'rdiscount', '~> 2.0.7'
@@ -27,7 +28,7 @@ end
 
 # Optional, for error capture on production
 group :production do
-  gem 'postmark-rails', '~> 0.5.0'
+  gem 'postmark-rails', '~> 0.5.1'
 end
 
 group :development do
