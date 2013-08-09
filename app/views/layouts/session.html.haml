@@ -5,15 +5,16 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 %head
   %meta{charset: "utf-8"}
-  %title Welcome to Funnies!
+  %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+  %title
+    = content_for?(:title) ? yield(:title) : "Welcome to Funnies!"
   = stylesheet_link_tag "application"
+  = javascript_include_tag "vendor/custom.modernizr"
   = csrf_meta_tag
 %body
-  - if flash[:notice] || flash[:alert]
-    %div{:class => "notice #{'alert' if flash[:alert]}"}
-      = flash[:notice] || flash[:alert]
-  #session
-    #session-inner
+  = flash_messages
+  %section#session
+    %section#session-inner
       = yield
   = javascript_include_tag "application"
   = render "shared/analytics" if Rails.env.production? || Rails.env.staging?
