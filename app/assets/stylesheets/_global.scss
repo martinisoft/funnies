@@ -23,6 +23,9 @@ h1, h2, h3, h4, h5, h6 {
   @include span-columns(6);
   @include shift(3);
 
+  input[type=submit] {
+    @include button($button-med, $primary-color, true, true, false, true);
+  }
 }
 
 #account_links {
