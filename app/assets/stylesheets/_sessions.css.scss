@@ -1,0 +1,25 @@
+// Devise related styles that fall under the session layout
+
+#session {
+  @include outer-container;
+}
+
+#session-inner {
+  @include span-columns(4);
+  @include shift(4);
+
+  input[type=submit] {
+    @include button($button-med, $primary-color, true, true, false, true);
+  }
+
+  h2 {
+    font-size: 1.6em;
+    text-align: center;
+  }
+}
+
+#account_links {
+  ul li {
+    list-style-type: none;
+  }
+}
