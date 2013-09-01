@@ -1,11 +1,12 @@
-#top-menu {
-  float: right;
-}
+.top-bar {
 
-#main-menu li {
-  float: left;
-}
+  font-family: 'playtimewithhottoddiesregular', $helvetica;
 
-#wrap-banner nav ul li {
-  list-style-type: none;
+  h1 a {
+    font-size: emCalc(34);
+  }
+
+  ul li:hover > a {
+    background: darken($topbar-bg, 10%);
+  }
 }
