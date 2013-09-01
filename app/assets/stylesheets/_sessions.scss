@@ -5,9 +5,10 @@
 }
 
 #session-inner {
-  @include grid-column(6, $center:true);
+  @include grid-column(8, $center:true);
   input[type=submit] {
-    @include button($button-med, $primary-color, true, true, false, true);
+    @include button($padding:$button-med, $bg:$primary-color, $radius:true, $is-input:true);
+    @include grid-column($columns:3,$float:right);
   }
 
   h2 {
