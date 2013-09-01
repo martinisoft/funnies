@@ -44,7 +44,7 @@ module ApplicationHelper
   def flash_messages
     if flash[:notice] || flash[:alert]
       type = flash[:notice] ? "success" : "alert"
-      content_tag(:div, class: "notice #{type}") do
+      content_tag(:div, class: "alert-box #{type}") do
         flash[:notice] || flash[:alert]
       end
     end
