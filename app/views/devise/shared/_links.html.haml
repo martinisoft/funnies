@@ -3,7 +3,9 @@
     - if controller_name != 'sessions'
       %li= link_to "Sign in", new_session_path(resource_name)
     - if devise_mapping.registerable? && controller_name != 'registrations'
-      %li= link_to "Sign up", new_registration_path(resource_name)
+      %li
+        Don't have an account yet?
+        = link_to "Sign up", new_registration_path(resource_name)
     - if devise_mapping.confirmable? && controller_name != 'confirmations'
       %li= link_to "Resend confirmation email?", new_confirmation_path(resource_name)
     - if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'

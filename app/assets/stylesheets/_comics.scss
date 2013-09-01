@@ -1,0 +1,88 @@
+article.comic {
+
+  .title {
+    text-align: left;
+    position: relative;
+    border-radius: 3px 3px 0 0;
+    @include linear-gradient(#7abcff, #4096ee);
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+
+    h4 {
+      padding: 4px 0 4px 10px;
+      margin: 0;
+      font-size: 1.8em;
+      color: #FFF;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+
+      a {
+        &:link, &:visited {
+          color: #FFF;
+        }
+
+        &:hover, &:active {
+          color: #CCC;
+        }
+
+      }
+
+    }
+
+  }
+
+  .comic_strip {
+    text-align: center;
+    padding: 30px 0;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+    margin: 0 0 10px 0;
+
+    h5 {
+      font-size: 1.8em;
+    }
+  }
+
+}
+
+ul.comic_nav {
+  font-size: emCalc(14);
+  @include button-group-container;
+
+  li {
+    a {
+      @include button;
+      @include inset-shadow;
+      @include single-transition;
+    }
+
+    .unsubscribe, .unsubscribe:visited {
+      background-color: #ff5c00;
+    }
+
+    .unsubscribe:hover {
+      background-color: #d45500;
+    }
+
+    .subscribe, .subscribe:visited {
+      background-color: #2daebf;
+    }
+
+    .subscribe:hover {
+      background-color: #007d9a;
+    }
+
+    .delete_button {
+      background-color: #f44e3b;
+
+      &:hover {
+        background-color: darken(#f44e3b, 10%);
+      }
+    }
+
+  }
+
+  & > li {
+    @include button-group-style();
+  }
+
+}
+

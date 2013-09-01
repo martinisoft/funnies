@@ -1,12 +1,13 @@
-#wrap-banner.clearfix
-  #banner-inner.clearfix
-    %header
-      %h1
-        = link_to root_path do
-          = image_tag("logo.png", alt: "Funnies")
-    %nav#top-menu
-      #top-menu-wrap
-        %ul#main-menu
+#wrap-banner
+  #banner-inner
+    %nav.top-bar
+      %ul.title-area
+        %li.name
+          %h1
+            = link_to root_path do
+              The Funnies
+      %section.top-bar-section
+        %ul.left
           - if user_signed_in?
             %li= link_to "My Comics", user_comics_path(current_user.username)
             %li= link_to "Comics List", comics_path
@@ -15,10 +16,14 @@
           - if user_signed_in? && current_user.admin?
             %li= admin_nav_link
 
-    #account
-      - if user_signed_in?
-        = gravatar_for(current_user, size: 20)
-        = link_to current_user.username, "#", class: "username"
-        = link_to "Sign out", destroy_user_session_path, method: :delete
-      - else
-        = link_to "Sign in", new_user_session_path
+        %ul.right
+          - if user_signed_in?
+            %li.has-dropdown
+              = link_to "#" do
+                = gravatar_for(current_user, size: 20)
+                = current_user.username
+              %ul.dropdown
+                %li= link_to "Change Password", edit_user_registration_path
+                %li= link_to "Sign out", destroy_user_session_path, method: :delete
+          - else
+            %li= link_to "Sign in", new_user_session_path
