@@ -1,54 +1,5 @@
 // Devise related styles that fall under the session layout
 
-#session {
-  @include grid-row();
-}
-
-#session-inner {
-  @include grid-column(8, $center:true);
-  input[type=submit] {
-    @include button($padding:$button-med, $bg:$primary-color, $radius:true, $is-input:true);
-    @include grid-column($columns:3, $float:right);
-  }
-
-  h2 {
-    font-size: 1.6em;
-    text-align: center;
-  }
-
-  form {
-    @include grid-row();
-
-    label {
-      @include prefix-postfix-base;
-      @include prefix;
-      @include grid-column($columns:4, $float:left);
-    }
-
-    input {
-      @include grid-column($columns:8);
-
-    }
-
-    span.hint {
-      @include grid-column($columns:8, $offset:4, $float:right);
-      margin-top: -($form-spacing - emCalc(2));
-      margin-bottom: 8px;
-      padding: 10px;
-      background: $input-prefix-bg;
-      border-width: 0 1px 1px 1px;
-      border-style: solid;
-      border-color: $input-prefix-border-color;
-    }
-
-    small {
-      font-size: 1.2em;
-      color: #C60F13;
-    }
-  }
-
-}
-
 #account_links {
   ul li {
     list-style-type: none;
