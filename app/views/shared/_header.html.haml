@@ -18,9 +18,11 @@
 
         %ul.right
           - if user_signed_in?
-            %li.has-dropdown= gravatar_for(current_user, size: 20)
-            %ul.dropdown
-              %li= link_to current_user.username, "#", class: "username"
-              %li= link_to "Sign out", destroy_user_session_path, method: :delete
+            %li.has-dropdown
+              = link_to "#" do
+                = gravatar_for(current_user, size: 20)
+                = current_user.username
+              %ul.dropdown
+                %li= link_to "Sign out", destroy_user_session_path, method: :delete
           - else
             %li= link_to "Sign in", new_user_session_path
