@@ -1,8 +1,10 @@
 %h2 Sign up for an account
 = simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
-  = f.input :username, input_html: { placeholder: "mal" }
-  = f.input :email, hint: "mal@firefly.com", input_html: { placeholder: "mal@firefly.com" }
-  = f.input :password, hint: "Has to be at least 6 characters"
-  = f.input :password_confirmation
-  = f.submit "Sign up"
+  = f.input :username
+  = f.input :email
+  = f.input :password, required: true
+  = f.hint "Has to be at least 6 characters, symbols are cool."
+  = f.input :password_confirmation, required: true
+  = f.hint "Must match the above password."
+  = f.submit "Sign me up!"
 = render :partial => "devise/shared/links"

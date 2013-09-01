@@ -27,6 +27,23 @@
 
     input {
       @include grid-column($columns:8);
+
+    }
+
+    span.hint {
+      @include grid-column($columns:8, $offset:4, $float:right);
+      margin-top: -($form-spacing - emCalc(2));
+      margin-bottom: 8px;
+      padding: 10px;
+      background: $input-prefix-bg;
+      border-width: 0 1px 1px 1px;
+      border-style: solid;
+      border-color: $input-prefix-border-color;
+    }
+
+    small {
+      font-size: 1.2em;
+      color: #C60F13;
     }
   }
 
