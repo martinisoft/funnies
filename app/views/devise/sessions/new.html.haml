@@ -1,6 +1,7 @@
 %h2 Sign In
 = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
   = f.input :login, label: "Username or Email"
-  = f.input :password, label: "Password #{link_to 'Forgot it?', new_user_password_url}"
+  = f.input :password, label: "Password"
+  = f.hint "Forgot your account password? #{link_to 'Reset your password', new_user_password_url}"
   = f.submit "Sign In"
 = render :partial => "devise/shared/links"
