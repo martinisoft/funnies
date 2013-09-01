@@ -8,14 +8,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #wrap {
-  @include outer-container;
+}
+
+#wrap-banner {
 }
 
 #banner-inner {
-  @include outer-container;
 }
 
 footer {
-  @include outer-container;
   text-align: center;
 }
