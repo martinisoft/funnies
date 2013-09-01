@@ -1,16 +1,18 @@
 source 'https://rubygems.org/'
 
+gem 'bourbon', '~> 3.1'
 gem 'carrierwave', '0.8.0'
 gem 'decent_exposure', '~> 2.1.0'
-gem 'devise', '~> 2.2.3'
+gem 'devise', '~> 2.2.0'
 gem 'escape_utils'
 gem 'figaro', '~> 0.6.0'
 gem 'gravatar_image_tag', '~> 1.1.3'
 gem 'haml', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'nokogiri', '~> 1.5.6'
+gem 'passenger'
 gem 'pg', '~> 0.15'
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.14'
 gem 'rdiscount', '~> 2.0.7'
 gem 'responders', '~> 0.9.3'
 gem 'simple_form', '~> 2.1.0'
@@ -21,16 +23,18 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'sass-rails', '~> 3.2.6'
   gem 'uglifier', '>= 1.0.3'
+  gem 'zurb-foundation', '~> 4.3'
 end
 
 # Optional, for error capture on production
 group :production do
-  gem 'postmark-rails', '~> 0.5.0'
+  gem 'postmark-rails', '~> 0.5.1'
 end
 
 group :development do
-  gem 'guard', '~> 1.6.2'
+  gem 'guard', '~> 1.8'
   gem 'guard-rspec', '~> 2.4.1'
+  gem 'guard-livereload', '~> 1.4'
   gem 'rb-inotify', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-fchange', require: false

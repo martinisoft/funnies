@@ -13,8 +13,8 @@ describe ApplicationHelper do
 
       before { flash[:notice] = message }
 
-      it 'returns a div with notice and success classes' do
-        result = "<div class=\"notice success\">#{message}</div>"
+      it 'returns a div with alert-box and success classes and a close link' do
+        result = "<div class=\"alert-box success\" data-alert=\"\">#{message}<a href=\"#\" class=\"close\">x</a></div>"
         expect(helper.flash_messages).to eq result
       end
     end
@@ -25,7 +25,7 @@ describe ApplicationHelper do
       before { flash[:alert] = message }
 
       it 'returns a div with notice and alert classes' do
-        result = "<div class=\"notice alert\">#{message}</div>"
+        result = "<div class=\"alert-box alert\" data-alert=\"\">#{message}<a href=\"#\" class=\"close\">x</a></div>"
         expect(helper.flash_messages).to eq result
       end
     end

@@ -1,0 +1,12 @@
+.top-bar {
+
+  font-family: 'playtimewithhottoddiesregular', $helvetica;
+
+  h1 a {
+    font-size: emCalc(34);
+  }
+
+  ul li:hover > a {
+    background: darken($topbar-bg, 10%);
+  }
+}

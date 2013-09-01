@@ -10,7 +10,7 @@ feature "User account" do
       fill_in "Email", with: @email
       page.find('#user_password').set "secrets"
       fill_in "Password confirmation", with: "secrets"
-      click_button "Sign up"
+      click_button "Sign me up!"
     end
 
     expect(mailbox_for(@email).size).to eq 1
