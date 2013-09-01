@@ -12,9 +12,9 @@
   = javascript_include_tag "vendor/custom.modernizr"
   = csrf_meta_tag
 %body
-  = flash_messages
   %section#session
     %section#session-inner
+      = flash_messages
       = yield
   = javascript_include_tag "application"
   = render "shared/analytics" if Rails.env.production? || Rails.env.staging?

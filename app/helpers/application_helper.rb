@@ -44,8 +44,9 @@ module ApplicationHelper
   def flash_messages
     if flash[:notice] || flash[:alert]
       type = flash[:notice] ? "success" : "alert"
-      content_tag(:div, class: "alert-box #{type}") do
-        flash[:notice] || flash[:alert]
+      content_tag(:div, class: "alert-box #{type}", data: { alert: '' }) do
+        concat(flash[:notice] || flash[:alert])
+        concat(link_to 'x', '#', class: 'close')
       end
     end
   end
