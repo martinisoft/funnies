@@ -23,6 +23,7 @@
                 = gravatar_for(current_user, size: 20)
                 = current_user.username
               %ul.dropdown
+                %li= link_to "Change Password", edit_user_registration_path
                 %li= link_to "Sign out", destroy_user_session_path, method: :delete
           - else
             %li= link_to "Sign in", new_user_session_path
