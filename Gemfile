@@ -28,6 +28,7 @@ end
 
 # Optional, for error capture on production
 group :production do
+  gem 'lograge', '~> 0.1'
   gem 'postmark-rails', '~> 0.5.1'
 end
 
