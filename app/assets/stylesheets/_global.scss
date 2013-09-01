@@ -11,12 +11,6 @@ h1, h2, h3, h4, h5, h6 {
   @include grid-row();
 }
 
-#wrap-banner {
-}
-
-#banner-inner {
-}
-
 .signup {
   @include button($padding:$button-med, $bg:$primary-color, $radius:true);
   @include grid-column($columns:4, $offset: 4);
