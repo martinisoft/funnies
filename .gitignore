@@ -1,11 +1,20 @@
-.bundle
-.DS_Store
-log/*.log
-tmp/
-public/stylesheets/*
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore application configuration files
 /config/database.yml
 /config/application.yml
-public/images/comics/
+
+# Ignore downloaded comics
+/public/images/comics/
+
+# Ignore the sass cache file
 .sass_cache
-vendor/gems
-bin
