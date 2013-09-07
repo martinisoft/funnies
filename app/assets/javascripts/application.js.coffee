@@ -6,6 +6,7 @@
 #
 #= require jquery
 #= require jquery_ujs
+#= require turbolinks
 #= require foundation/foundation
 #= require foundation/foundation.alerts
 #= require foundation/foundation.clearing

@@ -1,7 +1,7 @@
 Funnies::Application.routes.draw do
 
-  match '/about' => 'pages#about', as: :about
-  match '/copyright' => 'pages#copyright', as: :copyright
+  get '/about' => 'pages#about', as: :about
+  get '/copyright' => 'pages#copyright', as: :copyright
 
   scope "/blog" do
     resources :posts
@@ -25,5 +25,5 @@ Funnies::Application.routes.draw do
     resource :subscriptions, only: [:index, :create, :destroy]
   end
 
-  root to: "pages#landing"
+  root "pages#landing"
 end
