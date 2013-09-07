@@ -5,7 +5,6 @@ Funnies::Application.routes.draw do
 
   scope "/blog" do
     resources :posts
-    root to: "posts#index"
   end
 
   devise_for :users
@@ -18,7 +17,6 @@ Funnies::Application.routes.draw do
 
   scope "/:username", as: "user" do
     resources :comics
-    root to: "comics#index"
   end
 
   resources :comics do
