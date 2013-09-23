@@ -2,10 +2,14 @@ module SessionHelpers
   def sign_in_user
     @user_info = { email: "user@example.com", password: "foobar" }
     @user = Fabricate :confirmed_user, @user_info
+    sign_in_with(@user, @user_info[:password])
+  end
+
+  def sign_in_with(user, password)
     visit new_user_session_path
-    fill_in "Username or Email", with: @user_info[:email]
-    fill_in "Password", with: @user_info[:password]
-    click_button "Sign In"
+    fill_in 'Username or Email', with: user.username
+    fill_in 'Password', with: password
+    click_button 'Sign In'
   end
 
   def sign_in_admin

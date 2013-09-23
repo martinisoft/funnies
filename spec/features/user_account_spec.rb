@@ -3,21 +3,22 @@ require 'spec_helper'
 feature "User account" do
   scenario "User creates new account" do
     @email = "bishop@weylandindustries.com"
-    visit new_user_registration_path
+    visit root_path
+    click_link "Sign up for a free account"
 
-    within "#new_user" do
-      fill_in "Username", with: "Bishop"
-      fill_in "Email", with: @email
-      page.find('#user_password').set "secrets"
-      fill_in "Password confirmation", with: "secrets"
-      click_button "Sign me up!"
-    end
+    fill_in "user_username", with: "Bishop"
+    fill_in "user_email", with: @email
+    fill_in "user_password", with: "secrets"
+    fill_in "user_password_confirmation", with: "secrets"
+    click_button "Sign me up!"
 
     expect(mailbox_for(@email).size).to eq 1
 
-    open_email("bishop@weylandindustries.com")
+    open_email(@email)
     visit_in_email("confirmation")
 
+    user = User.find_by(email: @email)
+    sign_in_with(user, "secrets")
     expect(page).to have_link("Sign out")
   end
 
