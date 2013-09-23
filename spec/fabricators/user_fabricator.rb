@@ -10,5 +10,8 @@ Fabricator :confirmed_user, from: :user do
 end
 
 Fabricator :admin, from: :confirmed_user do
-  admin true
+  after_create do |user|
+    user.toggle :admin
+    user.save!
+  end
 end
