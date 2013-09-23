@@ -46,7 +46,7 @@ group :development do
 end
 
 group :development, :test do
-  gem "fabrication", "~> 2.6.1"
+  gem "fabrication", "~> 2.8"
   gem "haml-rails", "0.4.0"
   gem "pry", "~> 0.9.12"
   gem "pry-rails", "~> 0.2.2"
@@ -54,7 +54,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara", "~> 2.0.2"
+  gem "capybara", "~> 2.1"
   gem "email_spec", "~> 1.4.0"
   gem "fivemat"
   gem "launchy"
