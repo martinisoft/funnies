@@ -9,8 +9,8 @@ feature "Admin manages blog" do
     }
     visit posts_path
     click_link "New Post"
-    fill_in "Title", with: @post_info[:title]
-    fill_in "Body", with: @post_info[:body]
+    fill_in "post_title", with: @post_info[:title]
+    fill_in "post_body", with: @post_info[:body]
     click_button "Save"
     visit posts_path
     within "section.posts article" do
@@ -32,8 +32,8 @@ feature "Admin manages blog" do
     }
     visit posts_path
     click_link "Edit Post"
-    fill_in "Title", with: @new_post_info[:title]
-    fill_in "Body", with: @new_post_info[:body]
+    fill_in "post_title", with: @new_post_info[:title]
+    fill_in "post_body", with: @new_post_info[:body]
     click_button "Save"
     visit posts_path
     within "section.posts article" do
