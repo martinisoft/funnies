@@ -1,6 +1,6 @@
 class SuggestionsController < ApplicationController
   respond_to :html
-  expose :suggestion
+  expose(:suggestion, attributes: :suggestion_params)
 
   before_filter :authenticated
 
@@ -8,5 +8,11 @@ class SuggestionsController < ApplicationController
     suggestion.user = current_user
     suggestion.save
     respond_with(suggestion, location: comics_path)
+  end
+
+  private
+
+  def suggestion_params
+    params.require(:suggestion).permit(:name, :website, :reason)
   end
 end

@@ -5,7 +5,7 @@ class ComicsController < ApplicationController
   before_filter :authenticate_unless_rss
   before_filter :authenticate_admin, except: :index
 
-  expose(:comic)
+  expose(:comic, attributes: :comic_params)
   expose(:comics)
   expose(:subscribed_comics) { User.find_by_username(params[:username]).try(:comics) || [] }
 
@@ -25,8 +25,14 @@ class ComicsController < ApplicationController
   end
 
   private
+
   def authenticate_unless_rss
     authenticated unless request.format.to_s[/rss/]
   end
   hide_action :authenticate_unless_rss
+
+  def comic_params
+    params.require(:post).permit(:name, :homepage, :comic_page,
+                                 :xpath_title, :xpath_image)
+  end
 end

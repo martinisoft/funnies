@@ -1,8 +1,6 @@
 class ComicStrip < ActiveRecord::Base
   belongs_to :comic
 
-  attr_accessible :comic_id, :remote_comic_image_url
-
   mount_uploader :comic_image, ComicImageUploader
 
   validates :comic, presence: true

@@ -8,11 +8,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
 
-  attr_accessor :login
-  attr_accessible :username, :email, :login,
-                  :password, :password_confirmation, :remember_me
-
   validates :username, :email, presence: true, uniqueness: true
+
+  attr_accessor :login
 
   def subscribed?(comic)
     comics.include?(comic)

@@ -11,8 +11,6 @@ class Comic < ActiveRecord::Base
   validates :xpath_title, presence: true, xpath: true
   validates :xpath_image, presence: true, xpath: true
 
-  attr_accessible :name, :homepage, :comic_page, :xpath_title, :xpath_image
-
   def update_strip
     scraper = ComicScraper.from_comic(self, Rails.logger)
     comic_strip_url = scraper.comic_strip_url

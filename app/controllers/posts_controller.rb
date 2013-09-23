@@ -4,8 +4,8 @@ class PostsController < ApplicationController
   before_filter :authenticated, except: :index
   before_filter :authenticate_admin, except: :index
 
-  expose(:post)
   expose(:posts)
+  expose(:post, attributes: :post_params)
 
   def create
     post.user = current_user
@@ -21,5 +21,11 @@ class PostsController < ApplicationController
   def destroy
     post.destroy
     respond_with(post)
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:body, :title)
   end
 end
