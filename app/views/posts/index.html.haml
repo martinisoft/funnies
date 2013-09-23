@@ -9,4 +9,4 @@
     - if user_signed_in? && current_user.admin?
       %nav.admin-menu
         = link_to "Edit Post", edit_post_path(post), class: "button admin_button"
-        = link_to "Delete Post", post_path(post), method: :delete, confirm: "Are you REALLY sure?", class: "button admin_button"
+        = link_to "Delete Post", post_path(post), method: :delete, data: { confirm: "Are you REALLY sure?" }, class: "button admin_button"
