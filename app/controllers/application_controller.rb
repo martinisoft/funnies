@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_admin
     unless current_user.admin?
-      redirect_to :back, alert: "You do not have access to that action"
+      redirect_to root_url, alert: "You do not have access to that action"
     end
   end
 
